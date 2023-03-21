@@ -1,0 +1,104 @@
+// ................................
+// ................................ HERO
+// ................................
+section.hero {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2vw;
+}
+
+.color {
+  background-color: rgb(var(--tertiary));
+  color: rgb(var(--background));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-3deg) !important;
+  width: auto;
+  vertical-align: baseline;
+  padding: 1rem 1rem 0 1rem;
+  letter-spacing: -0.2rem;
+  position: relative;
+  svg {
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+    height: 3vw;
+    color: rgb(var(--tertiary));
+    background-color: rgb(var(--background));
+    border-radius: 100000px;
+    padding: 0.6rem;
+    animation: rotate 2s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ................................
+// ................................ ABOUT
+// ................................
+
+section.about {
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  img {
+    z-index: 2;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  font-weight: 1000;
+  font-family: "Fivo", sans-serif;
+  position: relative;
+  z-index: 3;
+  .number {
+    color: rgb(var(--secondary));
+    font-size: 2.4vw;
+  }
+  &__text {
+    width: 50%;
+    font-size: 1.6vw;
+    font-weight: 400 !important;
+    text-align: justify;
+  }
+}
+
+.about {
+  margin-left: 2vh;
+}
+
+section.community {
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+  pointer-events: none !important;
+  img {
+    height: 100%;
+    position: absolute;
+    right: 0;
+  }
+}

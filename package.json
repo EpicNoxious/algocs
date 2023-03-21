@@ -1,0 +1,14 @@
+{
+  "name": "algocs",
+  "version": "1.0.0",
+  "description": "Web application for algocs",
+  "main": "index.js",
+  "scripts": {
+    "development": "sass static/sass/main.scss static/css/styles.css -w"
+  },
+  "author": "Jappreet Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.59.3"
+  }
+}

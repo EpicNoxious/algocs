@@ -1,0 +1,30 @@
+:root {
+  --tile-size: 5vw; /* Set default tile size */
+  --primary: 242, 232, 222;
+  --secondary: 79, 38, 233;
+  --tertiary: 217, 242, 79;
+  --background: 31, 31, 31;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  cursor: default;
+}
+
+html,
+body {
+  user-select: none;
+  scroll-behavior: smooth;
+  margin: 0;
+  overflow: hidden;
+  background-color: rgb(var(--background));
+  position: relative;
+  color: rgb(var(--primary));
+  font-family: "Vietnam";
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
