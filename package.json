@@ -4,11 +4,17 @@
   "description": "Web application for algocs",
   "main": "index.js",
   "scripts": {
-    "development": "sass static/sass/main.scss static/css/styles.css -w"
+    "start:scss": "sass static/sass/main.scss static/css/styles.css -w",
+    "start:pug": "pug -w views -o templates",
+    "develop": "concurrently \"npm run start:pug\" \"npm run start:scss\" "
   },
   "author": "Jappreet Singh",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.59.3"
+  },
+  "dependencies": {
+    "concurrently": "^8.0.1",
+    "pug": "^3.0.2"
   }
 }

@@ -2,11 +2,8 @@
 // ................................ HERO
 // ................................
 section.hero {
-  position: relative;
-  z-index: 2;
   height: 100vh;
   width: 100%;
-  pointer-events: none;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -46,6 +43,29 @@ section.hero {
     transform: rotate(360deg);
   }
 }
+// ................................
+// ................................ CAROUSEL
+// ................................
+section.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: auto;
+    height: 100%;
+    white-space: nowrap;
+  }
+  ul li {
+    color: rgb(var(--primary));
+    list-style: none;
+  }
+}
 
 // ................................
 // ................................ ABOUT
@@ -53,13 +73,10 @@ section.hero {
 
 section.about {
   height: 100vh;
-  z-index: 2;
-  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  position: relative;
   img {
     z-index: 2;
   }
@@ -93,9 +110,6 @@ section.about {
 
 section.community {
   height: 100vh;
-  position: relative;
-  z-index: 2;
-  pointer-events: none !important;
   img {
     height: 100%;
     position: absolute;

@@ -18,13 +18,26 @@ body {
   user-select: none;
   scroll-behavior: smooth;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: rgb(var(--background));
   position: relative;
   color: rgb(var(--primary));
   font-family: "Vietnam";
 }
 
-html::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
+}
+
+main {
+  pointer-events: none;
+  z-index: 2;
+  position: relative;
+}
+
+.cutout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
