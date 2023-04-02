@@ -16,10 +16,17 @@ section.carousel {
     overflow: auto;
     height: 100%;
     white-space: nowrap;
+    overflow-x: hidden;
+    animation: scroll 8s linear infinite;
+    width: calc((40vw) * 8);
   }
   ul li {
     color: rgb(var(--primary));
     list-style: none;
+    width: 40vw;
+    h1 {
+      font-size: 16vw;
+    }
   }
 }
 .cutout {
@@ -32,5 +39,14 @@ section.carousel {
   }
   &.r {
     right: 0;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(40vw) * 4);
   }
 }

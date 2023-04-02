@@ -134,6 +134,31 @@ ul.transition li {
   transform: scaleY(0);
 }
 
+.img-box {
+  width: 30vw;
+  height: 75vh;
+  overflow: hidden;
+}
+.img-box div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  background-color: rgb(var(--background));
+  color: rgb(var(--tertiary));
+  text-transform: uppercase;
+  height: 6vh;
+  padding: 1vh;
+  font-family: "Fivo", sans-serif;
+}
+.img-box div .img-title {
+  font-size: 1vw;
+  font-weight: 1000;
+}
+.img-box img {
+  width: 100%;
+}
+
 h1 {
   margin: 0;
   background-color: transparent;
@@ -234,10 +259,17 @@ section.carousel ul {
   overflow: auto;
   height: 100%;
   white-space: nowrap;
+  overflow-x: hidden;
+  animation: scroll 8s linear infinite;
+  width: 320vw;
 }
 section.carousel ul li {
   color: rgb(var(--primary));
   list-style: none;
+  width: 40vw;
+}
+section.carousel ul li h1 {
+  font-size: 16vw;
 }
 
 .cutout {
@@ -253,37 +285,37 @@ section.carousel ul li {
   right: 0;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(160vw);
+  }
+}
 section.about {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  margin-top: 10vh;
 }
 section.about img {
   z-index: 2;
 }
-
-.content {
+section.about .about__left {
   display: flex;
+  justify-content: flex-start;
   align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
   height: 100%;
-  font-weight: 1000;
-  font-family: "Fivo", sans-serif;
-  position: relative;
-  z-index: 3;
-}
-.content .number {
-  color: rgb(var(--secondary));
-  font-size: 2.4vw;
-}
-.content__text {
   width: 50%;
-  font-size: 1.6vw;
-  font-weight: 400 !important;
-  text-align: justify;
+  padding-left: 5vw;
+}
+section.about .about__right {
+  height: 100%;
+  width: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */

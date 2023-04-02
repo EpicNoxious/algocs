@@ -42,22 +42,39 @@ body(data-barba="wrapper" data-scroll-container="" id="scroll-container")
   main(data-barba='container' data-barba-namespace='index')
     section.carousel
       img(class="cutout l" src="../temporary/cutoutl.svg", alt="vectors", srcset="")
-
       ul 
           li
-              h1 list item 1
+              h1 1
           li
-              h1 list item 2
+              h1 2
           li
-              h1 list item 1
+              h1 3
           li
-              h1 list item 4
+              h1 4
+          li
+              h1 1
+          li
+              h1 2
+          li
+              h1 3
+          li
+              h1 4
     section.about
       div.about__left
         h4 our journey
         h2 where it all began
+        content Praesent egestas varius felis. Integer aliquet venenatis elit et ornare. Nam ut blandit lectus. Mauris a sem tempor, posuere dolor imperdiet, egestas est. Fusce ipsum neque, pretium sed felis a, accumsan commodo tellus. Vivamus eu risus eget erat tincidunt efficitur. Nam consequat ipsum neque, sit amet lobortis nisi dignissim ac. Sed turpis lectus, tempus nec imperdiet ut, laoreet nec orci. Etiam vitae dolor bibendum, tristique risus non, volutpat odio. Aliquam sagittis turpis et faucibus tempus. Duis a venenatis libero, sed ullamcorper nunc. Fusce nisl ante, venenatis eu sollicitudin vel, sagittis sed felis. Praesent tempus lacus eget feugiat finibus. Etiam eget urna maximus, commodo libero mattis, rutrum leo. Vestibulum laoreet velit sed nibh porta, eget consequat ligula lacinia. Phasellus id sodales massa.
       div.about__right
-        img(src="../static/img/sample_img.png")
+        div.img-box
+          div
+            div(class="img-cut") &mdash;
+            div(class="img-title") sample img
+          img(src="../static/img/sample_img.png")
+        div.img-box.last-box
+          div
+            div(class="img-cut") &mdash;
+            div(class="img-title") sample img
+          img(src="../static/img/sample_img.png")
 
 
     

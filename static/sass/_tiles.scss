@@ -56,3 +56,37 @@ ul.transition {
     transform: scaleY(0);
   }
 }
+
+// .................img-box
+// .................img-box
+// .................img-box
+// .................img-box
+// .................img-box
+
+.img-box {
+  width: 30vw;
+  height: 75vh;
+  overflow: hidden;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+    background-color: rgb(var(--background));
+    color: rgb(var(--tertiary));
+    text-transform: uppercase;
+    height: 6vh;
+    padding: 1vh;
+    font-family: "Fivo", sans-serif;
+    .img-cut {
+    }
+    .img-title {
+      font-size: 1vw;
+      font-weight: 1000;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
