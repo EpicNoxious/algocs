@@ -13,20 +13,21 @@ head
   script(src='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js')
   script(defer src='../static/js/app.js')
 
-//
-//
-//
-body(data-barba="wrapper" data-scroll-container="")
+// 
+// 
+// 
+body(data-barba="wrapper" data-scroll-container="" id="scroll-container")
   // tiles
   #tile-container
   // transition
-  ul.transition
+  ul.transition(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
     li
     li
     li
     li
     li
-  nav()
+  // navigation
+  nav(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
     span dashboard
     ul
       li
@@ -58,13 +59,5 @@ body(data-barba="wrapper" data-scroll-container="")
       div.about__right
         img(src="../static/img/sample_img.png")
 
-script. 
-    const locomotivescroll = new LocomotiveScroll({
-        el:document.querySelector("[data-scroll-container]"),
-        smooth: true,
-        smartphone: {
-            smooth: true
-        }
-    }) 
-      
+
     

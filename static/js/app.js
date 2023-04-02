@@ -1,3 +1,17 @@
+// .............................scroll
+// .............................scroll
+// .............................scroll
+// .............................scroll
+// .............................scroll
+
+const locomotivescroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  smartphone: {
+    smooth: true,
+  },
+});
+
 // .............................tile
 // .............................tile
 // .............................tile
@@ -45,6 +59,7 @@ window.addEventListener("resize", () => {
 // .............................barba
 // .............................barba
 // .............................barba
+
 barba.init({
   sync: true,
   transitions: [
@@ -53,6 +68,7 @@ barba.init({
         const done = this.async();
         pageTransition();
         await delay(1000);
+        locomotivescroll.scrollTo(0, 0);
         done();
       },
 
@@ -69,7 +85,6 @@ barba.init({
 
 pageTransition = () => {
   var timeline = gsap.timeline();
-
   timeline.to("ul.transition li", {
     duration: 0.5,
     scaleY: 1,
@@ -98,7 +113,6 @@ mainAnimation = () => {
     },
     delay: 0.8,
   });
-  window.scrollTo(0, 0);
 };
 
 delay = (n) => {

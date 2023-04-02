@@ -6,26 +6,28 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1')
   // links
   link(rel='stylesheet' type='text/css' media='screen' href='../static/css/styles.css')
+  link(rel='stylesheet' media='screen' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css')
   // scripts
-  script(defer src='https://unpkg.com/@barba/core')
-  script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js')
+  script(src='https://unpkg.com/@barba/core')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js')
+  script(src='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js')
   script(defer src='../static/js/app.js')
 
 // 
 // 
 // 
-body(data-barba="wrapper")
+body(data-barba="wrapper" data-scroll-container="" id="scroll-container")
   // tiles
   #tile-container
   // transition
-  ul.transition
+  ul.transition(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
     li
     li
     li
     li
     li
   // navigation
-  nav
+  nav(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
     span dashboard
     ul
       li
@@ -60,3 +62,8 @@ body(data-barba="wrapper")
           li
               h1 list item 4
     section.sessions
+
+
+
+      
+    

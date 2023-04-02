@@ -13,21 +13,22 @@
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script defer src="../static/js/app.js"></script>
 </head>
-<!---->
-<!---->
-<!---->
-<body data-barba="wrapper" data-scroll-container="">
+<!-- -->
+<!-- -->
+<!-- -->
+<body data-barba="wrapper" data-scroll-container="" id="scroll-container">
   <!-- tiles-->
   <div id="tile-container"></div>
   <!-- transition-->
-  <ul class="transition">
+  <ul class="transition" data-scroll data-scroll-sticky data-scroll-target="#scroll-container">
     <li></li>
     <li></li>
     <li></li>
     <li></li>
     <li></li>
   </ul>
-  <nav><span>dashboard</span>
+  <!-- navigation-->
+  <nav data-scroll data-scroll-sticky data-scroll-target="#scroll-container"><span>dashboard</span>
     <ul>
       <li><a href="../templates/index.html">Home</a></li>
       <li><a href="../templates/about.html">Events</a></li>
@@ -62,13 +63,3 @@
     </section>
   </main>
 </body>
-<script>
-  const locomotivescroll = new LocomotiveScroll({
-      el:document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      smartphone: {
-          smooth: true
-      }
-  }) 
-    
-</script>
