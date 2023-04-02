@@ -1,0 +1,36 @@
+// ................................
+// ................................ CAROUSEL
+// ................................
+section.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: auto;
+    height: 100%;
+    white-space: nowrap;
+  }
+  ul li {
+    color: rgb(var(--primary));
+    list-style: none;
+  }
+}
+.cutout {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 5;
+  &.l {
+    left: 0;
+  }
+  &.r {
+    right: 0;
+  }
+}
