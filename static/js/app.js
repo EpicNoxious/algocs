@@ -7,6 +7,7 @@
 const locomotivescroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
+  multiplier: 0.3,
   smartphone: {
     smooth: true,
   },
@@ -66,9 +67,9 @@ barba.init({
     {
       async leave(data) {
         const done = this.async();
+        locomotivescroll.scrollTo(0, 0);
         pageTransition();
         await delay(1000);
-        locomotivescroll.scrollTo(0, 0);
         done();
       },
 
@@ -123,3 +124,15 @@ delay = (n) => {
     }, n);
   });
 };
+
+// .............................img-box
+// .............................img-box
+// .............................img-box
+// .............................img-box
+// .............................img-box
+// var imgbox = document.querySelectorAll(".img-box");
+// imgbox.forEach(function (box) {
+//   box.addEventListener("click", function () {
+//     box.style.text = "z-index: 10";
+//   });
+// });

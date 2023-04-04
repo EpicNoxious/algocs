@@ -5,7 +5,10 @@ section.carousel {
   position: relative;
   width: 100%;
   height: 100vh;
-
+  img {
+    margin: auto 0;
+    height: 75%;
+  }
   ul {
     display: flex;
     align-items: center;
@@ -17,23 +20,23 @@ section.carousel {
     height: 100%;
     white-space: nowrap;
     overflow-x: hidden;
-    animation: scroll 8s linear infinite;
-    width: calc((40vw) * 8);
+    animation: scroll 16s linear infinite;
+    width: calc((75vw) * 8);
   }
   ul li {
     color: rgb(var(--primary));
     list-style: none;
-    width: 40vw;
     h1 {
-      font-size: 16vw;
+      width: 75vw;
+      font-size: 15vw;
     }
   }
 }
 .cutout {
   position: absolute;
-  top: 0;
-  height: 100%;
+  top: 50%;
   z-index: 5;
+  transform: translateY(-50%);
   &.l {
     left: 0;
   }
@@ -47,6 +50,6 @@ section.carousel {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(40vw) * 4);
+    transform: translateX(calc(75vw) * 4);
   }
 }
