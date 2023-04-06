@@ -16,7 +16,7 @@ head
 // 
 // 
 // 
-body(data-barba="wrapper" data-scroll-container="" id="scroll-container")
+body(data-barba="wrapper" data-scroll-container id="scroll-container")
   // tiles
   #tile-container
   // transition
@@ -73,12 +73,14 @@ body(data-barba="wrapper" data-scroll-container="" id="scroll-container")
           div
             div(class="img-cut") &mdash;
             div(class="img-title") sample img
-          img(src="../static/img/sample_img.png")
-        div.img-box.last-box
+            div(class="img tertiary")
+              img(src="../static/img/sample_img1.png" alt="image of anmol")
+        div.img-box
           div
             div(class="img-cut") &mdash;
             div(class="img-title") sample img
-          img(src="../static/img/sample_img.png")
-
+            div(class="img secondary")
+              img(src="../static/img/sample_img2.png" alt="image of jappreet")
+       
 
     

@@ -47,39 +47,55 @@ section.hero {
   }
 }
 
-// .indicator {
-//   position: fixed;
-//   bottom: 0;
-//   right: 0;
-//   &__line {
-//     border-left: 5px solid rgb(var(--secondary));
-//     height: 25vh;
-//     position: absolute;
-//     bottom: 10vh;
-//     right: 5vw;
-//     // &::after {
-//     //   content: "\2207";
-//     //   position: absolute;
-//     //   bottom: 0;
-//     //   right: 0;
-//     //   display: block;
-//     //   transform: translate(50%, 50%);
-//     // }
-//   }
-//   &__text {
-//     position: absolute;
-//     bottom: 12.5vh;
-//     right: 0.6vw;
-//     writing-mode: vertical-rl;
-//     margin: auto 0;
-//     transform: rotate(180deg) translateY(-50%);
-//   }
-// }
+.scroll-indicator {
+  position: absolute;
+  bottom: 5vh;
+  right: 3vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  img {
+    height: 25vh;
+  }
+  &__text {
+    height: 25vh;
+    writing-mode: vertical-rl;
+    margin: auto 0;
+    transform: rotate(180deg);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 1.2vw;
+    line-height: 0.1;
+    font-family: "Fivo", sans-serif;
+    text-transform: uppercase;
+    color: rgb(var(--tertiary));
+  }
+}
 // ................................
 // ................................ SESSIONS
 // ................................
 
 section.sessions {
-  height: 100vh;
+  height: 200vh;
   width: 100%;
+  position: relative;
+
+  .img-box {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    &:nth-of-type(1) {
+      transform: translate(50%, 50%);
+      z-index: 2;
+    }
+    &:nth-of-type(2) {
+      transform: translate(100%, 75%);
+      z-index: 3;
+    }
+    &:nth-of-type(3) {
+      transform: translate(150%, 100%);
+      z-index: 4;
+    }
+  }
 }

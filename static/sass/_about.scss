@@ -38,10 +38,10 @@ section.about {
         left: 50%;
         transform: translate(-60%, -60%);
         z-index: 2;
-      }
-      .last-box {
-        z-index: 3;
-        transform: translate(-40%, -40%);
+        &:nth-of-type(2) {
+          z-index: 3;
+          transform: translate(-40%, -40%);
+        }
       }
     }
   }

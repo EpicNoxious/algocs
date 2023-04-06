@@ -64,29 +64,34 @@ ul.transition {
 // .................img-box
 
 .img-box {
-  width: 40vh;
-  height: 50vh;
+  width: 50vh;
+  height: 60vh;
   overflow: hidden;
   div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0px;
+    flex-wrap: wrap;
     background-color: rgb(var(--background));
     color: rgb(var(--tertiary));
     text-transform: uppercase;
     height: 6vh;
-    padding: 1vh;
     font-family: "Fivo", sans-serif;
     .img-cut {
+      margin: 0vh 1vh;
     }
     .img-title {
       font-size: 1vw;
       font-weight: 1000;
+      margin: 0vh 1vh;
     }
   }
 
-  img {
-    width: 100%;
+  .img {
+    width: 50vh;
+    height: 60vh;
+    display: inline-block;
+    color: rgb(var(--background));
   }
 }

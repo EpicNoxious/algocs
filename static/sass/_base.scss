@@ -5,6 +5,19 @@
   --tertiary: 217, 242, 79;
   --background: 31, 31, 31;
 }
+
+.primary {
+  background-color: rgb(var(--primary)) !important;
+}
+.secondary {
+  background-color: rgb(var(--secondary)) !important;
+}
+.tertiary {
+  background-color: rgb(var(--tertiary)) !important;
+}
+.background {
+  background-color: rgb(var(--background)) !important;
+}
 * {
   margin: 0;
   padding: 0;

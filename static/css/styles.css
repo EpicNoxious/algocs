@@ -1,60 +1,25 @@
-section.hero {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-}
-section.hero > h4 {
-  margin-top: 10vh;
-}
-
-.color {
-  background-color: rgb(var(--tertiary));
-  color: rgb(var(--background));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: rotate(-3deg) !important;
-  width: auto;
-  vertical-align: baseline;
-  padding: 1rem 1rem 0 1rem;
-  letter-spacing: -0.2rem;
-  position: relative;
-}
-.color svg {
-  position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
-  height: 3vw;
-  color: rgb(var(--tertiary));
-  background-color: rgb(var(--background));
-  border-radius: 100000px;
-  padding: 0.6rem;
-  animation: rotate 2s linear infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-section.sessions {
-  height: 100vh;
-  width: 100%;
-}
-
 :root {
   --tile-size: 5vw; /* Set default tile size */
   --primary: 242, 232, 222;
   --secondary: 79, 38, 233;
   --tertiary: 217, 242, 79;
   --background: 31, 31, 31;
+}
+
+.primary {
+  background-color: rgb(var(--primary)) !important;
+}
+
+.secondary {
+  background-color: rgb(var(--secondary)) !important;
+}
+
+.tertiary {
+  background-color: rgb(var(--tertiary)) !important;
+}
+
+.background {
+  background-color: rgb(var(--background)) !important;
 }
 
 * {
@@ -85,121 +50,6 @@ main {
   pointer-events: none;
   z-index: 2;
   position: relative;
-}
-
-@font-face {
-  font-family: "Fivo";
-  src: url("../fonts/FivoSans.otf");
-}
-@font-face {
-  font-family: "Vietnam";
-  src: url("../fonts/Vietnam.ttf");
-}
-#tile-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.tile {
-  flex-shrink: 0;
-  box-sizing: border-box;
-  border: 1px solid rgba(var(--secondary), 0.025);
-  background-color: rgb(var(--background));
-  width: var(--tile-size);
-  height: var(--tile-size);
-  transition: border 20ms ease-in-out;
-}
-.tile:hover {
-  border: 1px solid rgba(var(--secondary), 1);
-}
-.tile:not(:hover) {
-  transition-delay: 700ms;
-  transition-timing-function: ease-in-out;
-}
-
-ul.transition {
-  display: flex;
-  position: fixed;
-  z-index: 1000;
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  list-style: none;
-}
-ul.transition li {
-  background-color: rgb(var(--secondary));
-  width: 20%;
-  transform: scaleY(0);
-}
-
-.img-box {
-  width: 40vh;
-  height: 50vh;
-  overflow: hidden;
-}
-.img-box div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0px;
-  background-color: rgb(var(--background));
-  color: rgb(var(--tertiary));
-  text-transform: uppercase;
-  height: 6vh;
-  padding: 1vh;
-  font-family: "Fivo", sans-serif;
-}
-.img-box div .img-title {
-  font-size: 1vw;
-  font-weight: 1000;
-}
-.img-box img {
-  width: 100%;
-}
-
-h1 {
-  margin: 0;
-  background-color: transparent;
-  font-size: 8vw;
-  text-transform: uppercase;
-  font-weight: 1000;
-  font-family: "Fivo", sans-serif;
-  line-height: 1;
-  color: rgb(var(--primary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1vw;
-}
-
-h2 {
-  font-size: 4vw;
-  font-family: "Fivo", sans-serif;
-  font-weight: 1000;
-  text-transform: uppercase;
-}
-
-h4 {
-  color: rgb(var(--secondary));
-  font-family: Tahoma, Verdana, sans-serif;
-  font-size: 1.6vw;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-p {
-  font-family: "Vietnam";
-  font-size: 1.4vw;
 }
 
 nav {
@@ -251,6 +101,41 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: rgb(var(--tertiary));
+}
+
+h1 {
+  margin: 0;
+  background-color: transparent;
+  font-size: 8vw;
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-family: "Fivo", sans-serif;
+  line-height: 1;
+  color: rgb(var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+
+h2 {
+  font-size: 4vw;
+  font-family: "Fivo", sans-serif;
+  font-weight: 1000;
+  text-transform: uppercase;
+}
+
+h4 {
+  color: rgb(var(--secondary));
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 1.6vw;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Vietnam";
+  font-size: 1.4vw;
 }
 
 section.carousel {
@@ -306,6 +191,85 @@ section.carousel ul li h1 {
     transform: translateX(300vw);
   }
 }
+#tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tile {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(var(--secondary), 0.025);
+  background-color: rgb(var(--background));
+  width: var(--tile-size);
+  height: var(--tile-size);
+  transition: border 20ms ease-in-out;
+}
+.tile:hover {
+  border: 1px solid rgba(var(--secondary), 1);
+}
+.tile:not(:hover) {
+  transition-delay: 700ms;
+  transition-timing-function: ease-in-out;
+}
+
+ul.transition {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  list-style: none;
+}
+ul.transition li {
+  background-color: rgb(var(--secondary));
+  width: 20%;
+  transform: scaleY(0);
+}
+
+.img-box {
+  width: 50vh;
+  height: 60vh;
+  overflow: hidden;
+}
+.img-box div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  flex-wrap: wrap;
+  background-color: rgb(var(--background));
+  color: rgb(var(--tertiary));
+  text-transform: uppercase;
+  height: 6vh;
+  font-family: "Fivo", sans-serif;
+}
+.img-box div .img-cut {
+  margin: 0vh 1vh;
+}
+.img-box div .img-title {
+  font-size: 1vw;
+  font-weight: 1000;
+  margin: 0vh 1vh;
+}
+.img-box .img {
+  width: 50vh;
+  height: 60vh;
+  display: inline-block;
+  color: rgb(var(--background));
+}
+
 section.about {
   height: 100vh;
   display: flex;
@@ -343,9 +307,113 @@ section.about .about__right .img-box {
   transform: translate(-60%, -60%);
   z-index: 2;
 }
-section.about .about__right .last-box {
+section.about .about__right .img-box:nth-of-type(2) {
   z-index: 3;
   transform: translate(-40%, -40%);
+}
+
+section.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+section.hero > h4 {
+  margin-top: 10vh;
+}
+
+.color {
+  background-color: rgb(var(--tertiary));
+  color: rgb(var(--background));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-3deg) !important;
+  width: auto;
+  vertical-align: baseline;
+  padding: 1rem 1rem 0 1rem;
+  letter-spacing: -0.2rem;
+  position: relative;
+}
+.color svg {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  height: 3vw;
+  color: rgb(var(--tertiary));
+  background-color: rgb(var(--background));
+  border-radius: 100000px;
+  padding: 0.6rem;
+  animation: rotate 2s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 5vh;
+  right: 3vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.scroll-indicator img {
+  height: 25vh;
+}
+.scroll-indicator__text {
+  height: 25vh;
+  writing-mode: vertical-rl;
+  margin: auto 0;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 1.2vw;
+  line-height: 0.1;
+  font-family: "Fivo", sans-serif;
+  text-transform: uppercase;
+  color: rgb(var(--tertiary));
+}
+
+section.sessions {
+  height: 200vh;
+  width: 100%;
+  position: relative;
+}
+section.sessions .img-box {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+section.sessions .img-box:nth-of-type(1) {
+  transform: translate(50%, 50%);
+  z-index: 2;
+}
+section.sessions .img-box:nth-of-type(2) {
+  transform: translate(100%, 75%);
+  z-index: 3;
+}
+section.sessions .img-box:nth-of-type(3) {
+  transform: translate(150%, 100%);
+  z-index: 4;
+}
+
+@font-face {
+  font-family: "Fivo";
+  src: url("../fonts/FivoSans.otf");
+}
+@font-face {
+  font-family: "Vietnam";
+  src: url("../fonts/Vietnam.ttf");
 }
 
 /*# sourceMappingURL=styles.css.map */
