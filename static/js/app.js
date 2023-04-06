@@ -7,7 +7,7 @@
 const locomotivescroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  multiplier: 0.3,
+  multiplier: 0.5,
   smartphone: {
     smooth: true,
   },
@@ -49,10 +49,16 @@ function updateGrid() {
   }
 }
 
-updateGrid(); // Call function on page load
+updateGrid();
 
 window.addEventListener("resize", () => {
   updateGrid(); // Call function whenever window is resized
+});
+
+barba.hooks.after(() => {
+  locomotivescroll.destroy();
+  updateGrid();
+  locomotivescroll.init();
 });
 
 // .............................barba
@@ -62,14 +68,17 @@ window.addEventListener("resize", () => {
 // .............................barba
 
 barba.init({
-  sync: true,
+  cache: false,
   transitions: [
     {
       async leave(data) {
         const done = this.async();
         locomotivescroll.scrollTo(0, 0);
+
         pageTransition();
+
         await delay(1000);
+        // window.scroll(0, 0);
         done();
       },
 
@@ -124,15 +133,3 @@ delay = (n) => {
     }, n);
   });
 };
-
-// .............................img-box
-// .............................img-box
-// .............................img-box
-// .............................img-box
-// .............................img-box
-// var imgbox = document.querySelectorAll(".img-box");
-// imgbox.forEach(function (box) {
-//   box.addEventListener("click", function () {
-//     box.style.text = "z-index: 10";
-//   });
-// });

@@ -47,26 +47,34 @@ section.hero {
   }
 }
 
-.arrow {
-  // position: absolute;
-  // bottom: 0;
-  // right: 0;
-  &__line {
-    border-left: 5px solid rgb(var(--secondary));
-    height: 25vh;
-    position: absolute;
-    bottom: 10vh;
-    right: 5vw;
-  }
-  &__text {
-    position: absolute;
-    bottom: 10vh;
-    right: 5vw;
-    writing-mode: vertical-rl;
-    margin: auto 0;
-    transform: rotate(180deg) translateY(0%);
-  }
-}
+// .indicator {
+//   position: fixed;
+//   bottom: 0;
+//   right: 0;
+//   &__line {
+//     border-left: 5px solid rgb(var(--secondary));
+//     height: 25vh;
+//     position: absolute;
+//     bottom: 10vh;
+//     right: 5vw;
+//     // &::after {
+//     //   content: "\2207";
+//     //   position: absolute;
+//     //   bottom: 0;
+//     //   right: 0;
+//     //   display: block;
+//     //   transform: translate(50%, 50%);
+//     // }
+//   }
+//   &__text {
+//     position: absolute;
+//     bottom: 12.5vh;
+//     right: 0.6vw;
+//     writing-mode: vertical-rl;
+//     margin: auto 0;
+//     transform: rotate(180deg) translateY(-50%);
+//   }
+// }
 // ................................
 // ................................ SESSIONS
 // ................................
