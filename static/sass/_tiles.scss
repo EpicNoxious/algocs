@@ -64,9 +64,9 @@ ul.transition {
 // .................img-box
 
 .img-box {
-  width: 50vh;
-  height: 60vh;
-  overflow: hidden;
+  width: 20vw;
+  height: 50vh;
+  border: 1px solid red;
   div {
     display: flex;
     align-items: center;
@@ -85,13 +85,28 @@ ul.transition {
       font-size: 1vw;
       font-weight: 1000;
       margin: 0vh 1vh;
+      background-color: rgb(var(--background));
+    }
+    .img-content {
+      font-size: 1vw;
+      font-weight: 1000;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      height: 6vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
   .img {
-    width: 50vh;
-    height: 60vh;
+    width: 100%;
     display: inline-block;
+    flex: 100%;
+    img {
+      display: none;
+    }
     color: rgb(var(--background));
   }
 }
