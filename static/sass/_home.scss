@@ -9,14 +9,26 @@ section.hero {
   justify-content: center;
   flex-direction: column;
   position: relative;
+  margin-left: 10vh;
   & > h4 {
-    margin-top: 10vh;
+    margin-top: 20vh;
+  }
+  .overflow {
+    overflow: hidden;
+  }
+  h4 {
+    display: flex;
+    .slide-in {
+      transform: translateY(20vh);
+    }
+  }
+  .slide-in-in {
+    transform: translateY(20vh);
   }
 }
 
 .color {
-  background-color: rgb(var(--tertiary));
-  color: rgb(var(--background));
+  color: rgb(var(--primary));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +38,7 @@ section.hero {
   padding: 1rem 1rem 0 1rem;
   letter-spacing: -0.2rem;
   position: relative;
+
   svg {
     position: absolute;
     top: -1.5rem;
@@ -39,6 +52,7 @@ section.hero {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 5;
   }
 }
 @keyframes rotate {
@@ -77,7 +91,7 @@ section.hero {
 // ................................
 
 section.sessions {
-  height: 250vh;
+  height: 400vh;
   width: 100%;
   position: relative;
   .img-box {
@@ -90,51 +104,51 @@ section.sessions {
       z-index: 2;
     }
     &:nth-of-type(2) {
-      transform: translate(25%, 75%);
+      transform: translate(25%, 100%);
       z-index: 3;
     }
     &:nth-of-type(3) {
-      transform: translate(100%, 100%);
+      transform: translate(100%, 150%);
       z-index: 4;
     }
     &:nth-of-type(4) {
-      transform: translate(175%, 125%);
+      transform: translate(175%, 200%);
       z-index: 5;
     }
     &:nth-of-type(5) {
-      transform: translate(100%, 150%);
-      z-index: 5;
-    }
-    &:nth-of-type(6) {
-      transform: translate(25%, 175%);
-      z-index: 5;
-    }
-    &:nth-of-type(7) {
-      transform: translate(-50%, 200%);
-      z-index: 5;
-    }
-    &:nth-of-type(8) {
-      transform: translate(25%, 225%);
-      z-index: 5;
-    }
-    &:nth-of-type(9) {
       transform: translate(100%, 250%);
       z-index: 5;
     }
+    &:nth-of-type(6) {
+      transform: translate(25%, 300%);
+      z-index: 5;
+    }
+    &:nth-of-type(7) {
+      transform: translate(-50%, 350%);
+      z-index: 5;
+    }
+    &:nth-of-type(8) {
+      transform: translate(25%, 400%);
+      z-index: 5;
+    }
+    &:nth-of-type(9) {
+      transform: translate(100%, 450%);
+      z-index: 5;
+    }
     &:nth-of-type(10) {
-      transform: translate(175%, 275%);
+      transform: translate(175%, 500%);
       z-index: 5;
     }
     &:nth-of-type(11) {
-      transform: translate(100%, 300%);
+      transform: translate(100%, 550%);
       z-index: 5;
     }
     &:nth-of-type(12) {
-      transform: translate(25%, 325%);
+      transform: translate(25%, 600%);
       z-index: 5;
     }
     &:nth-of-type(13) {
-      transform: translate(-50%, 350%);
+      transform: translate(-50%, 650%);
       z-index: 5;
     }
   }

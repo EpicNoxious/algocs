@@ -7,10 +7,10 @@
 const locomotivescroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  multiplier: 0.5,
+  multiplier: 0.7,
   smartphone: {
     smooth: true,
-    multiplier: 0.5,
+    multiplier: 0.7,
   },
 });
 
@@ -28,7 +28,7 @@ barba.hooks.after(() => {
 
 const container = document.getElementById("tile-container");
 function updateGrid() {
-  const tileSize = Math.floor(window.innerWidth * 0.05); // Set tile size to 5% of screen width
+  const tileSize = Math.floor(window.innerWidth * 0.04); // Set tile size to 5% of screen width
 
   const bodyHeight = document.body.offsetHeight;
   const scrollBarWidth = window.innerWidth - document.body.clientWidth;
@@ -82,11 +82,11 @@ barba.init({
       },
 
       async enter(data) {
-        // mainAnimation();
+        mainAnimation();
       },
 
       async once(data) {
-        // mainAnimation();
+        mainAnimation();
       },
     },
   ],
@@ -113,15 +113,25 @@ pageTransition = () => {
 mainAnimation = () => {
   var timeline = gsap.timeline();
 
-  // timeline.from(".container h1, .menu-items li, .logo", {
-  //   duration: 1,
-  //   y: 30,
-  //   opacity: 0,
-  //   stagger: {
-  //     amount: 0.4,
-  //   },
-  //   delay: 0.8,
-  // });
+  timeline.to(".hero h4 div.overflow div.slide-in", {
+    duration: 0.5,
+    y: 0,
+    ease: "power2.out",
+    stagger: 0.05,
+    delay: 0.5,
+  });
+
+  timeline.to(".hero h1 div.overflow div.slide-in-in", {
+    duration: 0.5,
+    y: 0,
+    ease: "power2.out",
+    stagger: 0.05,
+    delay: 0.5,
+  });
+  timeline.to(".color", {
+    backgroundColor: "rgb(var(--tertiary))",
+    color: "rgb(var(--background))",
+  });
 };
 
 delay = (n) => {

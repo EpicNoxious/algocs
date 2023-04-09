@@ -19,7 +19,7 @@
 .tile {
   flex-shrink: 0;
   box-sizing: border-box;
-  border: 1px solid rgba(var(--secondary), 0.025);
+  border: 1px solid rgba(var(--secondary), 0.03);
 
   background-color: rgb(var(--background));
   width: var(--tile-size);
@@ -66,47 +66,97 @@ ul.transition {
 .img-box {
   width: 20vw;
   height: 50vh;
-  border: 1px solid red;
-  div {
+
+  &-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: stretch;
+    justify-content: stretch;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
     gap: 0px;
-    flex-wrap: wrap;
     background-color: rgb(var(--background));
     color: rgb(var(--tertiary));
     text-transform: uppercase;
-    height: 6vh;
     font-family: "Fivo", sans-serif;
-    .img-cut {
-      margin: 0vh 1vh;
+    pointer-events: all;
+    &:focus {
+      animation: quick 300ms ease-in-out;
     }
-    .img-title {
-      font-size: 1vw;
-      font-weight: 1000;
-      margin: 0vh 1vh;
-      background-color: rgb(var(--background));
+
+    @keyframes quick {
+      0% {
+        -webkit-animation-timing-function: steps(1, end);
+        -moz-animation-timing-function: steps(1, end);
+        -ms-animation-timing-function: steps(1, end);
+        -o-animation-timing-function: steps(1, end);
+        animation-timing-function: steps(1, end);
+        background-color: rgb(var(--background));
+        scale: 1.2;
+      }
+      10% {
+        -webkit-animation-timing-function: steps(1, end);
+        -moz-animation-timing-function: steps(1, end);
+        -ms-animation-timing-function: steps(1, end);
+        -o-animation-timing-function: steps(1, end);
+        animation-timing-function: steps(1, end);
+        background-color: rgb(var(--secondary));
+        scale: 1.1;
+      }
+      100% {
+        -webkit-animation-timing-function: steps(1, end);
+        -moz-animation-timing-function: steps(1, end);
+        -ms-animation-timing-function: steps(1, end);
+        -o-animation-timing-function: steps(1, end);
+        animation-timing-function: steps(1, end);
+        background-color: rgb(var(--background));
+        scale: 1;
+      }
     }
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 15%;
+      .img-cut {
+        margin: 0vh 1vh;
+      }
+      .img-title {
+        font-size: 1vw;
+        font-weight: 1000;
+        margin: 0vh 1vh;
+        background-color: transparent;
+      }
+    }
+
     .img-content {
       font-size: 1vw;
       font-weight: 1000;
       display: inline-block;
       width: 100%;
       text-align: center;
-      height: 6vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      height: 15%;
+      color: rgb(var(--primary));
     }
-  }
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 40%;
+      padding-bottom: 40%;
+      img {
+        // display: none;
+        text-decoration: none;
+        // height: 100%;
+      }
+      span {
+        font-size: 3.2vw;
+      }
 
-  .img {
-    width: 100%;
-    display: inline-block;
-    flex: 100%;
-    img {
-      display: none;
+      color: rgb(var(--background));
     }
-    color: rgb(var(--background));
   }
 }

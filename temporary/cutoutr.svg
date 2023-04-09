@@ -1,18 +1,10 @@
-<svg xml:space="preserve" style="enable-background:new 0 0 793 555;" viewBox="0 0 793 555" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Layer_1" version="1.1">
-<style type="text/css">
-	.st0{fill:#4F26E9;}
-</style>
-<g>
-	<polygon points="0.1,282.3 152.6,194.3 152.6,369.7 0.1,457.7" class="st0"></polygon>
-	<polygon points="312.9,282.4 160.4,194.4 160.4,369.7 312.9,457.7" class="st0"></polygon>
-</g>
-<g>
-	<polygon points="320.7,282.8 473.2,194.8 473.2,370.1 320.7,458.2" class="st0"></polygon>
-	<polygon points="633.4,282.8 481,194.8 481,370.2 633.4,458.2" class="st0"></polygon>
-</g>
-<polygon points="640.9,461 793.3,549 793.3,373.6 640.9,285.6" class="st0"></polygon>
-<g>
-	<polygon points="321,98.1 473.4,10.1 473.4,185.4 321,273.4" class="st0"></polygon>
-</g>
-<polygon points="641.6,98.5 794,10.5 794,185.9 641.6,273.9" class="st0"></polygon>
+<svg width="794" height="539" viewBox="0 0 794 539" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 272.2L152.5 184.2V359.6L0 447.6V272.2Z" fill="#4F26E9"/>
+<path d="M480.4 175.4L632.9 263.4V87.9999L480.4 -0.00012207V175.4Z" fill="#4F26E9"/>
+<path d="M312.8 272.3L160.3 184.3V359.6L312.8 447.6V272.3Z" fill="#4F26E9"/>
+<path d="M320.6 272.7L473.1 184.7V360L320.6 448.1V272.7Z" fill="#4F26E9"/>
+<path d="M633.3 272.7L480.9 184.7V360.1L633.3 448.1V272.7Z" fill="#4F26E9"/>
+<path d="M640.8 450.9L793.2 538.9V363.5L640.8 275.5V450.9Z" fill="#4F26E9"/>
+<path d="M320.9 88.0001L473.3 0.00012207V175.3L320.9 263.3V88.0001Z" fill="#4F26E9"/>
+<path d="M641.5 88.4L793.9 0.400024V175.8L641.5 263.8V88.4Z" fill="#4F26E9"/>
 </svg>

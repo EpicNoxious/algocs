@@ -143,7 +143,7 @@ section.carousel {
   width: 100%;
   height: 100vh;
 }
-section.carousel img {
+section.carousel object {
   margin: auto 0;
   height: 75%;
 }
@@ -207,7 +207,7 @@ section.carousel ul li h1 {
 .tile {
   flex-shrink: 0;
   box-sizing: border-box;
-  border: 1px solid rgba(var(--secondary), 0.025);
+  border: 1px solid rgba(var(--secondary), 0.03);
   background-color: rgb(var(--background));
   width: var(--tile-size);
   height: var(--tile-size);
@@ -241,48 +241,93 @@ ul.transition li {
 .img-box {
   width: 20vw;
   height: 50vh;
-  border: 1px solid red;
 }
-.img-box div {
+.img-box-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   gap: 0px;
-  flex-wrap: wrap;
   background-color: rgb(var(--background));
   color: rgb(var(--tertiary));
   text-transform: uppercase;
-  height: 6vh;
   font-family: "Fivo", sans-serif;
+  pointer-events: all;
 }
-.img-box div .img-cut {
+.img-box-container:focus {
+  animation: quick 300ms ease-in-out;
+}
+@keyframes quick {
+  0% {
+    -webkit-animation-timing-function: steps(1, end);
+    -moz-animation-timing-function: steps(1, end);
+    -ms-animation-timing-function: steps(1, end);
+    -o-animation-timing-function: steps(1, end);
+    animation-timing-function: steps(1, end);
+    background-color: rgb(var(--background));
+    scale: 1.2;
+  }
+  10% {
+    -webkit-animation-timing-function: steps(1, end);
+    -moz-animation-timing-function: steps(1, end);
+    -ms-animation-timing-function: steps(1, end);
+    -o-animation-timing-function: steps(1, end);
+    animation-timing-function: steps(1, end);
+    background-color: rgb(var(--secondary));
+    scale: 1.1;
+  }
+  100% {
+    -webkit-animation-timing-function: steps(1, end);
+    -moz-animation-timing-function: steps(1, end);
+    -ms-animation-timing-function: steps(1, end);
+    -o-animation-timing-function: steps(1, end);
+    animation-timing-function: steps(1, end);
+    background-color: rgb(var(--background));
+    scale: 1;
+  }
+}
+.img-box-container .toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 15%;
+}
+.img-box-container .toggle-container .img-cut {
   margin: 0vh 1vh;
 }
-.img-box div .img-title {
+.img-box-container .toggle-container .img-title {
   font-size: 1vw;
   font-weight: 1000;
   margin: 0vh 1vh;
-  background-color: rgb(var(--background));
+  background-color: transparent;
 }
-.img-box div .img-content {
+.img-box-container .img-content {
   font-size: 1vw;
   font-weight: 1000;
   display: inline-block;
   width: 100%;
   text-align: center;
-  height: 6vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 15%;
+  color: rgb(var(--primary));
 }
-.img-box .img {
-  width: 100%;
-  display: inline-block;
-  flex: 100%;
+.img-box-container .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40%;
+  padding-bottom: 40%;
   color: rgb(var(--background));
 }
-.img-box .img img {
-  display: none;
+.img-box-container .img img {
+  text-decoration: none;
+}
+.img-box-container .img span {
+  font-size: 3.2vw;
 }
 
 section.about {
@@ -291,9 +336,6 @@ section.about {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-}
-section.about img {
-  z-index: 2;
 }
 section.about .about__left {
   display: flex;
@@ -335,14 +377,26 @@ section.hero {
   justify-content: center;
   flex-direction: column;
   position: relative;
+  margin-left: 10vh;
 }
 section.hero > h4 {
-  margin-top: 10vh;
+  margin-top: 20vh;
+}
+section.hero .overflow {
+  overflow: hidden;
+}
+section.hero h4 {
+  display: flex;
+}
+section.hero h4 .slide-in {
+  transform: translateY(20vh);
+}
+section.hero .slide-in-in {
+  transform: translateY(20vh);
 }
 
 .color {
-  background-color: rgb(var(--tertiary));
-  color: rgb(var(--background));
+  color: rgb(var(--primary));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -366,6 +420,7 @@ section.hero > h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 }
 
 @keyframes rotate {
@@ -400,7 +455,7 @@ section.hero > h4 {
 }
 
 section.sessions {
-  height: 250vh;
+  height: 400vh;
   width: 100%;
   position: relative;
 }
@@ -415,51 +470,51 @@ section.sessions .img-box:nth-of-type(1) {
   z-index: 2;
 }
 section.sessions .img-box:nth-of-type(2) {
-  transform: translate(25%, 75%);
+  transform: translate(25%, 100%);
   z-index: 3;
 }
 section.sessions .img-box:nth-of-type(3) {
-  transform: translate(100%, 100%);
+  transform: translate(100%, 150%);
   z-index: 4;
 }
 section.sessions .img-box:nth-of-type(4) {
-  transform: translate(175%, 125%);
+  transform: translate(175%, 200%);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(5) {
-  transform: translate(100%, 150%);
-  z-index: 5;
-}
-section.sessions .img-box:nth-of-type(6) {
-  transform: translate(25%, 175%);
-  z-index: 5;
-}
-section.sessions .img-box:nth-of-type(7) {
-  transform: translate(-50%, 200%);
-  z-index: 5;
-}
-section.sessions .img-box:nth-of-type(8) {
-  transform: translate(25%, 225%);
-  z-index: 5;
-}
-section.sessions .img-box:nth-of-type(9) {
   transform: translate(100%, 250%);
   z-index: 5;
 }
+section.sessions .img-box:nth-of-type(6) {
+  transform: translate(25%, 300%);
+  z-index: 5;
+}
+section.sessions .img-box:nth-of-type(7) {
+  transform: translate(-50%, 350%);
+  z-index: 5;
+}
+section.sessions .img-box:nth-of-type(8) {
+  transform: translate(25%, 400%);
+  z-index: 5;
+}
+section.sessions .img-box:nth-of-type(9) {
+  transform: translate(100%, 450%);
+  z-index: 5;
+}
 section.sessions .img-box:nth-of-type(10) {
-  transform: translate(175%, 275%);
+  transform: translate(175%, 500%);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(11) {
-  transform: translate(100%, 300%);
+  transform: translate(100%, 550%);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(12) {
-  transform: translate(25%, 325%);
+  transform: translate(25%, 600%);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(13) {
-  transform: translate(-50%, 350%);
+  transform: translate(-50%, 650%);
   z-index: 5;
 }
 

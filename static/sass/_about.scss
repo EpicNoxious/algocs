@@ -8,9 +8,6 @@ section.about {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  img {
-    z-index: 2;
-  }
 
   .about {
     &__left {

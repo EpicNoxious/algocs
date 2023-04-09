@@ -41,7 +41,8 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
   // main with sections
   main(data-barba='container' data-barba-namespace='index')
     section.carousel
-      img(class="cutout l" src="../temporary/cutoutl.svg", alt="vectors", srcset="")
+      //- img(class="cutout l" src="../temporary/cutoutl.svg", alt="vectors", srcset="")
+      object(class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg", alt="vectors", srcset="")
       ul 
           li
               h1 about
@@ -70,18 +71,21 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
           | Nam consequat ipsum neque, sit amet lobortis nisi dignissim ac. Sed turpis lectus, tempus nec imperdiet ut, laoreet nec orci. Etiam vitae dolor bibendum, tristique risus non, volutpat odio. Aliquam sagittis turpis et faucibus tempus. Duis a venenatis libero, sed ullamcorper nunc. Fusce nisl ante, venenatis eu sollicitudin vel, sagittis sed felis. Praesent tempus lacus eget feugiat finibus. Etiam eget urna maximus, commodo libero mattis, rutrum leo. Vestibulum laoreet velit sed nibh porta, eget consequat ligula lacinia. Phasellus id sodales massa.
       div.about__right
         div.img-box
-          div
-            div(class="img-cut") &mdash;
-            div(class="img-title") sample img
+          div(class="img-box-container")
+            div(class="toggle-container")
+              div(class="img-cut") &mdash;
+              div(class="img-title") sample img
             div(class="img tertiary")
               img(src="../static/img/sample_img1.png" alt="image of anmol")
             div(class="img-content") sample img
         div.img-box
-          div
-            div(class="img-cut") &mdash;
-            div(class="img-title") sample img
+          div(class="img-box-container")
+            div(class="toggle-container")
+              div(class="img-cut") &mdash;
+              div(class="img-title") sample img
             div(class="img secondary")
-              img(src="../static/img/sample_img2.png" alt="image of jappreet")
-       
+              img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            div(class="img-content") sample img
+        
 
     
