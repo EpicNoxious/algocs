@@ -384,6 +384,10 @@ section.hero > h4 {
 }
 section.hero .overflow {
   overflow: hidden;
+  position: relative;
+}
+section.hero .overflow-build {
+  padding: 1rem 1rem 0 1rem !important;
 }
 section.hero h4 {
   display: flex;
@@ -393,6 +397,18 @@ section.hero h4 .slide-in {
 }
 section.hero .slide-in-in {
   transform: translateY(20vh);
+  position: relative;
+  z-index: 3;
+}
+section.hero .check {
+  letter-spacing: -0.2rem;
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0%;
+  left: 0%;
+  z-index: 2;
+  background-color: rgb(var(--tertiary));
 }
 
 .color {
@@ -400,10 +416,8 @@ section.hero .slide-in-in {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-3deg) !important;
   width: auto;
   vertical-align: baseline;
-  padding: 1rem 1rem 0 1rem;
   letter-spacing: -0.2rem;
   position: relative;
 }
@@ -416,11 +430,11 @@ section.hero .slide-in-in {
   background-color: rgb(var(--background));
   border-radius: 100000px;
   padding: 0.6rem;
-  animation: rotate 2s linear infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5;
+  opacity: 0;
 }
 
 @keyframes rotate {

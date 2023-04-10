@@ -129,8 +129,36 @@ mainAnimation = () => {
     delay: 0.5,
   });
   timeline.to(".color", {
-    backgroundColor: "rgb(var(--tertiary))",
+    duration: 0.3,
+    ease: "power2.out",
     color: "rgb(var(--background))",
+    rotation: -3,
+  });
+  timeline.from(".check", {
+    duration: 0.3,
+    ease: "power2.out",
+    scaleY: 0,
+    transformOrigin: "center",
+  });
+  timeline.to(".check", {
+    scaleY: 1,
+  });
+  timeline.set(".color-svg", {
+    scale: 0,
+    opacity: 1,
+  });
+  timeline.to(".color-svg", {
+    duration: 1,
+    ease: Linear.easeNone,
+    scale: 1,
+    opacity: 1,
+    rotation: 720,
+  });
+  timeline.to(".color-svg", {
+    duration: 2,
+    ease: Linear.easeNone,
+    repeat: -1,
+    rotation: 360,
   });
 };
 
