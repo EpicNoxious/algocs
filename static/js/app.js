@@ -14,6 +14,8 @@ const locomotivescroll = new LocomotiveScroll({
   },
 });
 
+//
+
 barba.hooks.after(() => {
   locomotivescroll.destroy();
   updateGrid();
@@ -62,6 +64,23 @@ window.addEventListener("resize", () => {
   updateGrid(); // Call function whenever window is resized
 });
 
+// .............................imgbox zindex
+// .............................imgbox zindex
+// .............................imgbox zindex
+// .............................imgbox zindex
+// .............................imgbox zindex
+
+function incrementZIndex() {
+  let zIndex = 5;
+  const boxes = document.querySelectorAll(".img-box");
+  boxes.forEach((box) => {
+    box.addEventListener("click", function () {
+      this.style.zIndex = ++zIndex;
+    });
+  });
+}
+incrementZIndex();
+
 // .............................barba
 // .............................barba
 // .............................barba
@@ -83,6 +102,7 @@ barba.init({
 
       async enter(data) {
         mainAnimation();
+        incrementZIndex();
       },
 
       async once(data) {
@@ -170,3 +190,19 @@ delay = (n) => {
     }, n);
   });
 };
+
+// locomotivescroll.on("scroll", (e) => {
+//   const scrollX = e.scroll.x,
+//     scrollY = e.scroll.y;
+
+//   const xDecimal = scrollX / window.innerWidth,
+//     yDecimal = scrollY / window.innerHeight;
+
+//   const maxX = gallery.offsetWidth - window.innerWidth,
+//     maxY = gallery.offsetHeight - window.innerHeight;
+
+//   const panX = maxX * xDecimal * -1,
+//     panY = maxY * yDecimal * -1;
+
+//   gallery.style.transform = `translate(${panX}px, ${panY}px)`;
+// });

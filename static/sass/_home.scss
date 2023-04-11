@@ -57,7 +57,7 @@ section.hero {
     position: absolute;
     top: -1.5rem;
     right: -1.5rem;
-    height: 3vw;
+    height: 2.4vw;
     color: rgb(var(--tertiary));
     background-color: rgb(var(--background));
     border-radius: 100000px;
@@ -114,6 +114,8 @@ section.sessions {
     top: 0%;
     left: 27.5%;
     bottom: 0%;
+    pointer-events: all;
+
     &:nth-of-type(1) {
       transform: translate(-50%, 50%);
       z-index: 2;

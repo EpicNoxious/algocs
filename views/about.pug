@@ -33,7 +33,7 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
       li
         a(href='../templates/index.html') Home
       li
-        a(href='../templates/about.html') Events
+        a(href='../templates/gallery.html') Gallery
       li
         a(href='../templates/about.html') About Us
       li
@@ -71,21 +71,21 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
           | Nam consequat ipsum neque, sit amet lobortis nisi dignissim ac. Sed turpis lectus, tempus nec imperdiet ut, laoreet nec orci. Etiam vitae dolor bibendum, tristique risus non, volutpat odio. Aliquam sagittis turpis et faucibus tempus. Duis a venenatis libero, sed ullamcorper nunc. Fusce nisl ante, venenatis eu sollicitudin vel, sagittis sed felis. Praesent tempus lacus eget feugiat finibus. Etiam eget urna maximus, commodo libero mattis, rutrum leo. Vestibulum laoreet velit sed nibh porta, eget consequat ligula lacinia. Phasellus id sodales massa.
       div.about__right
         div.img-box
-          div(class="img-box-container")
+          div(class="img-box-container" tabindex="0")
             div(class="toggle-container")
               div(class="img-cut") &mdash;
               div(class="img-title") sample img
-            div(class="img tertiary")
-              img(src="../static/img/sample_img1.png" alt="image of anmol")
+            div(class="img img-src tertiary")
+              img(src="../static/img/sample_img.png" alt="image of jappreet")
             div(class="img-content") sample img
         div.img-box
-          div(class="img-box-container")
-            div(class="toggle-container")
-              div(class="img-cut") &mdash;
-              div(class="img-title") sample img
-            div(class="img secondary")
-              img(src="../static/img/sample_img1.png" alt="image of jappreet")
-            div(class="img-content") sample img
+            div(class="img-box-container" tabindex="0")
+              div(class="toggle-container toggle-container-src")
+                div(class="img-cut") &mdash;
+                div(class="img-title") sample img
+              div(class="img img-src primary")
+                img(src="../static/img/sample_img.png" alt="image of jappreet")
+              div(class="img-content img-content-src") sample img
         
 
     

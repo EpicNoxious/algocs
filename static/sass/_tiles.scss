@@ -79,45 +79,13 @@ ul.transition {
     color: rgb(var(--tertiary));
     text-transform: uppercase;
     font-family: "Fivo", sans-serif;
-    pointer-events: all;
-    &:focus {
-      animation: quick 300ms ease-in-out;
-    }
 
-    @keyframes quick {
-      0% {
-        -webkit-animation-timing-function: steps(1, end);
-        -moz-animation-timing-function: steps(1, end);
-        -ms-animation-timing-function: steps(1, end);
-        -o-animation-timing-function: steps(1, end);
-        animation-timing-function: steps(1, end);
-        background-color: rgb(var(--background));
-        scale: 1.2;
-      }
-      10% {
-        -webkit-animation-timing-function: steps(1, end);
-        -moz-animation-timing-function: steps(1, end);
-        -ms-animation-timing-function: steps(1, end);
-        -o-animation-timing-function: steps(1, end);
-        animation-timing-function: steps(1, end);
-        background-color: rgb(var(--secondary));
-        scale: 1.1;
-      }
-      100% {
-        -webkit-animation-timing-function: steps(1, end);
-        -moz-animation-timing-function: steps(1, end);
-        -ms-animation-timing-function: steps(1, end);
-        -o-animation-timing-function: steps(1, end);
-        animation-timing-function: steps(1, end);
-        background-color: rgb(var(--background));
-        scale: 1;
-      }
-    }
     .toggle-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 15%;
+
       .img-cut {
         margin: 0vh 1vh;
       }
@@ -147,10 +115,19 @@ ul.transition {
       justify-content: center;
       padding-top: 40%;
       padding-bottom: 40%;
+      position: relative;
+      overflow: hidden;
+      &-src {
+        padding-top: 50%;
+        padding-bottom: 50%;
+      }
       img {
         // display: none;
-        text-decoration: none;
-        // height: 100%;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
       }
       span {
         font-size: 3.2vw;
