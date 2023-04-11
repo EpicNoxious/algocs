@@ -6,19 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- links-->
   <link rel="stylesheet" type="text/css" media="screen" href="../static/css/styles.css">
+  <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
   <!-- scripts-->
-  <script defer src="https://unpkg.com/@barba/core"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script defer src="../static/js/app.js"></script>
 </head>
 <!-- -->
 <!-- -->
 <!-- -->
-<body data-barba="wrapper">
+<body data-barba="wrapper" data-scroll-container id="scroll-container">
+  <div class="mouse-trail"></div>
   <!-- tiles-->
   <div id="tile-container"></div>
   <!-- transition-->
-  <ul class="transition">
+  <ul class="transition" data-scroll data-scroll-sticky data-scroll-target="#scroll-container">
     <li></li>
     <li></li>
     <li></li>
@@ -26,7 +29,7 @@
     <li></li>
   </ul>
   <!-- navigation-->
-  <nav><span>dashboard</span>
+  <nav data-scroll data-scroll-sticky data-scroll-target="#scroll-container"><span>dashboard</span>
     <ul>
       <li><a href="../templates/index.html">Home</a></li>
       <li><a href="../templates/gallery.html">Gallery</a></li>

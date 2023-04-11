@@ -527,17 +527,30 @@ section.gallery {
   position: relative;
 }
 
+.mouse-trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
 #gallery-container {
   height: 140vmax !important;
   width: 140vmax !important;
   position: absolute;
-  pointer-events: all;
 }
 
 .gallery-box {
-  border-radius: 1vmax;
   position: absolute;
   transition: transform 800ms ease;
+  pointer-events: all;
 }
 
 .gallery-box:hover {
@@ -553,7 +566,6 @@ section.gallery {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: inherit;
   opacity: 0;
   transition: opacity 800ms ease, transform 800ms ease;
 }
