@@ -17,7 +17,6 @@ head
 // 
 // 
 body(data-barba="wrapper" data-scroll-container id="scroll-container")
-  div.mouse-trail
   // tiles
   #tile-container
   // transition
@@ -42,7 +41,7 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
         a(href='../templates/about.html') Contact
   // main with sections
   main(data-barba='container' data-barba-namespace='gallery')
-    section.gallery
+    section.gallery()
           #gallery-container
             .gallery-box
               img(src='https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHJhbmRvbSUyMG9iamVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70')

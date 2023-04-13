@@ -5,21 +5,6 @@ section.gallery {
   position: relative;
 }
 
-.mouse-trail {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50%;
-  // transform: translate(-10px, -10px);
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 0.2s ease-out;
-}
-
 #gallery-container {
   height: 140vmax !important;
   width: 140vmax !important;
@@ -28,7 +13,7 @@ section.gallery {
 
 .gallery-box {
   position: absolute;
-  transition: transform 800ms ease;
+  transition: transform 700ms ease;
   pointer-events: all;
 }
 

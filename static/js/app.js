@@ -14,66 +14,37 @@ const locomotivescroll = new LocomotiveScroll({
   },
 });
 
+// .............................test
+// .............................test
+// .............................test
+// .............................test
+// .............................test
+
 const gallery = document.getElementById("gallery-container");
 
-// locomotivescroll.on("scroll", (e) => {
-//   const scrollX = e.scroll.x,
-//     scrollY = e.scroll.y;
-//   console.log(scrollX, scrollY);
-//   const xDecimal = scrollX / window.innerWidth,
-//     yDecimal = scrollY / window.innerHeight;
-
-//   const maxX = gallery.offsetWidth - window.innerWidth,
-//     maxY = gallery.offsetHeight - window.innerHeight;
-
-//   const panX = maxX * xDecimal * -1,
-//     panY = maxY * yDecimal * -1;
-
-//   gallery.style.transform = `translate(${panX}px, ${panY}px)`;
-// });
-
-// .............................test
-// .............................test
-// .............................test
-// .............................test
-// .............................test
-
-const mouseTrail = document.querySelector(".mouse-trail");
-
-let mouseX = -100;
-let mouseY = -100;
 let scrollX = 0;
 let scrollY = 0;
 
 window.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY; //use this tom
-});
-
-window.addEventListener("scroll", (e) => {
-  scrollX = window.pageXOffset;
-  scrollY = window.pageYOffset;
+  scrollX = e.clientX;
+  scrollY = e.clientY;
 });
 
 const render = () => {
-  const xDecimal = mouseX / scrollX,
-    yDecimal = mouseY / scrollY;
+  const xDecimal = scrollX / window.innerWidth,
+    yDecimal = scrollY / window.innerHeight;
 
   const maxX = gallery.offsetWidth - window.innerWidth,
     maxY = gallery.offsetHeight - window.innerHeight;
-  console.log(gallery.offsetWidth, window.innerWidth);
-  const panX = maxX * xDecimal * -1,
-    panY = maxY * yDecimal * -1;
-  const posX = mouseX;
-  const posY = mouseY - scrollY;
-  mouseTrail.style.transform = `translate(${posX}px, ${posY}px)`;
-  mouseTrail.style.opacity = 1;
-  gallery.style.transform = `translate(${-posX}px, ${-posY}px)`;
-  requestAnimationFrame(render); // important
+
+  const posX = maxX * xDecimal * -1,
+    posY = maxY * yDecimal * -1;
+
+  gallery.style.transform = `translate(${posX}px, ${posY}px)`;
+  requestAnimationFrame(render);
 };
 
-render(); //important
-
+render();
 // .............................responsive grid
 // .............................responsive grid
 // .............................responsive grid
@@ -167,10 +138,12 @@ barba.init({
       async enter(data) {
         mainAnimation();
         incrementZIndex();
+        // requestAnimationFrame(render);
       },
 
       async once(data) {
         mainAnimation();
+        // requestAnimationFrame(render);
       },
     },
   ],
