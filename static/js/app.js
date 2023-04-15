@@ -14,37 +14,6 @@ const locomotivescroll = new LocomotiveScroll({
   },
 });
 
-// .............................test
-// .............................test
-// .............................test
-// .............................test
-// .............................test
-
-const gallery = document.getElementById("gallery-container");
-
-let scrollX = 0;
-let scrollY = 0;
-
-window.addEventListener("mousemove", (e) => {
-  scrollX = e.clientX;
-  scrollY = e.clientY;
-});
-
-const render = () => {
-  const xDecimal = scrollX / window.innerWidth,
-    yDecimal = scrollY / window.innerHeight;
-
-  const maxX = gallery.offsetWidth - window.innerWidth,
-    maxY = gallery.offsetHeight - window.innerHeight;
-
-  const posX = maxX * xDecimal * -1,
-    posY = maxY * yDecimal * -1;
-
-  gallery.style.transform = `translate(${posX}px, ${posY}px)`;
-  requestAnimationFrame(render);
-};
-
-render();
 // .............................responsive grid
 // .............................responsive grid
 // .............................responsive grid
@@ -123,7 +92,7 @@ incrementZIndex();
 // .............................barba
 
 barba.init({
-  cache: false,
+  cache: true,
   transitions: [
     {
       async leave(data) {
@@ -138,12 +107,10 @@ barba.init({
       async enter(data) {
         mainAnimation();
         incrementZIndex();
-        // requestAnimationFrame(render);
       },
 
       async once(data) {
         mainAnimation();
-        // requestAnimationFrame(render);
       },
     },
   ],
@@ -168,55 +135,84 @@ pageTransition = () => {
 };
 
 mainAnimation = () => {
-  var timeline = gsap.timeline();
+  const timeline = gsap.timeline();
+  const gallery = document.getElementById("gallery-container");
+  let scrollX = 0;
+  let scrollY = 0;
+  // .............................gallery hover
+  // .............................gallery hover
+  // .............................gallery hover
+  // .............................gallery hover
+  // .............................gallery hover
+  function onMouseMove(e) {
+    scrollX = e.clientX;
+    scrollY = e.clientY;
+    const xDecimal = scrollX / window.innerWidth,
+      yDecimal = scrollY / window.innerHeight;
 
-  timeline.to(".hero h4 div.overflow div.slide-in", {
-    duration: 0.5,
-    y: 0,
-    ease: "power2.out",
-    stagger: 0.05,
-    delay: 0.5,
-  });
+    const maxX = gallery.offsetWidth - window.innerWidth,
+      maxY = gallery.offsetHeight - window.innerHeight;
 
-  timeline.to(".hero h1 div.overflow div.slide-in-in", {
-    duration: 0.5,
-    y: 0,
-    ease: "power2.out",
-    stagger: 0.05,
-    delay: 0.5,
-  });
-  timeline.to(".color", {
-    duration: 0.3,
-    ease: "power2.out",
-    color: "rgb(var(--background))",
-    rotation: -3,
-  });
-  timeline.from(".check", {
-    duration: 0.3,
-    ease: "power2.out",
-    scaleY: 0,
-    transformOrigin: "center",
-  });
-  timeline.to(".check", {
-    scaleY: 1,
-  });
-  timeline.set(".color-svg", {
-    scale: 0,
-    opacity: 1,
-  });
-  timeline.to(".color-svg", {
-    duration: 1,
-    ease: Linear.easeNone,
-    scale: 1,
-    opacity: 1,
-    rotation: 720,
-  });
-  timeline.to(".color-svg", {
-    duration: 2,
-    ease: Linear.easeNone,
-    repeat: -1,
-    rotation: 360,
-  });
+    const posX = maxX * xDecimal * -1,
+      posY = maxY * yDecimal * -1;
+
+    gsap.to(gallery, {
+      x: posX,
+      y: posY,
+      ease: "power2.out",
+    });
+  }
+
+  // Add the mousemove event listener
+  window.addEventListener("mousemove", onMouseMove);
+
+  timeline
+    .to(".hero h4 div.overflow div.slide-in", {
+      duration: 0.5,
+      y: 0,
+      ease: "power2.out",
+      stagger: 0.05,
+      delay: 0.5,
+    })
+    .to(".hero h1 div.overflow div.slide-in-in", {
+      duration: 0.5,
+      y: 0,
+      ease: "power2.out",
+      stagger: 0.05,
+      delay: 0.5,
+    })
+    .to(".color", {
+      duration: 0.3,
+      ease: "power2.out",
+      color: "rgb(var(--background))",
+      rotation: -3,
+    })
+    .from(".check", {
+      duration: 0.3,
+      ease: "power2.out",
+      scaleY: 0,
+      transformOrigin: "center",
+    })
+    .to(".check", {
+      scaleY: 1,
+    })
+    .set(".color-svg", {
+      scale: 0,
+      opacity: 1,
+    })
+    .to(".color-svg", {
+      duration: 1,
+      ease: Linear.easeNone,
+      scale: 1,
+      opacity: 1,
+      rotation: 720,
+    })
+    .to(".color-svg", {
+      duration: 2,
+      ease: Linear.easeNone,
+      repeat: -1,
+      rotation: 360,
+    });
 };
 
 delay = (n) => {
@@ -227,27 +223,3 @@ delay = (n) => {
     }, n);
   });
 };
-
-// .............................gallery hover
-// .............................gallery hover
-// .............................gallery hover
-// .............................gallery hover
-// .............................gallery hover
-
-// const gallery = document.getElementById("gallery-container");
-
-// locomotivescroll.on("scroll", (e) => {
-//   const scrollX = e.scroll.x,
-//     scrollY = e.scroll.y;
-
-//   const xDecimal = scrollX / window.innerWidth,
-//     yDecimal = scrollY / window.innerHeight;
-
-//   const maxX = gallery.offsetWidth - window.innerWidth,
-//     maxY = gallery.offsetHeight - window.innerHeight;
-
-//   const panX = maxX * xDecimal * -1,
-//     panY = maxY * yDecimal * -1;
-
-//   gallery.style.transform = `translate(${panX}px, ${panY}px)`;
-// });
