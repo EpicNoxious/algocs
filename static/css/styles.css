@@ -167,6 +167,9 @@ ul.transition li {
   text-transform: uppercase;
   font-family: "Fivo", sans-serif;
 }
+.img-box-container .minus {
+  height: 0% !important;
+}
 .img-box-container .toggle-container {
   display: flex;
   align-items: center;

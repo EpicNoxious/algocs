@@ -79,6 +79,9 @@ ul.transition {
     color: rgb(var(--tertiary));
     text-transform: uppercase;
     font-family: "Fivo", sans-serif;
+    .minus {
+      height: 0% !important;
+    }
 
     .toggle-container {
       display: flex;
@@ -122,7 +125,6 @@ ul.transition {
         padding-bottom: 50%;
       }
       img {
-        // display: none;
         width: 100%;
         left: 50%;
         top: 50%;

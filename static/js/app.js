@@ -79,10 +79,22 @@ function incrementZIndex() {
   const boxes = document.querySelectorAll(".img-box");
   boxes.forEach((box) => {
     box.addEventListener("click", function () {
+      // Increment the z-index of the clicked img-box
       this.style.zIndex = ++zIndex;
+
+      // Change the background color of the toggle-container element for 1 second
+      const toggleContainer = this.querySelector(".toggle-container");
+      const toggleContainer2 = this.querySelector(".img-content");
+      toggleContainer.style.backgroundColor = "rgb(var(--secondary))";
+      toggleContainer2.style.backgroundColor = "rgb(var(--secondary))";
+      setTimeout(() => {
+        toggleContainer.style.backgroundColor = "";
+        toggleContainer2.style.backgroundColor = "";
+      }, 200);
     });
   });
 }
+
 incrementZIndex();
 
 // .............................barba
