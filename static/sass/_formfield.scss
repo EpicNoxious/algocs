@@ -1,0 +1,95 @@
+input {
+  pointer-events: all;
+  font-size: 1.6vw;
+  font-family: "Fivo", sans-serif;
+  font-weight: 1000;
+}
+input[type="text"] {
+  color: rgb(var(--secondary));
+  height: 8vh;
+  width: 66.67%;
+  border: 0;
+  border-bottom: 2px solid rgb(var(--secondary));
+  outline: 0;
+  background-color: transparent;
+}
+input::placeholder {
+  color: rgba(var(--secondary), 0.5);
+}
+
+.btn {
+  padding: 0 1vw;
+  font-size: 1.6vw;
+  font-family: "Fivo", sans-serif;
+  font-weight: 1000;
+  background: transparent;
+  outline: none;
+  color: transparent;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: all;
+  background-color: rgb(var(--tertiary));
+  text-transform: uppercase;
+  border: 0;
+  height: 8vh;
+}
+
+.btn-bg-fixed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(var(--primary));
+  z-index: -5;
+}
+
+.btn::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.5s;
+}
+
+.btn::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.5s;
+}
+
+.btn-bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgb(var(--secondary));
+  z-index: -3;
+  transition: height 0.5s;
+}
+
+.btn:hover:after {
+  top: -100%;
+}
+
+.btn:hover:before {
+  top: 0;
+}

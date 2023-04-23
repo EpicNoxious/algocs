@@ -17,7 +17,6 @@ head
 // 
 // 
 body(data-barba="wrapper" data-scroll-container id="scroll-container")
- 
   // tiles
   #tile-container
   // transition
@@ -40,29 +39,11 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
         a(href='../templates/about.html') About Us
       li
         a(href='../templates/about.html') Contact
-  // main with sections
-  //- section.gallery1(class="hidden")
-  //- #gallery-container
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHJhbmRvbSUyMG9iamVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70')
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsdWV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70')
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1587590227264-0ac64ce63ce8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwb2JqZWN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=70')
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1520121401995-928cd50d4e27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z3JlZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70')
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHVycGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=70')
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3JhbmdlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=70')
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1520338258525-606b90f95b04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGRhcmslMjBibHVlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=70')
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1521127474489-d524412fd439?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fHJhbmRvbSUyMG9iamVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=70')
-  //-   .gallery-box
-  //-     img(src='https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmFuZG9tJTIwb2JqZWN0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=70')
   
+  // main with sections
+ 
   main(data-barba='container' data-barba-namespace='index')
+    div.cursor-hover Sample Text
     section.hero
       h4
         div.overflow
@@ -109,25 +90,25 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
 
       ul 
           li
-              h1 build
+              h1 form
           li
-              h1 create
+              h1 hone
           li
-              h1 make
+              h1 grow
           li
-              h1 raise
+              h1 rise
           li
-              h1 build
+              h1 form
           li
-              h1 create
+              h1 hone
           li
-              h1 make
+              h1 grow
           li
-              h1 raise
+              h1 rise
     section.sessions
       h4 why you need us
       h2 we host sessions on
-      div.img-box()
+      div.img-box(class='hoverable' data-trailer-content="Sample text hai!")
           div(class="img-box-container" tabindex="0")
             div(class="toggle-container")
               div(class="img-cut") &mdash;
@@ -245,9 +226,104 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
               span sql
             div(class="img-content") sample img
 
-    section.sesction
-          h4 why you need us
-          h2 we host sessions on
+    section.metrics
+      h4 why choose ALGOCS
+      h2 our metrics speak
+      p.subhead 
+        |Lorem ipsum dolor sit amet consectetur 
+        | adipisicing elit. Corporis est consectetur 
+        | autem quo deserunt? Omnis, vitae delectus!
+        | Vero provident quasi distinctio itaque? Totam 
+        | facere, quisquam accusamus nisi ducimus in non!
 
+      .metrics-content
+        .metrics-content--left
+          .number 01
+          .metrics-number 30+
+          .metrics-title Groups
+        .metrics-content--right
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi necessitatibus voluptatum ad, magnam enim aut architecto corporis, fugit et, quos magni cum tenetur error itaque facilis amet. In, fuga.
+      .metrics-content
+        .metrics-content--left
+          .number 02
+          .metrics-number 10000+
+          .metrics-title Members
+        .metrics-content--right
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi necessitatibus voluptatum ad, magnam enim aut architecto corporis, fugit et, quos magni cum tenetur error itaque facilis amet. In, fuga.
+      .metrics-content
+        .metrics-content--left
+          .number 03
+          .metrics-number 100+
+          .metrics-title Sessions
+        .metrics-content--right
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi necessitatibus voluptatum ad, magnam enim aut architecto corporis, fugit et, quos magni cum tenetur error itaque facilis amet. In, fuga.
+      .metrics-content
+        .metrics-content--left
+          .number 04
+          .metrics-number 50+
+          .metrics-title Colleges
+        .metrics-content--right
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi necessitatibus voluptatum ad, magnam enim aut architecto corporis, fugit et, quos magni cum tenetur error itaque facilis amet. In, fuga.
+    
+    section.carousel
+      //- img(class="cutout r" src="../temporary/cutoutr.svg", alt="vectors", srcset="")
+      object(class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg", alt="vectors", srcset="")
+
+      ul 
+          li
+              h1 logo
+          li
+              h1 logo
+          li
+              h1 logo
+          li
+              h1 logo
+          li
+              h1 logo
+          li
+              h1 logo
+          li
+              h1 logo
+          li
+              h1 logo
+    section.mail
+      h4 connect with us
+      h2 become a part
+      
+      .mailbox 
+        .mailbox--left
+          p.subhead 
+            |Lorem ipsum dolor sit amet consectetur 
+            | adipisicing elit. Corporis est consectetur 
+            | autem quo deserunt? Omnis, vitae delectus!
+            | Vero provident quasi distinctio itaque? Totam 
+            | facere, quisquam accusamus nisi ducimus in non!
+          .mail-content
+            input(type="text" placeholder="yourname@mail.com")            
+            button.btn(class="btn" data-label="Join Us")
+              | Join Us
+              span(class="btn-bg-fixed")
+              span(class="btn-bg-slide")
+
+   
+        .mailbox--right
+          .picture-lib(tabindex="0")
+            div.mg-box
+              div(class="img-box-container" tabindex="0")
+                div(class="img primary")
+                  //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                  span img 1
+            
+            div.mg-box
+              div(class="img-box-container" tabindex="0")
+                div(class="img secondary")
+                  //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                  span img 2
+            
+            div.mg-box
+              div(class="img-box-container" tabindex="0")
+                div(class="img tertiary")
+                  //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                  span img 3
       
     

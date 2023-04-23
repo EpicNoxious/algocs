@@ -24,6 +24,11 @@ barba.hooks.after(() => {
   locomotivescroll.destroy();
   updateGrid();
   locomotivescroll.init();
+  btn.removeEventListener("mouseenter", handleMouseEnter);
+  btn.removeEventListener("mouseleave", handleMouseLeave);
+
+  btn.addEventListener("mouseenter", handleMouseEnter);
+  btn.addEventListener("mouseleave", handleMouseLeave);
 });
 
 // .............................tile
@@ -77,22 +82,24 @@ window.addEventListener("resize", () => {
 function incrementZIndex() {
   let zIndex = 5;
   const boxes = document.querySelectorAll(".img-box");
-  boxes.forEach((box) => {
-    box.addEventListener("click", function () {
-      // Increment the z-index of the clicked img-box
-      this.style.zIndex = ++zIndex;
+  if (boxes) {
+    boxes.forEach((box) => {
+      box.addEventListener("click", function () {
+        // Increment the z-index of the clicked img-box
+        this.style.zIndex = ++zIndex;
 
-      // Change the background color of the toggle-container element for 1 second
-      const toggleContainer = this.querySelector(".toggle-container");
-      const toggleContainer2 = this.querySelector(".img-content");
-      toggleContainer.style.backgroundColor = "rgb(var(--secondary))";
-      toggleContainer2.style.backgroundColor = "rgb(var(--secondary))";
-      setTimeout(() => {
-        toggleContainer.style.backgroundColor = "";
-        toggleContainer2.style.backgroundColor = "";
-      }, 200);
+        // Change the background color of the toggle-container element for 1 second
+        const toggleContainer = this.querySelector(".toggle-container");
+        const toggleContainer2 = this.querySelector(".img-content");
+        toggleContainer.style.backgroundColor = "rgb(var(--secondary))";
+        toggleContainer2.style.backgroundColor = "rgb(var(--secondary))";
+        setTimeout(() => {
+          toggleContainer.style.backgroundColor = "";
+          toggleContainer2.style.backgroundColor = "";
+        }, 200);
+      });
     });
-  });
+  }
 }
 
 incrementZIndex();
@@ -119,6 +126,7 @@ barba.init({
       async enter(data) {
         mainAnimation();
         incrementZIndex();
+        rotateImages();
       },
 
       async once(data) {
@@ -149,34 +157,66 @@ pageTransition = () => {
 mainAnimation = () => {
   const timeline = gsap.timeline();
   const gallery = document.getElementById("gallery-container");
+  const cursorText = document.querySelector(".cursor-hover");
+  // const cursorTextRect = elem.getBoundingClientRect();
+  // const cursorTextRectWidth = cursorTextRect.width;
+  const btn = document.querySelector(".btn");
+  const btnBgSlide = document.querySelector(".btn-bg-slide");
   let scrollX = 0;
   let scrollY = 0;
+  let X = 0;
+  let Y = 0;
+  let cursorScrollY = 0;
   // .............................gallery hover
   // .............................gallery hover
   // .............................gallery hover
   // .............................gallery hover
   // .............................gallery hover
-  function onMouseMove(e) {
-    scrollX = e.clientX;
-    scrollY = e.clientY;
-    const xDecimal = scrollX / window.innerWidth,
-      yDecimal = scrollY / window.innerHeight;
+  if (gallery) {
+    function onMouseMove(e) {
+      scrollX = e.clientX;
+      scrollY = e.clientY;
+      const xDecimal = scrollX / window.innerWidth,
+        yDecimal = scrollY / window.innerHeight;
 
-    const maxX = gallery.offsetWidth - window.innerWidth,
-      maxY = gallery.offsetHeight - window.innerHeight;
+      const maxX = gallery.offsetWidth - window.innerWidth,
+        maxY = gallery.offsetHeight - window.innerHeight;
 
-    const posX = maxX * xDecimal * -1,
-      posY = maxY * yDecimal * -1;
+      const posX = maxX * xDecimal * -1,
+        posY = maxY * yDecimal * -1;
 
-    gsap.to(gallery, {
-      x: posX,
-      y: posY,
-      ease: "power2.out",
-    });
+      gsap.to(gallery, {
+        x: posX,
+        y: posY,
+        ease: "power2.out",
+      });
+    }
+  }
+  // .............................cursor text
+  // .............................cursor text
+  // .............................cursor text
+  // .............................cursor text
+  // .............................cursor text
+  locomotivescroll.on("scroll", (args) => {
+    setTimeout(() => {
+      cursorScrollY = args.delta.y;
+    }, 100);
+  });
+  if (cursorText) {
+    function onMouseMove2(e) {
+      X = e.clientX - cursorText.clientWidth / 2;
+      Y = e.clientY + cursorScrollY - cursorText.clientHeight;
+      gsap.to(cursorText, {
+        x: X,
+        y: Y,
+        ease: "power2.out",
+      });
+    }
   }
 
   // Add the mousemove event listener
   window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("mousemove", onMouseMove2);
 
   timeline
     .to(".hero h4 div.overflow div.slide-in", {
@@ -213,7 +253,7 @@ mainAnimation = () => {
       opacity: 1,
     })
     .to(".color-svg", {
-      duration: 1,
+      duration: 0.5,
       ease: Linear.easeNone,
       scale: 1,
       opacity: 1,
@@ -225,6 +265,20 @@ mainAnimation = () => {
       repeat: -1,
       rotation: 360,
     });
+  // .............................btn-hover
+  // .............................btn-hover
+  // .............................btn-hover
+  // .............................btn-hover
+  // .............................btn-hover
+  function handleMouseEnter() {
+    btnBgSlide.setAttribute("style", "height: 100%; top:0; bottom:unset;");
+  }
+
+  function handleMouseLeave() {
+    btnBgSlide.setAttribute("style", "height: 0;bottom:0; top:unset;");
+  }
+  btn.addEventListener("mouseenter", handleMouseEnter);
+  btn.addEventListener("mouseleave", handleMouseLeave);
 };
 
 delay = (n) => {
@@ -235,3 +289,41 @@ delay = (n) => {
     }, n);
   });
 };
+
+// .............................toggle mail img box
+// .............................toggle mail img box
+// .............................toggle mail img box
+// .............................toggle mail img box
+// .............................toggle mail img box
+
+function rotateImages() {
+  const pictureLib = document.querySelector(".picture-lib");
+  const pictures = document.querySelectorAll(".mg-box");
+  let currentLastIndex = 2;
+  let zIndexPicture = 5;
+  if (pictureLib) {
+    pictureLib.addEventListener("click", () => {
+      currentLastIndex = (currentLastIndex + 1) % 3;
+      pictures[currentLastIndex].style.zIndex = ++zIndexPicture;
+    });
+  }
+}
+rotateImages();
+
+// .............................cursor text display
+// .............................cursor text display
+// .............................cursor text display
+// .............................cursor text display
+// .............................cursor text display
+const trailer = document.querySelector(".cursor-hover");
+const hoverable = document.querySelectorAll(".hoverable");
+
+hoverable.forEach((item) => {
+  item.addEventListener("mousemove", (e) => {
+    trailer.style.opacity = "1";
+    trailer.innerText = item.dataset.trailerContent;
+  });
+  item.addEventListener("mouseout", () => {
+    trailer.style.opacity = "0";
+  });
+});

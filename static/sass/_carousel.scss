@@ -21,13 +21,15 @@ section.carousel {
     white-space: nowrap;
     overflow-x: hidden;
     animation: scroll 16s linear infinite;
-    width: calc((75vw) * 8);
+    width: calc((50vw) * 8);
+    z-index: 5;
   }
   ul li {
     color: rgb(var(--primary));
     list-style: none;
+
     h1 {
-      width: 75vw;
+      width: 50vw;
       font-size: 15vw;
     }
   }
@@ -35,7 +37,7 @@ section.carousel {
 .cutout {
   position: absolute;
   top: 50%;
-  z-index: 5;
+  z-index: 10;
   transform: translateY(-50%);
   &.l {
     left: 0;
@@ -50,6 +52,6 @@ section.carousel {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(75vw) * 4);
+    transform: translateX(calc(50vw) * 4);
   }
 }
