@@ -7,10 +7,10 @@
 const locomotivescroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  multiplier: 0.7,
+  multiplier: 0.5,
   smartphone: {
     smooth: true,
-    multiplier: 0.7,
+    multiplier: 0.5,
   },
 });
 
@@ -158,8 +158,7 @@ mainAnimation = () => {
   const timeline = gsap.timeline();
   const gallery = document.getElementById("gallery-container");
   const cursorText = document.querySelector(".cursor-hover");
-  // const cursorTextRect = elem.getBoundingClientRect();
-  // const cursorTextRectWidth = cursorTextRect.width;
+  const hoverable = document.querySelectorAll(".hoverable");
   const btn = document.querySelector(".btn");
   const btnBgSlide = document.querySelector(".btn-bg-slide");
   let scrollX = 0;
@@ -167,6 +166,8 @@ mainAnimation = () => {
   let X = 0;
   let Y = 0;
   let cursorScrollY = 0;
+  let randomRotation = 0;
+  let rotateValue = 0;
   // .............................gallery hover
   // .............................gallery hover
   // .............................gallery hover
@@ -192,31 +193,9 @@ mainAnimation = () => {
       });
     }
   }
-  // .............................cursor text
-  // .............................cursor text
-  // .............................cursor text
-  // .............................cursor text
-  // .............................cursor text
-  locomotivescroll.on("scroll", (args) => {
-    setTimeout(() => {
-      cursorScrollY = args.delta.y;
-    }, 100);
-  });
-  if (cursorText) {
-    function onMouseMove2(e) {
-      X = e.clientX - cursorText.clientWidth / 2;
-      Y = e.clientY + cursorScrollY - cursorText.clientHeight;
-      gsap.to(cursorText, {
-        x: X,
-        y: Y,
-        ease: "power2.out",
-      });
-    }
-  }
 
   // Add the mousemove event listener
   window.addEventListener("mousemove", onMouseMove);
-  window.addEventListener("mousemove", onMouseMove2);
 
   timeline
     .to(".hero h4 div.overflow div.slide-in", {
@@ -277,8 +256,43 @@ mainAnimation = () => {
   function handleMouseLeave() {
     btnBgSlide.setAttribute("style", "height: 0;bottom:0; top:unset;");
   }
+  // .............................cursor text
+  // .............................cursor text
+  // .............................cursor text
+  // .............................cursor text
+  // .............................cursor text
+
+  // not working after navigating to other page
+  function onMouseMove2(e) {
+    if (cursorText) {
+      locomotivescroll.on("scroll", (args) => {
+        cursorScrollY = args.delta.y;
+      });
+      X = e.clientX - cursorText.clientWidth / 2;
+      Y = e.clientY + cursorScrollY - cursorText.clientHeight;
+      gsap.to(cursorText, {
+        x: X,
+        y: Y,
+        duration: 0.1,
+      });
+      if (hoverable) {
+        hoverable.forEach((item) => {
+          item.addEventListener("mousemove", (e) => {
+            cursorText.style.opacity = "1";
+            cursorText.innerText = item.dataset.trailerContent;
+          });
+          item.addEventListener("mouseout", () => {
+            cursorText.style.opacity = "0";
+          });
+        });
+      }
+    }
+  }
+
+  // calling of above function to ensure animations work after navigation
   btn.addEventListener("mouseenter", handleMouseEnter);
   btn.addEventListener("mouseleave", handleMouseLeave);
+  window.addEventListener("mousemove", onMouseMove2);
 };
 
 delay = (n) => {
@@ -315,15 +329,3 @@ rotateImages();
 // .............................cursor text display
 // .............................cursor text display
 // .............................cursor text display
-const trailer = document.querySelector(".cursor-hover");
-const hoverable = document.querySelectorAll(".hoverable");
-
-hoverable.forEach((item) => {
-  item.addEventListener("mousemove", (e) => {
-    trailer.style.opacity = "1";
-    trailer.innerText = item.dataset.trailerContent;
-  });
-  item.addEventListener("mouseout", () => {
-    trailer.style.opacity = "0";
-  });
-});

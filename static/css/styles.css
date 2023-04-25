@@ -222,6 +222,21 @@ ul.transition li {
   font-size: 3.2vw;
 }
 
+.cursor-hover {
+  font-size: 0.8vw;
+  padding: 0.4vw 0.4vw;
+  font-family: "Fivo", sans-serif;
+  font-weight: 1000;
+  background-color: rgb(var(--tertiary));
+  color: rgb(var(--background));
+  display: inline-block;
+  z-index: 1000;
+  opacity: 0;
+  position: relative;
+  text-transform: uppercase;
+  transform: rotate(var(--x) deg);
+}
+
 @font-face {
   font-family: "Fivo";
   src: url("../fonts/FivoSans.otf");
@@ -263,6 +278,22 @@ h4 {
 p {
   font-family: "Vietnam";
   font-size: 1.4vw;
+}
+
+h5 {
+  color: rgb(var(--primary));
+  font-family: "Fivo", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.6vw;
+}
+
+h6 {
+  color: rgb(var(--tertiary));
+  font-family: "Fivo", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2vw;
 }
 
 input {
@@ -473,16 +504,17 @@ section.hero .check {
   position: absolute;
   top: -1.5rem;
   right: -1.5rem;
-  height: 2.4vw;
+  height: 3.2vw;
   color: rgb(var(--tertiary));
   background-color: rgb(var(--background));
   border-radius: 100000px;
-  padding: 0.6rem;
+  padding: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5;
   opacity: 0;
+  pointer-events: all;
 }
 
 @keyframes rotate {
@@ -705,20 +737,6 @@ section.mail .picture-lib .mg-box:nth-of-type(3) {
   transform: rotate(0deg) translate(0%, -50%);
 }
 
-.cursor-hover {
-  font-size: 1vw;
-  padding: 0.6vw 0.6vw;
-  font-family: "Fivo", sans-serif;
-  font-weight: 1000;
-  background-color: rgb(var(--tertiary));
-  color: rgb(var(--background));
-  display: inline-block;
-  pointer-events: none;
-  z-index: 1000;
-  opacity: 0;
-  position: relative;
-}
-
 section.about {
   height: 100vh;
   width: 100%;
@@ -926,6 +944,66 @@ body.menu-toggled > .meta-link > span {
   color: white;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
+}
+
+section.footer {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+section.footer .footer-left {
+  padding: 0 5vw;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.footer .footer-left .footer-head {
+  line-height: 1.1;
+}
+section.footer .footer-left .footer-head-first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+section.footer .footer-left .footer-head .foot-color {
+  color: rgb(var(--background));
+  background-color: rgb(var(--tertiary));
+  vertical-align: baseline;
+  transform: rotate(-3deg);
+  padding: 0.1rem 0.1rem;
+  width: auto;
+}
+section.footer .footer-left .footer-content {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.footer .footer-left .footer-content p {
+  font-size: 1.2vw;
+  pointer-events: all;
+}
+section.footer .footer-right {
+  padding: 5vw;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid rgb(var(--primary));
+  font-family: "Fivo", sans-serif;
+  text-transform: uppercase;
+  font-weight: 1000;
+}
+section.footer .footer-right p {
+  font-size: 0.8vw;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -139,3 +139,21 @@ ul.transition {
     }
   }
 }
+
+// ................................
+// ................................ CURSOR TEXT
+// ................................
+.cursor-hover {
+  font-size: 0.8vw;
+  padding: 0.4vw 0.4vw;
+  font-family: "Fivo", sans-serif;
+  font-weight: 1000;
+  background-color: rgb(var(--tertiary));
+  color: rgb(var(--background));
+  display: inline-block;
+  z-index: 1000;
+  opacity: 0;
+  position: relative;
+  text-transform: uppercase;
+  transform: rotate(var(--x) deg);
+}

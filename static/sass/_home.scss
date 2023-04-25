@@ -59,17 +59,18 @@ section.hero {
     position: absolute;
     top: -1.5rem;
     right: -1.5rem;
-    height: 2.4vw;
+    height: 3.2vw;
     color: rgb(var(--tertiary));
     background-color: rgb(var(--background));
     border-radius: 100000px;
-    padding: 0.6rem;
+    padding: 0.8rem;
     // animation: rotate 2s linear infinite;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 5;
     opacity: 0;
+    pointer-events: all;
   }
 }
 @keyframes rotate {
@@ -306,19 +307,4 @@ section.mail {
   }
 }
 
-// ................................
-// ................................ CURSOR TEXT
-// ................................
-.cursor-hover {
-  font-size: 1vw;
-  padding: 0.6vw 0.6vw;
-  font-family: "Fivo", sans-serif;
-  font-weight: 1000;
-  background-color: rgb(var(--tertiary));
-  color: rgb(var(--background));
-  display: inline-block;
-  pointer-events: none;
-  z-index: 1000;
-  opacity: 0;
-  position: relative;
-}
+

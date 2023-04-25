@@ -1,0 +1,62 @@
+// ................................
+// ................................ FOOTER
+// ................................
+section.footer {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .footer-left {
+    padding: 0 5vw;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .footer-head {
+      line-height: 1.1;
+      &-first {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+      .foot-color {
+        color: rgb(var(--background));
+        background-color: rgb(var(--tertiary));
+        vertical-align: baseline;
+        transform: rotate(-3deg);
+        padding: 0.1rem 0.1rem;
+        width: auto;
+      }
+    }
+    .footer-content {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        font-size: 1.2vw;
+        pointer-events: all;
+      }
+    }
+  }
+  .footer-right {
+    padding: 5vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid rgb(var(--primary));
+    font-family: "Fivo", sans-serif;
+    text-transform: uppercase;
+    font-weight: 1000;
+    p {
+      font-size: 0.8vw;
+    }
+  }
+}

@@ -30,3 +30,18 @@ p {
   font-family: "Vietnam";
   font-size: 1.4vw;
 }
+
+h5 {
+  color: rgb(var(--primary));
+  font-family: "Fivo", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.6vw;
+}
+h6 {
+  color: rgb(var(--tertiary));
+  font-family: "Fivo", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2vw;
+}
