@@ -54,6 +54,8 @@ main {
 
 nav {
   position: fixed;
+  top: 3vh;
+  right: 3vh;
   z-index: 100;
   display: flex;
   pointer-events: none;
@@ -72,13 +74,10 @@ nav span {
   font-family: "Fivo", sans-serif;
   line-height: 3;
   width: 10vw;
-  margin-right: 3vh;
-  margin-top: 3vh;
   text-align: center;
 }
 nav ul {
   padding: 1vw 1vw 2vw 1vw;
-  margin-right: 3vh;
   width: 10vw;
   border: 3px solid rgb(var(--primary));
   list-style: none;
@@ -101,6 +100,18 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: rgb(var(--tertiary));
+}
+
+.logo {
+  pointer-events: all;
+  z-index: 100;
+  position: fixed;
+  top: 2vh;
+  color: rgb(var(--tertiary));
+  font-size: 2.4vw;
+  font-family: "Fivo", sans-serif;
+  font-weight: 1000;
+  text-transform: uppercase;
 }
 
 #tile-container {
@@ -229,12 +240,66 @@ ul.transition li {
   font-weight: 1000;
   background-color: rgb(var(--tertiary));
   color: rgb(var(--background));
-  display: inline-block;
+  display: none;
   z-index: 1000;
   opacity: 0;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   text-transform: uppercase;
-  transform: rotate(var(--x) deg);
+}
+
+.btn-reveal {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%) !important;
+  color: rgba(var(--primary), 1);
+  z-index: 220;
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: 1000;
+  text-transform: uppercase;
+  font-size: 3.2vw;
+  cursor: pointer;
+  font-family: "Fivo Sans Modern";
+}
+
+.text-container {
+  display: flex;
+  position: fixed;
+  z-index: 200;
+  height: 100vh;
+  width: 100%;
+  list-style: none;
+}
+
+.text-container li {
+  background: rgb(var(--secondary));
+  width: 20%;
+  transform: scaleY(1);
+}
+
+.text-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: -50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+  z-index: 210;
+}
+
+.text {
+  width: 300%;
+  font-family: "Fivo Sans Modern";
+  font-size: 4vw;
+  text-transform: uppercase;
+  opacity: 0.1;
+  color: rgb(var(--primary));
 }
 
 @font-face {
@@ -946,6 +1011,57 @@ body.menu-toggled > .meta-link > span {
   font-weight: 500;
 }
 
+section.contact {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+section.contact .contact-container {
+  width: 66.67%;
+  margin-left: 33.33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+section.contact .contact-text-container {
+  padding-top: 5vh;
+  font-weight: 1000;
+}
+section.contact .contact-text-container p {
+  text-transform: uppercase !important;
+  font-size: 0.8vw !important;
+}
+section.contact .contact-content {
+  width: 33.33%;
+  border: 1px solid red;
+  height: 33vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+section.contact .contact-content .contact-number {
+  color: rgb(var(--tertiary));
+  font-size: 1.2vw;
+  font-family: "Fivo", sans-serif;
+}
+section.contact .contact-content .contact-head {
+  font-size: 2.4vw;
+  font-family: "Fivo", sans-serif;
+  text-transform: uppercase;
+  color: rgb(var(--primary));
+}
+section.contact .contact-content .contact-text {
+  pointer-events: all;
+  text-transform: capitalize;
+}
+section.contact .contact-content .follow {
+  text-transform: uppercase;
+}
+
 section.footer {
   height: 50vh;
   width: 100%;
@@ -958,11 +1074,12 @@ section.footer {
 }
 section.footer .footer-left {
   padding: 0 5vw;
-  height: 60%;
   width: 100%;
+  height: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid rgb(var(--primary));
 }
 section.footer .footer-left .footer-head {
   line-height: 1.1;
@@ -992,18 +1109,28 @@ section.footer .footer-left .footer-content p {
   pointer-events: all;
 }
 section.footer .footer-right {
-  padding: 5vw;
+  padding: 5vh 5vw;
   width: 100%;
+  height: 30%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 2px solid rgb(var(--primary));
   font-family: "Fivo", sans-serif;
   text-transform: uppercase;
   font-weight: 1000;
 }
+section.footer .footer-right .footer-statement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
 section.footer .footer-right p {
   font-size: 0.8vw;
+  pointer-events: all;
+}
+section.footer .footer-right p:hover {
+  color: rgb(var(--tertiary));
 }
 
 /*# sourceMappingURL=styles.css.map */

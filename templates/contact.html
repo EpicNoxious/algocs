@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- links-->
+  <link rel="stylesheet" type="text/css" media="screen" href="../static/css/styles.css">
+  <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+  <!-- scripts-->
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script defer src="../static/js/app.js"></script>
+</head>
+<!-- -->
+<!-- -->
+<!-- -->
+<body data-barba="wrapper" data-scroll-container id="scroll-container">
+  <!-- tiles-->
+  <div id="tile-container"></div>
+  <!-- transition-->
+  <ul class="transition" data-scroll data-scroll-sticky data-scroll-target="#scroll-container">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <!-- navigation-->
+  <nav data-scroll data-scroll-sticky data-scroll-target="#scroll-container"><span>dashboard</span>
+    <ul>
+      <li><a href="../templates/index.html">Home</a></li>
+      <li><a href="../templates/gallery.html">Gallery</a></li>
+      <li><a href="../templates/about.html">About Us</a></li>
+      <li><a href="../templates/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- main with sections-->
+  <main data-barba="container" data-barba-namespace="contact">
+    <section class="contact">
+      <object class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg" alt="vectors" srcset=""></object>
+      <div class="contact-container">
+        <div class="contact-content">
+          <div class="contact-number">01</div>
+          <div class="contact-head">contact </div>
+          <div class="contact-text-container">
+            <p class="contact-text">xyz address, </p>
+            <p class="contact-text">new delhi - 1100XX</p>
+          </div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-number">02</div>
+          <div class="contact-head">reach us</div>
+          <div class="contact-text-container">
+            <p class="contact-text hoverable" data-trailer-content="anmol.wri@gmail.com">general</p>
+            <p class="contact-text hoverable" data-trailer-content="+91 9999040232">talk</p>
+          </div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-number">03</div>
+          <div class="contact-head">follow us</div>
+          <div class="contact-text-container">
+            <p class="contact-text follow hoverable" data-trailer-content="">linkedin</p>
+            <p class="contact-text follow hoverable" data-trailer-content="">twitter</p>
+            <p class="contact-text follow hoverable" data-trailer-content="">developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>

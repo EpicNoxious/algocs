@@ -17,6 +17,7 @@
 <!-- -->
 <!-- -->
 <body data-barba="wrapper" data-scroll-container id="scroll-container">
+  <div class="cursor-hover">Sample Text</div>
   <!-- tiles-->
   <div id="tile-container"></div>
   <!-- transition-->
@@ -33,11 +34,11 @@
       <li><a href="../templates/index.html">Home</a></li>
       <li><a href="../templates/gallery.html">Gallery</a></li>
       <li><a href="../templates/about.html">About Us</a></li>
-      <li><a href="../templates/about.html">Contact</a></li>
+      <li><a href="../templates/contact.html">Contact</a></li>
     </ul>
   </nav>
   <!-- main with sections-->
-  <main data-barba="container" data-barba-namespace="index">
+  <main data-barba="container" data-barba-namespace="about">
     <section class="carousel">
       <object class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg" alt="vectors" srcset=""></object>
       <ul> 
@@ -75,7 +76,7 @@
            Praesent egestas varius felis. Integer aliquet venenatis elit et ornare. Nam ut blandit lectus. Mauris a sem tempor, posuere dolor imperdiet, egestas est. Fusce ipsum neque, pretium sed felis a, accumsan commodo tellus. Vivamus eu risus eget erat tincidunt efficitur. <br><br>Nam consequat ipsum neque, sit amet lobortis nisi dignissim ac. Sed turpis lectus, tempus nec imperdiet ut, laoreet nec orci. Etiam vitae dolor bibendum, tristique risus non, volutpat odio. Aliquam sagittis turpis et faucibus tempus. Duis a venenatis libero, sed ullamcorper nunc. Fusce nisl ante, venenatis eu sollicitudin vel, sagittis sed felis. Praesent tempus lacus eget feugiat finibus. Etiam eget urna maximus, commodo libero mattis, rutrum leo. Vestibulum laoreet velit sed nibh porta, eget consequat ligula lacinia. Phasellus id sodales massa.</p>
       </div>
       <div class="about__right">
-        <div class="img-box">
+        <div class="img-box hoverable" data-trailer-content="Bring Up">
           <div class="img-box-container" tabindex="0">
             <div class="toggle-container">
               <div class="img-cut">&mdash;</div>
@@ -85,7 +86,7 @@
             <div class="img-content">sample img</div>
           </div>
         </div>
-        <div class="img-box">
+        <div class="img-box hoverable" data-trailer-content="Bring Up">
           <div class="img-box-container" tabindex="0">
             <div class="toggle-container toggle-container-src">
               <div class="img-cut">&mdash;</div>

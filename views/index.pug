@@ -17,6 +17,7 @@ head
 // 
 // 
 body(data-barba="wrapper" data-scroll-container id="scroll-container")
+  div.cursor-hover Sample Text
   // tiles
   #tile-container
   // transition
@@ -26,7 +27,65 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
     li
     li
     li
-  
+
+  // button for reveal animation
+  button.btn-reveal(data-scroll data-scroll-sticky data-scroll-target="#scroll-container") Welcome
+  ul.text-container(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+    li
+    li
+    li
+    li
+    li
+  .text-wrapper(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+    .text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+      | est, molestie id porta quis, sollicitudin at velit.
+    .text
+      | Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+      | Phasellus et lectus vitae quam euismod tincidunt.
+    .text
+      | Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+      | elit. Vestibulum lobortis aliquam nibh.
+    .text
+      | Non blandit mauris fringilla quis. Nunc sit amet fringilla quam.
+      | Mauris et felis quis mauris iaculis gravida ac in enim.
+    .text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+      | est, molestie id porta quis, sollicitudin at velit.
+    .text
+      | Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+      | Phasellus et lectus vitae quam euismod tincidunt.
+    .text
+      | Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+      | elit. Vestibulum lobortis aliquam nibh.
+    .text
+      | Non blandit mauris fringilla quis. Nunc sit amet fringilla quam.
+      | Mauris et felis quis mauris iaculis gravida ac in enim.
+    .text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+      | est, molestie id porta quis, sollicitudin at velit.
+    .text
+      | Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+      | Phasellus et lectus vitae quam euismod tincidunt.
+    .text
+      | Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+      | elit. Vestibulum lobortis aliquam nibh.
+    .text
+      | Non blandit mauris fringilla quis. Nunc sit amet fringilla quam.
+      | Mauris et felis quis mauris iaculis gravida ac in enim.
+    .text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+      | est, molestie id porta quis, sollicitudin at velit.
+    .text
+      | Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+      | Phasellus et lectus vitae quam euismod tincidunt.
+    .text
+      | Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+      | elit. Vestibulum lobortis aliquam nibh.
+    .text
+      | Non blandit mauris fringilla quis. Nunc sit amet fringilla quam.
+      | Mauris et felis quis mauris iaculis gravida ac in enim.
+
   // navigation
   nav(data-scroll data-scroll-sticky data-scroll-target="#scroll-container" )
     span dashboard
@@ -38,12 +97,14 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
       li
         a(href='../templates/about.html') About Us
       li
-        a(href='../templates/about.html') Contact
+        a(href='../templates/contact.html') Contact
+  //- .logo(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+  //-   | algocs
+  
   
   // main with sections
  
   main(data-barba='container' data-barba-namespace='index')
-    div.cursor-hover Sample Text
     section.hero
       h4
         div.overflow
@@ -347,5 +408,8 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
       .footer-right
         .footer-copyright 
           p &copy; algocs 2023
-        .footer-legal 
-          p legal statement
+        .footer-statement
+          .footer-privacy 
+            p privacy statement
+          .footer-legal 
+            p legal statement
