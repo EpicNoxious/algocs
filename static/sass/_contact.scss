@@ -17,16 +17,15 @@ section.contact {
       text-transform: uppercase !important;
       font-size: 0.8vw !important;
     }
-    padding-top: 5vh;
+    // padding-top: 5vh;
     font-weight: 1000;
   }
   .contact-content {
     width: 33.33%;
-    border: 1px solid red;
-    height: 33vh;
+    height: 20vh;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     .contact-number {
       color: rgb(var(--tertiary));
@@ -42,9 +41,27 @@ section.contact {
     .contact-text {
       pointer-events: all;
       text-transform: capitalize;
+      &:hover {
+        color: rgb(var(--tertiary));
+      }
     }
     .follow {
       text-transform: uppercase;
     }
+  }
+}
+
+section.contact-footer {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10 !important;
+  .footer-left {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .footer-right {
+    border-top: 2px solid rgb(var(--primary));
   }
 }

@@ -78,13 +78,16 @@ function incrementZIndex() {
   let zIndex = 5;
   const boxes = document.querySelectorAll(".img-box");
   boxes.forEach((box) => {
+    const imgBoxContainer = box.querySelector(".img-box-container");
+    const toggleContainer = box.querySelector(".toggle-container");
+    const imgBoxImage = box.querySelector(".img");
+    const imgBoxMinus = box.querySelector(".img-cut");
+    const toggleContainer2 = box.querySelector(".img-content");
     box.addEventListener("click", function () {
       // Increment the z-index of the clicked img-box
       this.style.zIndex = ++zIndex;
 
       // Change the background color of the toggle-container element for 1 second
-      const toggleContainer = this.querySelector(".toggle-container");
-      const toggleContainer2 = this.querySelector(".img-content");
       toggleContainer.style.backgroundColor = "rgb(var(--secondary))";
       toggleContainer2.style.backgroundColor = "rgb(var(--secondary))";
       setTimeout(() => {
@@ -92,11 +95,60 @@ function incrementZIndex() {
         toggleContainer2.style.backgroundColor = "";
       }, 200);
     });
+    toggleContainer.addEventListener("click", function () {
+      box.classList.toggle("img-box-clicked");
+      imgBoxContainer.classList.toggle("img-box-container-clicked");
+      toggleContainer.classList.toggle("toggle-container-clicked");
+      imgBoxImage.classList.toggle("img-clicked");
+      if (imgBoxMinus.textContent === "-") {
+        imgBoxMinus.textContent = "+";
+      } else {
+        imgBoxMinus.textContent = "-";
+      }
+      toggleContainer2.classList.toggle("img-content-clicked");
+    });
   });
 }
 
 incrementZIndex();
 
+// .............................cursor hover
+// .............................cursor hover
+// .............................cursor hover
+// .............................cursor hover
+// .............................cursor hover
+
+function cursorHover() {
+  const cursorText = document.querySelector(".cursor-hover");
+  const hoverable = document.querySelectorAll(".hoverable");
+
+  document.addEventListener("mousemove", function (e) {
+    locomotivescroll.on("scroll", (args) => {
+      cursorScrollY = args.delta.y;
+    });
+    let X = e.clientX - cursorText.clientWidth / 2;
+    let Y = e.clientY + cursorScrollY - cursorText.clientHeight;
+    gsap.to(cursorText, {
+      x: X,
+      y: Y,
+      duration: 0.5,
+    });
+  });
+
+  // hoverable.forEach((item) => {
+  //   item.addEventListener("mousemove", () => {
+  //     cursorText.style.opacity = "1";
+  //     cursorText.style.display = "inline-block";
+  //     cursorText.innerText = item.dataset.trailerContent;
+  //   });
+  //   item.addEventListener("mouseout", () => {
+  //     cursorText.style.display = "none";
+  //     cursorText.style.opacity = "0";
+  //   });
+  // });
+}
+
+cursorHover();
 // .............................barba
 // .............................barba
 // .............................barba
@@ -118,13 +170,12 @@ barba.init({
       async enter(data) {
         mainAnimation();
         incrementZIndex();
-        // cursorHover();
+        cursorHover();
       },
 
       async once(data) {
-        revealAnimation();
+        // revealAnimation();
         mainAnimation();
-        // cursorHover();
       },
     },
   ],
@@ -317,41 +368,3 @@ delay = (n) => {
     }, n);
   });
 };
-
-// .............................cursor hover
-// .............................cursor hover
-// .............................cursor hover
-// .............................cursor hover
-// .............................cursor hover
-
-function cursorHover() {
-  let X = 0;
-  let Y = 0;
-  const cursorText = document.querySelector(".cursor-hover");
-  const hoverable = document.querySelectorAll(".hoverable");
-  if (cursorText) {
-    window.addEventListener("mousemove", onMouseMove2);
-    function onMouseMove2(e) {
-      locomotivescroll.on("scroll", (args) => {
-        cursorScrollY = args.delta.y;
-      });
-      X = e.clientX - cursorText.clientWidth / 2;
-      Y = e.clientY + cursorScrollY - cursorText.clientHeight;
-      gsap.to(cursorText, {
-        x: X,
-        y: Y,
-      });
-      hoverable.forEach((item) => {
-        item.addEventListener("mousemove", () => {
-          cursorText.style.opacity = "1";
-          cursorText.style.display = "inline-block";
-          cursorText.innerText = item.dataset.trailerContent;
-        });
-        item.addEventListener("mouseout", () => {
-          cursorText.style.display = "none";
-          cursorText.style.opacity = "0";
-        });
-      });
-    }
-  }
-}

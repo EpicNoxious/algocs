@@ -62,7 +62,23 @@ ul.transition {
 // .................img-box
 // .................img-box
 // .................img-box
-
+.img-box-clicked {
+  height: 6vh !important;
+}
+.img-box-container-clicked {
+  height: 100% !important;
+}
+.toggle-container-clicked {
+  height: 100% !important;
+}
+.img-clicked {
+  height: 0vh !important;
+  padding: 0 !important;
+}
+.img-content-clicked {
+  height: 0vh !important;
+  display: none;
+}
 .img-box {
   width: 20vw;
   height: 50vh;
@@ -89,6 +105,11 @@ ul.transition {
       justify-content: space-between;
       height: 15%;
 
+      &:hover {
+        background-color: rgb(var(--secondary));
+        color: rgb(var(--primary));
+      }
+
       .img-cut {
         margin: 0vh 1vh;
       }
@@ -98,6 +119,17 @@ ul.transition {
         margin: 0vh 1vh;
         background-color: transparent;
       }
+    }
+    .toggle-container-clicked + .img {
+      // display: none !important;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .toggle-container-clicked ~ .img-content {
+      // display: none !important;
+      visibility: hidden;
+      opacity: 0;
     }
 
     .img-content {
@@ -150,13 +182,13 @@ ul.transition {
   font-weight: 1000;
   background-color: rgb(var(--tertiary));
   color: rgb(var(--background));
-  display: none;
   z-index: 1000;
-  opacity: 0;
+  opacity: 1;
   position: fixed;
   top: 0;
   left: 0;
   text-transform: uppercase;
+  pointer-events: none;
 }
 
 // ...........................

@@ -17,7 +17,7 @@ head
 // 
 // 
 body(data-barba="wrapper" data-scroll-container id="scroll-container")
-  
+
   // tiles
   #tile-container
   // transition
@@ -27,7 +27,7 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
     li
     li
     li
-  
+
   // navigation
   nav(data-scroll data-scroll-sticky data-scroll-target="#scroll-container" )
     span dashboard
@@ -42,42 +42,64 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
         a(href='../templates/contact.html') Contact
   //- .logo(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
   //-   | algocs
-  
-  
+
+
   // main with sections
- 
+
   main(data-barba='container' data-barba-namespace='contact')
     section.contact
-        object(class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg", alt="vectors", srcset="")
-        .contact-container
-            .contact-content
-                .contact-number 01
-                .contact-head contact 
-                .contact-text-container
-                  p.contact-text xyz address, 
-                  p.contact-text new delhi - 1100XX
-            
-            .contact-content
-                .contact-number 02
-                .contact-head reach us
-                .contact-text-container
-                    p(class="contact-text hoverable" data-trailer-content="anmol.wri@gmail.com") general
-                    p(class="contact-text hoverable" data-trailer-content="+91 9999040232") talk
-            
-            .contact-content
-                .contact-number 03
-                .contact-head follow us
-                .contact-text-container
-                    p(class="contact-text follow hoverable" data-trailer-content="") linkedin
-                    p(class="contact-text follow hoverable" data-trailer-content="") twitter
-                    p(class="contact-text follow hoverable" data-trailer-content="") developer
-        //- .footer-right
-        //- .footer-copyright 
-        //-   p &copy; algocs 2023
-        //- .footer-statement
-        //-   .footer-privacy 
-        //-     p privacy statement
-        //-   .footer-legal 
-        //-     p legal statement
-      
-            
+      object(class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg" alt="vectors" srcset="")
+      .contact-container
+        .contact-content
+          div
+            .contact-number 01
+            .contact-head locate us
+          .contact-text-container
+            p.contact-text xyz address,
+              br
+              | new delhi - 1100XX
+
+        .contact-content
+          div
+            .contact-number 02
+            .contact-head reach us
+          .contact-text-container
+            p(class="contact-text hoverable" data-trailer-content="anmol.wri@gmail.com") general
+            p(class="contact-text hoverable" data-trailer-content="+91 9999040232") talk
+
+        .contact-content
+          div
+            .contact-number 03
+            .contact-head follow us
+          .contact-text-container
+            p(class="contact-text follow hoverable" data-trailer-content="") linkedin
+            p(class="contact-text follow hoverable" data-trailer-content="") twitter
+            p(class="contact-text follow hoverable" data-trailer-content="") developer
+
+    section.footer.contact-footer
+      .footer-left
+        .footer-head
+          h5.footer-head-first
+            span.foot-color build 
+            |&nbsp;your 
+          h5 path to
+          h5 success
+        .footer-content 
+          .footer-content__contact
+            h6 contact us
+            p(class="hoverable" data-trailer-content="Nice to meet you") hello@gmail.com
+          .footer-content__follow
+            h6 follow us
+            p(class="hoverable" data-trailer-content="Let's Conect") linkedin
+          .footer-content__locate
+            h6 locate us
+            p(class="hoverable" data-trailer-content="See you soon") xyz address
+      .footer-right
+        .footer-copyright 
+          p &copy; algocs 2023
+        .footer-statement
+          .footer-privacy 
+            p privacy statement
+          .footer-legal 
+            p legal statement
+

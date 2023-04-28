@@ -161,6 +161,28 @@ ul.transition li {
   transform: scaleY(0);
 }
 
+.img-box-clicked {
+  height: 6vh !important;
+}
+
+.img-box-container-clicked {
+  height: 100% !important;
+}
+
+.toggle-container-clicked {
+  height: 100% !important;
+}
+
+.img-clicked {
+  height: 0vh !important;
+  padding: 0 !important;
+}
+
+.img-content-clicked {
+  height: 0vh !important;
+  display: none;
+}
+
 .img-box {
   width: 20vw;
   height: 50vh;
@@ -187,6 +209,10 @@ ul.transition li {
   justify-content: space-between;
   height: 15%;
 }
+.img-box-container .toggle-container:hover {
+  background-color: rgb(var(--secondary));
+  color: rgb(var(--primary));
+}
 .img-box-container .toggle-container .img-cut {
   margin: 0vh 1vh;
 }
@@ -195,6 +221,14 @@ ul.transition li {
   font-weight: 1000;
   margin: 0vh 1vh;
   background-color: transparent;
+}
+.img-box-container .toggle-container-clicked + .img {
+  visibility: hidden;
+  opacity: 0;
+}
+.img-box-container .toggle-container-clicked ~ .img-content {
+  visibility: hidden;
+  opacity: 0;
 }
 .img-box-container .img-content {
   font-size: 1vw;
@@ -240,13 +274,13 @@ ul.transition li {
   font-weight: 1000;
   background-color: rgb(var(--tertiary));
   color: rgb(var(--background));
-  display: none;
   z-index: 1000;
-  opacity: 0;
+  opacity: 1;
   position: fixed;
   top: 0;
   left: 0;
   text-transform: uppercase;
+  pointer-events: none;
 }
 
 .btn-reveal {
@@ -627,55 +661,55 @@ section.sessions .img-box {
   pointer-events: all;
 }
 section.sessions .img-box:nth-of-type(1) {
-  transform: translate(-50%, 50%);
+  transform: translate(-10vw, 25vh);
   z-index: 2;
 }
 section.sessions .img-box:nth-of-type(2) {
-  transform: translate(25%, 100%);
+  transform: translate(5vw, 50vh);
   z-index: 3;
 }
 section.sessions .img-box:nth-of-type(3) {
-  transform: translate(100%, 150%);
+  transform: translate(20vw, 75vh);
   z-index: 4;
 }
 section.sessions .img-box:nth-of-type(4) {
-  transform: translate(175%, 200%);
+  transform: translate(35vw, 100vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(5) {
-  transform: translate(100%, 250%);
+  transform: translate(20vw, 125vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(6) {
-  transform: translate(25%, 300%);
+  transform: translate(5vw, 150vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(7) {
-  transform: translate(-50%, 350%);
+  transform: translate(-10vw, 175vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(8) {
-  transform: translate(25%, 400%);
+  transform: translate(5vw, 200vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(9) {
-  transform: translate(100%, 450%);
+  transform: translate(20vw, 225vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(10) {
-  transform: translate(175%, 500%);
+  transform: translate(35vw, 250vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(11) {
-  transform: translate(100%, 550%);
+  transform: translate(20vw, 275vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(12) {
-  transform: translate(25%, 600%);
+  transform: translate(5vw, 300vh);
   z-index: 5;
 }
 section.sessions .img-box:nth-of-type(13) {
-  transform: translate(-50%, 650%);
+  transform: translate(-10vw, 325vh);
   z-index: 5;
 }
 
@@ -1027,7 +1061,6 @@ section.contact .contact-container {
   z-index: 10;
 }
 section.contact .contact-text-container {
-  padding-top: 5vh;
   font-weight: 1000;
 }
 section.contact .contact-text-container p {
@@ -1036,11 +1069,10 @@ section.contact .contact-text-container p {
 }
 section.contact .contact-content {
   width: 33.33%;
-  border: 1px solid red;
-  height: 33vh;
+  height: 20vh;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 }
 section.contact .contact-content .contact-number {
@@ -1058,8 +1090,26 @@ section.contact .contact-content .contact-text {
   pointer-events: all;
   text-transform: capitalize;
 }
+section.contact .contact-content .contact-text:hover {
+  color: rgb(var(--tertiary));
+}
 section.contact .contact-content .follow {
   text-transform: uppercase;
+}
+
+section.contact-footer {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10 !important;
+}
+section.contact-footer .footer-left {
+  visibility: hidden;
+  opacity: 0;
+}
+section.contact-footer .footer-right {
+  border-top: 2px solid rgb(var(--primary));
 }
 
 section.footer {
