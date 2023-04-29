@@ -7,6 +7,7 @@
 const locomotivescroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
+  smoothing: 1,
   multiplier: 0.5,
   smartphone: {
     smooth: true,
@@ -22,7 +23,7 @@ const locomotivescroll = new LocomotiveScroll({
 
 barba.hooks.after(() => {
   locomotivescroll.destroy();
-  updateGrid();
+  resizeCanvas();
   locomotivescroll.init();
 });
 
@@ -32,40 +33,90 @@ barba.hooks.after(() => {
 // .............................tile
 // .............................tile
 
-const container = document.getElementById("tile-container");
-function updateGrid() {
-  const tileSize = Math.floor(window.innerWidth * 0.05); // Set tile size to 5% of screen width
+// const container = document.getElementById("tile-container");
+// function updateGrid() {
+//   const tileSize = Math.floor(window.innerWidth * 0.05); // Set tile size to 5% of screen width
 
+//   const bodyHeight = document.body.offsetHeight;
+//   const scrollBarWidth = window.innerWidth - document.body.clientWidth;
+//   const numRows = Math.ceil((bodyHeight + scrollBarWidth) / tileSize);
+//   const numCols = Math.ceil(container.offsetWidth / tileSize);
+
+//   // THIS CODE IS CREATING AN ISSUE WITH SCROLL
+//   const totalHeight = numRows * tileSize;
+//   container.style.height = totalHeight + "px";
+
+//   const totalWidth = numCols * tileSize;
+//   container.style.width = totalWidth + "px";
+//   container.style.boxSizing = "border-box";
+//   container.style.maxWidth = "100%"; // Set max-width to 100%
+
+//   const root = document.documentElement;
+//   root.style.setProperty("--tile-size", tileSize + "px");
+
+//   container.innerHTML = "";
+
+//   for (let i = 0; i < numRows * numCols; i++) {
+//     const tile = document.createElement("div");
+//     tile.classList.add("tile");
+//     container.appendChild(tile);
+//   }
+// }
+
+// updateGrid(); // Call the function for the first time
+
+// window.addEventListener("resize", () => {
+//   updateGrid(); // Call function whenever window is resized
+// });
+
+// .............................canvas
+// .............................canvas
+// .............................canvas
+// .............................canvas
+// .............................canvas
+
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+const tileSize = Math.floor(window.innerWidth * 0.04); // Set tile size to 4% of screen width
+function resizeCanvas() {
+  context.translate(0.5, 0.5);
   const bodyHeight = document.body.offsetHeight;
   const scrollBarWidth = window.innerWidth - document.body.clientWidth;
-  const numRows = Math.ceil((bodyHeight + scrollBarWidth) / tileSize);
-  const numCols = Math.ceil(container.offsetWidth / tileSize);
+  const numRows = Math.floor((bodyHeight + scrollBarWidth) / tileSize);
+  const numCols = Math.floor(window.innerWidth / tileSize);
 
-  // THIS CODE IS CREATING AN ISSUE WITH SCROLL
-  const totalHeight = numRows * tileSize;
-  container.style.height = totalHeight + "px";
+  canvas.width = numCols * tileSize;
+  canvas.height = numRows * tileSize;
 
-  const totalWidth = numCols * tileSize;
-  container.style.width = totalWidth + "px";
-  container.style.boxSizing = "border-box";
-  container.style.maxWidth = "100%"; // Set max-width to 100%
-
-  const root = document.documentElement;
-  root.style.setProperty("--tile-size", tileSize + "px");
-
-  container.innerHTML = "";
-
-  for (let i = 0; i < numRows * numCols; i++) {
-    const tile = document.createElement("div");
-    tile.classList.add("tile");
-    container.appendChild(tile);
+  for (let row = 0; row < numRows; row++) {
+    for (let col = 0; col < numCols; col++) {
+      const x = col * tileSize;
+      const y = row * tileSize;
+      context.fillStyle = "#1f1f1f";
+      context.fillRect(x, y, tileSize, tileSize);
+      context.strokeStyle = "#1f1f1f";
+      context.lineWidth = "2";
+      context.strokeRect(x, y, tileSize, tileSize);
+    }
   }
+
+  // Add event listener for mousemove
+  canvas.addEventListener("mousemove", function (event) {
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const col = Math.floor(x / tileSize);
+    const row = Math.floor(y / tileSize);
+    context.strokeStyle = "rgba(23, 31, 230, 0.01)"; // Set the new stroke color with desired opacity
+    context.strokeRect(col * tileSize, row * tileSize, tileSize, tileSize); // Stroke the tile with new color
+  });
 }
 
-updateGrid(); // Call the function for the first time
+resizeCanvas(); // Initial canvas sizing
 
-window.addEventListener("resize", () => {
-  updateGrid(); // Call function whenever window is resized
+// Add event listener for window resize
+window.addEventListener("resize", function () {
+  resizeCanvas();
 });
 
 // .............................imgbox zindex
@@ -93,7 +144,7 @@ function incrementZIndex() {
       setTimeout(() => {
         toggleContainer.style.backgroundColor = "";
         toggleContainer2.style.backgroundColor = "";
-      }, 200);
+      }, 100);
     });
     toggleContainer.addEventListener("click", function () {
       box.classList.toggle("img-box-clicked");
@@ -135,17 +186,17 @@ function cursorHover() {
     });
   });
 
-  // hoverable.forEach((item) => {
-  //   item.addEventListener("mousemove", () => {
-  //     cursorText.style.opacity = "1";
-  //     cursorText.style.display = "inline-block";
-  //     cursorText.innerText = item.dataset.trailerContent;
-  //   });
-  //   item.addEventListener("mouseout", () => {
-  //     cursorText.style.display = "none";
-  //     cursorText.style.opacity = "0";
-  //   });
-  // });
+  hoverable.forEach((item) => {
+    item.addEventListener("mousemove", () => {
+      cursorText.style.opacity = "1";
+      cursorText.style.display = "inline-block";
+      cursorText.innerText = item.dataset.trailerContent;
+    });
+    item.addEventListener("mouseout", () => {
+      cursorText.style.display = "none";
+      cursorText.style.opacity = "0";
+    });
+  });
 }
 
 cursorHover();

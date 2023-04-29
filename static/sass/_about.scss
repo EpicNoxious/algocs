@@ -35,11 +35,11 @@ section.about {
         position: absolute;
         top: 50%;
         left: 37.5%;
-        transform: translate(-50%, -50%);
+        transform: translate(-10vw, -25vh);
         z-index: 2;
         &:nth-of-type(2) {
           z-index: 3;
-          transform: translate(25%, -25%);
+          transform: translate(5vw, -12.5vh);
         }
       }
     }

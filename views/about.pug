@@ -19,7 +19,8 @@ head
 body(data-barba="wrapper" data-scroll-container id="scroll-container")
   div.cursor-hover Sample Text
   // tiles
-  #tile-container
+  canvas#canvas
+  //- #tile-container
   // transition
   ul.transition(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
     li
@@ -42,25 +43,25 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
   // main with sections
   main(data-barba='container' data-barba-namespace='about')
     section.carousel
-      //- img(class="cutout l" src="../temporary/cutoutl.svg", alt="vectors", srcset="")
-      object(class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg", alt="vectors", srcset="")
+      //- img(class="cutout l" src="../temporary/cutoutl.svg" alt="vectors" srcset="")
+      object(class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg" alt="vectors" srcset="")
       ul 
-          li
-              h1 about
-          li
-              h1 algocs
-          li
-              h1 about
-          li
-              h1 algocs
-          li
-              h1 about
-          li
-              h1 algocs
-          li
-              h1 about
-          li
-              h1 algocs
+        li
+          h1 about
+        li
+          h1 algocs
+        li
+          h1 about
+        li
+          h1 algocs
+        li
+          h1 about
+        li
+          h1 algocs
+        li
+          h1 about
+        li
+          h1 algocs
     section.about
       div.about__left
         h4 our journey
@@ -74,19 +75,21 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
         div.img-box(class='hoverable' data-trailer-content="Bring Up")
           div(class="img-box-container" tabindex="0")
             div(class="toggle-container")
-              div(class="img-cut") &mdash;
+              div(class="img-cut") -
               div(class="img-title") sample img
-            div(class="img img-src tertiary")
+            div(class="img primary")
               img(src="../static/img/sample_img.png" alt="image of jappreet")
-            div(class="img-content") sample img
+              span text
+            div(class="img-content" ) sample img
         div.img-box(class='hoverable' data-trailer-content="Bring Up")
-            div(class="img-box-container" tabindex="0")
-              div(class="toggle-container toggle-container-src")
-                div(class="img-cut") &mdash;
-                div(class="img-title") sample img
-              div(class="img img-src primary")
-                img(src="../static/img/sample_img.png" alt="image of jappreet")
-              div(class="img-content img-content-src") sample img
-        
+          div(class="img-box-container" tabindex="0")
+            div(class="toggle-container")
+              div(class="img-cut") -
+              div(class="img-title") sample img
+            div(class="img primary")
+              img(src="../static/img/sample_img.png" alt="image of jappreet")
+              span text
+            div(class="img-content" ) sample img
 
-    
+
+
