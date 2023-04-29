@@ -29,7 +29,7 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
     li
     li
   // navigation
-  nav(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+  nav(data-scroll data-scroll-sticky data-scroll-target="#scroll-container" )
     span dashboard
     ul
       li
@@ -38,6 +38,8 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
         a(href='../templates/gallery.html') Gallery
       li
         a(href='../templates/about.html') About Us
+      li
+        a(href='../templates/partners.html') Collab
       li
         a(href='../templates/contact.html') Contact
   // main with sections
@@ -72,7 +74,7 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
           br
           | Nam consequat ipsum neque, sit amet lobortis nisi dignissim ac. Sed turpis lectus, tempus nec imperdiet ut, laoreet nec orci. Etiam vitae dolor bibendum, tristique risus non, volutpat odio. Aliquam sagittis turpis et faucibus tempus. Duis a venenatis libero, sed ullamcorper nunc. Fusce nisl ante, venenatis eu sollicitudin vel, sagittis sed felis. Praesent tempus lacus eget feugiat finibus. Etiam eget urna maximus, commodo libero mattis, rutrum leo. Vestibulum laoreet velit sed nibh porta, eget consequat ligula lacinia. Phasellus id sodales massa.
       div.about__right
-        div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div.img-box(class='hoverable' data-trailer-content="Bring Up" tabindex="0")
           div(class="img-box-container" tabindex="0")
             div(class="toggle-container")
               div(class="img-cut") -
@@ -81,7 +83,7 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
               img(src="../static/img/sample_img.png" alt="image of jappreet")
               span text
             div(class="img-content" ) sample img
-        div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div.img-box(class='hoverable' data-trailer-content="Bring Up" tabindex="0")
           div(class="img-box-container" tabindex="0")
             div(class="toggle-container")
               div(class="img-cut") -
@@ -90,6 +92,31 @@ body(data-barba="wrapper" data-scroll-container id="scroll-container")
               img(src="../static/img/sample_img.png" alt="image of jappreet")
               span text
             div(class="img-content" ) sample img
-
+    section.footer
+      .footer-left 
+        .footer-head
+          h5.footer-head-first
+            span.foot-color build 
+            |&nbsp;your 
+          h5 path to
+          h5 success
+        .footer-content 
+          .footer-content__contact
+            h6 contact us
+            p(class="hoverable" data-trailer-content="Nice to meet you") hello@gmail.com
+          .footer-content__follow
+            h6 follow us
+            p(class="hoverable" data-trailer-content="Let's Conect") linkedin
+          .footer-content__locate
+            h6 locate us
+            p(class="hoverable" data-trailer-content="See you soon") xyz address
+      .footer-right
+        .footer-copyright 
+          p &copy; algocs 2023
+        .footer-statement
+          .footer-privacy 
+            p privacy statement
+          .footer-legal 
+            p legal statement
 
 
