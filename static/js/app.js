@@ -4,16 +4,28 @@
 // .............................scroll
 // .............................scroll
 
-const locomotivescroll = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
-  smooth: true,
-  smoothing: 1,
-  multiplier: 0.5,
-  smartphone: {
-    smooth: true,
-    multiplier: 0.5,
-  },
+// const locomotivescroll = new LocomotiveScroll({
+//   el: document.querySelector("[data-scroll-container]"),
+//   smooth: true,
+//   smoothing: 1,
+//   multiplier: 0.5,
+//   smartphone: {
+//     smooth: true,
+//     multiplier: 0.5,
+//   },
+// });
+
+const lenis = new Lenis({
+  duration: 1.3,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
 
 // .............................responsive grid
 // .............................responsive grid
@@ -22,9 +34,9 @@ const locomotivescroll = new LocomotiveScroll({
 // .............................responsive grid
 
 barba.hooks.after(() => {
-  locomotivescroll.destroy();
+  // locomotivescroll.destroy();
   resizeCanvas();
-  locomotivescroll.init();
+  // locomotivescroll.init();
 });
 
 // .............................tile
@@ -78,6 +90,8 @@ barba.hooks.after(() => {
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const tileSize = Math.floor(window.innerWidth * 0.04); // Set tile size to 4% of screen width
+const originalStrokeStyle = "#1f1f1f"; // Store the original stroke color
+
 function resizeCanvas() {
   context.translate(0.5, 0.5);
   const bodyHeight = document.body.offsetHeight;
@@ -107,8 +121,18 @@ function resizeCanvas() {
     const y = event.clientY - rect.top;
     const col = Math.floor(x / tileSize);
     const row = Math.floor(y / tileSize);
-    context.strokeStyle = "rgba(23, 31, 230, 0.01)"; // Set the new stroke color with desired opacity
-    context.strokeRect(col * tileSize, row * tileSize, tileSize, tileSize); // Stroke the tile with new color
+
+    // Set the new stroke color with desired opacity
+    context.strokeStyle = "rgba(23, 31, 230, 1)";
+
+    // Stroke the tile with new color
+    context.strokeRect(col * tileSize, row * tileSize, tileSize, tileSize);
+
+    // Set the stroke color back to the original color after a short delay (adjust as needed)
+    setTimeout(function () {
+      context.strokeStyle = originalStrokeStyle;
+      context.strokeRect(col * tileSize, row * tileSize, tileSize, tileSize);
+    }, 500);
   });
 }
 
@@ -174,9 +198,9 @@ function cursorHover() {
   const hoverable = document.querySelectorAll(".hoverable");
 
   document.addEventListener("mousemove", function (e) {
-    locomotivescroll.on("scroll", (args) => {
-      cursorScrollY = args.delta.y;
-    });
+    // locomotivescroll.on("scroll", (args) => {
+    //   cursorScrollY = args.delta.y;
+    // });
     let X = e.clientX - cursorText.clientWidth / 2;
     let Y = e.clientY + cursorScrollY - cursorText.clientHeight;
     gsap.to(cursorText, {
@@ -199,7 +223,7 @@ function cursorHover() {
   });
 }
 
-cursorHover();
+// cursorHover();
 // .............................barba
 // .............................barba
 // .............................barba
@@ -213,15 +237,16 @@ barba.init({
       async leave(data) {
         const done = this.async();
         pageTransition();
-        locomotivescroll.scrollTo(0, 0);
+        // locomotivescroll.scrollTo(0, 0);
         await delay(1000);
+        window.scrollTo(0, 0);
         done();
       },
 
       async enter(data) {
         mainAnimation();
-        incrementZIndex();
-        cursorHover();
+        // incrementZIndex();
+        // cursorHover();
       },
 
       async once(data) {
@@ -250,7 +275,7 @@ pageTransition = () => {
   });
 };
 revealAnimation = () => {
-  locomotivescroll.stop();
+  // locomotivescroll.stop();
 
   const btn = document.querySelector(".btn-reveal");
   btn.addEventListener("click", function () {
@@ -302,7 +327,7 @@ revealAnimation = () => {
         elementsToHide.forEach((element) => {
           element.style.display = "none";
         });
-        locomotivescroll.start();
+        // locomotivescroll.start();
       },
     });
   });
