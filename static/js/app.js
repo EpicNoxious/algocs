@@ -198,11 +198,8 @@ function cursorHover() {
   const hoverable = document.querySelectorAll(".hoverable");
 
   document.addEventListener("mousemove", function (e) {
-    // locomotivescroll.on("scroll", (args) => {
-    //   cursorScrollY = args.delta.y;
-    // });
     let X = e.clientX - cursorText.clientWidth / 2;
-    let Y = e.clientY + cursorScrollY - cursorText.clientHeight;
+    let Y = e.clientY - cursorText.clientHeight;
     gsap.to(cursorText, {
       x: X,
       y: Y,
@@ -223,7 +220,7 @@ function cursorHover() {
   });
 }
 
-// cursorHover();
+cursorHover();
 // .............................barba
 // .............................barba
 // .............................barba
@@ -237,7 +234,6 @@ barba.init({
       async leave(data) {
         const done = this.async();
         pageTransition();
-        // locomotivescroll.scrollTo(0, 0);
         await delay(1000);
         window.scrollTo(0, 0);
         done();
@@ -245,12 +241,12 @@ barba.init({
 
       async enter(data) {
         mainAnimation();
-        // incrementZIndex();
-        // cursorHover();
+        incrementZIndex();
+        cursorHover();
       },
 
       async once(data) {
-        // revealAnimation();
+        revealAnimation();
         mainAnimation();
       },
     },
@@ -388,6 +384,11 @@ mainAnimation = () => {
   window.addEventListener("mousemove", onMouseMove);
 
   timeline
+    .to(".logo object", {
+      duration: 0.7,
+      y: 0,
+      ease: "power2.out",
+    })
     .to(".hero h4 div.overflow div.slide-in", {
       duration: 0.5,
       y: 0,
