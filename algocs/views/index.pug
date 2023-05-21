@@ -1,0 +1,419 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  title Index
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // links
+  link(rel='stylesheet' type='text/css' media='screen' href='../static/css/styles.css')
+  link(rel='stylesheet' media='screen' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css')
+  // scripts
+  script(src='https://unpkg.com/@barba/core')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js')
+  //- script(src='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js')
+  script(src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js")
+  script(defer src='../static/js/app.js')
+
+// 
+// 
+// 
+body(data-barba="wrapper" data-scroll-container id="scroll-container")
+  div.cursor-hover Sample Text
+  // tiles
+  //- #tile-container
+  canvas#canvas
+  // transition
+  ul.transition(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+    li
+    li
+    li
+    li
+    li
+
+  // button for reveal animation
+  button.btn-reveal(data-scroll data-scroll-sticky data-scroll-target="#scroll-container") Welcome
+  ul.text-container(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+    li
+    li
+    li
+    li
+    li
+  .text-wrapper(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+    .text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+      | est, molestie id porta quis, sollicitudin at velit.
+    .text
+      | Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+      | Phasellus et lectus vitae quam euismod tincidunt.
+    .text
+      | Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+      | elit. Vestibulum lobortis aliquam nibh.
+    .text
+      | Non blandit mauris fringilla quis. Nunc sit amet fringilla quam.
+      | Mauris et felis quis mauris iaculis gravida ac in enim.
+    .text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+      | est, molestie id porta quis, sollicitudin at velit.
+    .text
+      | Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+      | Phasellus et lectus vitae quam euismod tincidunt.
+    .text
+      | Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+      | elit. Vestibulum lobortis aliquam nibh.
+    .text
+      | Non blandit mauris fringilla quis. Nunc sit amet fringilla quam.
+      | Mauris et felis quis mauris iaculis gravida ac in enim.
+    .text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+      | est, molestie id porta quis, sollicitudin at velit.
+    .text
+      | Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+      | Phasellus et lectus vitae quam euismod tincidunt.
+    .text
+      | Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+      | elit. Vestibulum lobortis aliquam nibh.
+    .text
+      | Non blandit mauris fringilla quis. Nunc sit amet fringilla quam.
+      | Mauris et felis quis mauris iaculis gravida ac in enim.
+    .text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+      | est, molestie id porta quis, sollicitudin at velit.
+    .text
+      | Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+      | Phasellus et lectus vitae quam euismod tincidunt.
+    .text
+      | Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+      | elit. Vestibulum lobortis aliquam nibh.
+    .text
+      | Non blandit mauris fringilla quis. Nunc sit amet fringilla quam.
+      | Mauris et felis quis mauris iaculis gravida ac in enim.
+
+  // navigation
+  nav(data-scroll data-scroll-sticky data-scroll-target="#scroll-container" )
+    span dashboard
+    ul
+      li
+        a(href='../templates/index.html') Home
+      li
+        a(href='../templates/gallery.html') Gallery
+      li
+        a(href='../templates/about.html') About Us
+      li
+        a(href='../templates/partners.html') Collab
+      li
+        a(href='../templates/contact.html') Contact
+  .logo(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+    img(src="../static/img/logo.svg" alt="algocs logo")
+    object(type="image/svg+xml" data="../static/img/logo.svg" alt="algocs logo")
+
+  // main with sections
+
+  main(data-barba='container' data-barba-namespace='index')
+    section.hero
+      h4
+        div.overflow
+          div.slide-in
+            | This &nbsp;
+        div.overflow
+          div.slide-in
+            | is &nbsp;
+        div.overflow
+          div.slide-in
+            | algocs
+
+      h1
+        span.color()
+          svg(class="color-svg hoverable" data-trailer-content="Huh?" viewbox='0 0 10 10' fill='currentColor' xmlns='http://www.w3.org/2000/svg')
+            path(d='m3.871 8.473 1.819.255.225-1.604-.064-1.1.016-.107.099.069.727.838 1.278.998 1.13-1.45-1.277-.997-.994-.495-.1-.068.146-.061 1.065-.205 1.503-.607-.688-1.705-1.503.606-.93.606-.115.038.02-.133.363-1.04.226-1.604L4.999.451l-.226 1.605.064 1.1-.023.16-.122-.1-.7-.834-1.278-.997-1.131 1.45 1.278.997.967.49.122.1-.114.038-1.092.2-1.503.607.687 1.706 1.503-.607.93-.606.115-.038-.015.107-.364 1.04-.226 1.604Z')
+          div.overflow.overflow-build
+            div.slide-in-in
+              | build 
+            div.check
+        div.overflow
+          div.slide-in-in
+            | your
+      h1
+        div.overflow
+          div.slide-in-in 
+            | path
+        div.overflow
+          div.slide-in-in 
+            | to
+      h1
+        div.overflow
+          div.slide-in-in
+            | success
+      // scroll indicator
+      //- div.scroll-indicator
+      //-   div.scroll-indicator__text 
+      //-     div scroll
+      //-   img(class="indicator" src="../temporary/arrow.svg" alt="arrow img")
+
+    section.carousel
+      //- img(class="cutout r" src="../temporary/cutoutr.svg" alt="vectors" srcset="")
+      //- object(class="cutout r" type="image/svg+xml" data="../temporary/cutoutr.svg" alt="vectors" srcset="")
+
+      ul 
+        li
+          h1 form
+        li
+          h1 hone
+        li
+          h1 grow
+        li
+          h1 rise
+        li
+          h1 form
+        li
+          h1 hone
+        li
+          h1 grow
+        li
+          h1 rise
+    section.sessions
+      h4 why you need us
+      h2 we host sessions on
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container" tabindex="0")
+            div(class="img-cut") -
+            div(class="img-title" ) c++
+          div(class="img primary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span c++
+          div(class="img-content" ) sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") dsa
+          div(class="img secondary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span dsa
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") ml
+          div(class="img tertiary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span ml
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") web dev
+          div(class="img primary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span web dev
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") linux
+          div(class="img secondary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span linux
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") git
+          div(class="img tertiary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span git
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") vs code
+          div(class="img primary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span vs code
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") linkeden
+          div(class="img secondary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span linkedin
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") gsoc
+          div(class="img tertiary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span gsoc
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") flutter
+          div(class="img primary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span flutter
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") icpc
+          div(class="img secondary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span icpc
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") database
+          div(class="img tertiary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span database
+          div(class="img-content") sample img
+      div.img-box(class='hoverable' data-trailer-content="Bring Up")
+        div(class="img-box-container" tabindex="0")
+          div(class="toggle-container")
+            div(class="img-cut") -
+            div(class="img-title") sql
+          div(class="img primary")
+            //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+            span sql
+          div(class="img-content") sample img
+
+    section.metrics
+      h4 why choose ALGOCS
+      h2 our metrics speak
+      p.subhead 
+        |Lorem ipsum dolor sit amet consectetur 
+        | adipisicing elit. Corporis est consectetur 
+        | autem quo deserunt? Omnis, vitae delectus!
+        | Vero provident quasi distinctio itaque? Totam 
+        | facere, quisquam accusamus nisi ducimus in non!
+
+      .metrics-content
+        .metrics-content--left
+          .number 01
+          .metrics-number 30+
+          .metrics-title Groups
+        .metrics-content--right
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi necessitatibus voluptatum ad, magnam enim aut architecto corporis, fugit et, quos magni cum tenetur error itaque facilis amet. In, fuga.
+      .metrics-content
+        .metrics-content--left
+          .number 02
+          .metrics-number 10000+
+          .metrics-title Members
+        .metrics-content--right
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi necessitatibus voluptatum ad, magnam enim aut architecto corporis, fugit et, quos magni cum tenetur error itaque facilis amet. In, fuga.
+      .metrics-content
+        .metrics-content--left
+          .number 03
+          .metrics-number 100+
+          .metrics-title Sessions
+        .metrics-content--right
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi necessitatibus voluptatum ad, magnam enim aut architecto corporis, fugit et, quos magni cum tenetur error itaque facilis amet. In, fuga.
+      .metrics-content
+        .metrics-content--left
+          .number 04
+          .metrics-number 50+
+          .metrics-title Colleges
+        .metrics-content--right
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi necessitatibus voluptatum ad, magnam enim aut architecto corporis, fugit et, quos magni cum tenetur error itaque facilis amet. In, fuga.
+
+    section.carousel
+      //- img(class="cutout r" src="../temporary/cutoutr.svg" alt="vectors" srcset="")
+      //- object(class="cutout l" type="image/svg+xml" data="../temporary/cutoutl.svg" alt="vectors" srcset="")
+
+      ul 
+        li
+          h1 logo
+        li
+          h1 logo
+        li
+          h1 logo
+        li
+          h1 logo
+        li
+          h1 logo
+        li
+          h1 logo
+        li
+          h1 logo
+        li
+          h1 logo
+    section.mail
+      h4 connect with us
+      h2 become a part
+
+      .mailbox 
+        .mailbox--left
+          p.subhead 
+            |Lorem ipsum dolor sit amet consectetur 
+            | adipisicing elit. Corporis est consectetur 
+            | autem quo deserunt? Omnis, vitae delectus!
+            | Vero provident quasi distinctio itaque? Totam 
+            | facere, quisquam accusamus nisi ducimus in non!
+          .mail-content
+            input(type="text" placeholder="yourname@mail.com")            
+            button.btn(class="btn" data-label="Join Us")
+              | Join Us
+              span(class="btn-bg-fixed")
+              span(class="btn-bg-slide")
+
+
+        .mailbox--right
+          .picture-lib(tabindex="0" class="hoverable" data-trailer-content="Next")
+            div.mg-box(class="hoverable" data-trailer-content="Next")
+              div(class="img-box-container" tabindex="0")
+                div(class="img primary")
+                  //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                  span img 1
+
+            div.mg-box(class="hoverable" data-trailer-content="Next")
+              div(class="img-box-container" tabindex="0")
+                div(class="img secondary")
+                  //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                  span img 2
+
+            div.mg-box(class="hoverable" data-trailer-content="Next")
+              div(class="img-box-container" tabindex="0")
+                div(class="img tertiary")
+                  //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                  span img 3
+
+    section.footer
+      .footer-left 
+        .footer-head
+          h5.footer-head-first
+            span.foot-color build 
+            |&nbsp;your 
+          h5 path to
+          h5 success
+        .footer-content 
+          .footer-content__contact
+            h6 contact us
+            p(class="hoverable" data-trailer-content="Nice to meet you") hello@gmail.com
+          .footer-content__follow
+            h6 follow us
+            p(class="hoverable" data-trailer-content="Let's Conect") linkedin
+          .footer-content__locate
+            h6 locate us
+            p(class="hoverable" data-trailer-content="See you soon") xyz address
+      .footer-right
+        .footer-copyright 
+          p &copy; algocs 2023
+        .footer-statement
+          .footer-privacy 
+            p privacy statement
+          .footer-legal 
+            p legal statement

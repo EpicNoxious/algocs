@@ -1,0 +1,207 @@
+doctype html
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Index
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    // links
+    link(rel='stylesheet' type='text/css' media='screen' href='../static/css/styles.css')
+    link(rel='stylesheet' media='screen' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css')
+    // scripts
+    script(src='https://unpkg.com/@barba/core')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js')
+    script(defer src='../static/js/app.js')
+    script(src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js") 
+
+// 
+// 
+// 
+body(data-barba="wrapper" data-scroll-container id="scroll-container")
+    div.cursor-hover Sample Text
+    // tiles
+    canvas#canvas
+    // transition
+    ul.transition(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+        li
+        li
+        li
+        li
+        li
+
+    // navigation
+    nav(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+        span dashboard
+        ul
+            li
+                a(href='../templates/index.html') Home
+            li
+                a(href='../templates/gallery.html') Gallery
+            li
+                a(href='../templates/about.html') About Us
+            li
+                a(href='../templates/partners.html') Collab
+            li
+                a(href='../templates/contact.html') Contact
+    .logo(data-scroll data-scroll-sticky data-scroll-target="#scroll-container")
+        img(src="../static/img/logo.svg" alt="algocs logo")
+
+
+
+    // main with sections
+    main(data-barba='container' data-barba-namespace='partners')
+        section.carousel
+            object(class="cutout r" type="image/svg+xml" data="../temporary/cutoutr.svg" alt="vectors" srcset="")
+            ul 
+                li
+                    h1 recent
+                li
+                    h1 collab
+                li
+                    h1 recent
+                li
+                    h1 collab
+                li
+                    h1 recent
+                li
+                    h1 collab
+                li
+                    h1 recent
+                li
+                    h1 collab
+        section.recent-collab
+            .collab-container 
+                .collab-img
+                    div.img-box(class='hoverable' data-trailer-content="Bring Up")
+                        div(class="img-box-container" tabindex="0")
+                            div(class="toggle-container" tabindex="0")
+                                div(class="img-cut") -
+                                div(class="img-title" ) c++
+                            div(class="img primary")
+                                //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                                span c++
+                            div(class="img-content" ) sample img
+                .collab-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ea aperiam rem labore libero qui hic maiores ab, rerum ullam asperiores optio ex. Atque rerum expedita provident id, voluptatum saepe!
+            .collab-container 
+                .collab-img
+                    div.img-box(class='hoverable' data-trailer-content="Bring Up")
+                        div(class="img-box-container" tabindex="0")
+                            div(class="toggle-container" tabindex="0")
+                                div(class="img-cut") -
+                                div(class="img-title" ) c++
+                            div(class="img secondary")
+                                //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                                span c++
+                            div(class="img-content" ) sample img
+                .collab-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ea aperiam rem labore libero qui hic maiores ab, rerum ullam asperiores optio ex. Atque rerum expedita provident id, voluptatum saepe!
+            .collab-container 
+                .collab-img
+                    div.img-box(class='hoverable' data-trailer-content="Bring Up" tabindex="0")
+                        div(class="img-box-container" tabindex="0")
+                            div(class="toggle-container" tabindex="0")
+                                div(class="img-cut") -
+                                div(class="img-title" ) c++
+                            div(class="img tertiary")
+                                //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                                span c++
+                            div(class="img-content" ) sample img
+                .collab-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ea aperiam rem labore libero qui hic maiores ab, rerum ullam asperiores optio ex. Atque rerum expedita provident id, voluptatum saepe!
+            .collab-container 
+                .collab-img
+                    div.img-box(class='hoverable' data-trailer-content="Bring Up" tabindex="0")
+                        div(class="img-box-container" tabindex="0")
+                            div(class="toggle-container" tabindex="0")
+                                div(class="img-cut") -
+                                div(class="img-title" ) c++
+                            div(class="img primary")
+                                //- img(src="../static/img/sample_img1.png" alt="image of jappreet")
+                                span c++
+                            div(class="img-content" ) sample img
+                .collab-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ea aperiam rem labore libero qui hic maiores ab, rerum ullam asperiores optio ex. Atque rerum expedita provident id, voluptatum saepe!
+        section.stats 
+            h4 dashboard
+            h2 check algostistics
+            .stats-container 
+                .stats-strip
+                    h3 which editor?
+                .strip-container
+                    ul.strip-list
+                        li vs code: 50%
+                        li figma: 30%
+                        li git bash: 12%
+                        li other: 8%
+                        li vs code: 40%
+                        li figma: 50%
+                        li git bash: 5%
+                        li other: 5%
+            br
+            .stats-container 
+                .stats-strip
+                    h3 what's clickin?
+                .strip-container
+                    ul.strip-list
+                        li mouse: 40%
+                        li keyboard: 50%
+                        li touch pad: 10%
+                        li stylus: 0%
+                        li mouse: 30%
+                        li keyboard: 49%
+                        li touch pad: 17%
+                        li stylus: 4%
+            br
+            .stats-container 
+                .stats-strip
+                    h3 preferred language
+                .strip-container
+                    ul.strip-list
+                        li pug & scss: 40%
+                        li django: 20%
+                        li javascript: 30%
+                        li gsap: 10%
+                        li pug & scss: 40%
+                        li django: 20%
+                        li javascript: 30%
+                        li gsap: 10%
+            br
+            .stats-container 
+                .stats-strip
+                    h3 what da dev doin?
+                .strip-container
+                    ul.strip-list
+                        li eat: 100%
+                        li sleep: 100%
+                        li code: 0%
+                        li repeat: 100%
+                        li eat: 100%
+                        li sleep: 100%
+                        li code: 0%
+                        li repeat: 100%
+
+
+        section.footer
+            .footer-left 
+                .footer-head
+                    h5.footer-head-first
+                        span.foot-color build 
+                        |&nbsp;your 
+                    h5 path to
+                    h5 success
+                .footer-content 
+                    .footer-content__contact
+                        h6 contact us
+                        p(class="hoverable" data-trailer-content="Nice to meet you") hello@gmail.com
+                    .footer-content__follow
+                        h6 follow us
+                        p(class="hoverable" data-trailer-content="Let's Conect") linkedin
+                    .footer-content__locate
+                        h6 locate us
+                        p(class="hoverable" data-trailer-content="See you soon") xyz address
+            .footer-right
+                .footer-copyright 
+                    p &copy; algocs 2023
+                .footer-statement
+                    .footer-privacy 
+                        p privacy statement
+                    .footer-legal 
+                        p legal statement
+

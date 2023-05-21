@@ -1,0 +1,75 @@
+// ................................
+// ................................ FOOTER
+// ................................
+section.footer {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .footer-left {
+    padding: 0 5vw;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(var(--primary));
+
+    .footer-head {
+      line-height: 1.1;
+      &-first {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+      .foot-color {
+        color: rgb(var(--background));
+        background-color: rgb(var(--tertiary));
+        vertical-align: baseline;
+        transform: rotate(-3deg);
+        padding: 0.1rem 0.1rem;
+        width: auto;
+      }
+    }
+    .footer-content {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        font-size: 1.2vw;
+        pointer-events: all;
+      }
+    }
+  }
+  .footer-right {
+    padding: 5vh 5vw;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Fivo", sans-serif;
+    text-transform: uppercase;
+    font-weight: 1000;
+    .footer-statement {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2vw;
+    }
+    p {
+      font-size: 0.8vw;
+      pointer-events: all;
+      &:hover {
+        color: rgb(var(--tertiary));
+      }
+    }
+  }
+}
