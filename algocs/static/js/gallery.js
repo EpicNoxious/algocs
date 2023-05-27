@@ -16,7 +16,7 @@ export function hoverGallery() {
       gsap.to(gallery, {
         x: posX,
         y: posY,
-        ease: "power2.inOut",
+        ease: "power2.out",
       });
     });
 }

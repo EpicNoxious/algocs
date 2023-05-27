@@ -1,6 +1,63 @@
 import { resizeCanvas } from "./canvas.js";
 import { hoverGallery } from "./gallery.js";
 
+// Page reveal transition
+const revealTransition = () => {
+  const btn = document.querySelector(".btn-reveal");
+  btn.addEventListener("click", function () {
+    gsap.to(".btn-reveal", 1, {
+      opacity: 0,
+      y: -50,
+      ease: Expo.easeInOut,
+    });
+
+    gsap.to(".text-wrapper > div", 1, {
+      x: "500",
+      ease: Expo.easeInOut,
+      delay: 1,
+      stagger: 0.1,
+    });
+
+    gsap.to(".text-wrapper", 3, {
+      y: -400,
+      scale: 4.5,
+      rotate: -90,
+      ease: Expo.easeInOut,
+      delay: 1.5,
+    });
+
+    gsap.to(".text", 1, {
+      opacity: 1,
+      ease: Expo.easeInOut,
+      delay: 3,
+    });
+
+    gsap.to(".text-wrapper > div", 4, {
+      x: "-4000",
+      ease: Expo.easeInOut,
+      delay: 3.5,
+      stagger: 0.05,
+    });
+
+    gsap.to(".text-container li", {
+      duration: 0.5,
+      scaleY: 0,
+      transformOrigin: "bottom left",
+      stagger: 0.1,
+      delay: 6.5,
+      onComplete: function () {
+        const elementsToHide = document.querySelectorAll(
+          ".btn-reveal, .text-wrapper > div, .text-wrapper, .text, .text-container"
+        );
+        elementsToHide.forEach((element) => {
+          element.style.display = "none";
+        });
+      },
+    });
+  });
+};
+
+// Between page transition
 const pageTransition = [
   {
     from: "(.*)",
@@ -16,7 +73,7 @@ const pageTransition = [
       });
     },
     out: (next, infos) => {
-      gsap.to(document.querySelector("#swup"), 1, {
+      gsap.to(document.querySelector("#swup"), 1.2, {
         onComplete: next,
       });
       gsap.to("ul.transition li", {
@@ -29,6 +86,61 @@ const pageTransition = [
     },
   },
 ];
+
+// In page transition
+const inTransition = () => {
+  gsap.to(".logo object", {
+    duration: 0.7,
+    y: 0,
+    ease: "power2.out",
+  });
+  gsap.to(".hero h4 div.overflow div.slide-in", {
+    duration: 0.5,
+    y: 0,
+    ease: "power2.out",
+    stagger: 0.05,
+    delay: 0.5,
+  });
+  gsap.to(".hero h1 div.overflow div.slide-in-in", {
+    duration: 0.5,
+    y: 0,
+    ease: "power2.out",
+    stagger: 0.05,
+    delay: 0.5,
+  });
+  gsap.to(".color", {
+    duration: 0.3,
+    ease: "power2.out",
+    color: "rgb(var(--background))",
+    rotation: -3,
+  });
+  gsap.from(".check", {
+    duration: 0.3,
+    ease: "power2.out",
+    scaleY: 0,
+    transformOrigin: "center",
+  });
+  gsap.to(".check", {
+    scaleY: 1,
+  });
+  gsap.set(".color-svg", {
+    scale: 0,
+    opacity: 1,
+  });
+  gsap.to(".color-svg", {
+    duration: 1,
+    ease: Linear.easeNone,
+    scale: 1,
+    opacity: 1,
+    rotation: 720,
+  });
+  gsap.to(".color-svg", {
+    duration: 2,
+    ease: Linear.easeNone,
+    repeat: -1,
+    rotation: 360,
+  });
+};
 
 // Initialize Swup
 const swup = new Swup({
@@ -44,7 +156,6 @@ const swup = new Swup({
 swup.on("clickLink", () => {
   const nextLink = swup.link;
   if (nextLink) {
-    console.log("this piece of code is working");
     swup.preloadPage(nextLink).then(() => {
       // Preloading completed, trigger the transition
       swup.loadPage(nextLink.href);
@@ -52,13 +163,26 @@ swup.on("clickLink", () => {
   }
 });
 
+// swup.on("animationInStart", () => {
+//   if (swup.options.animateHistoryBrowsing) {
+//     // Run the page transition
+//     inTransition();
+//   }
+// });
+
 // Function Calls
+inTransition();
 resizeCanvas();
 hoverGallery();
 
 // On Swup content replace
 document.addEventListener("swup:contentReplaced", () => {
+  inTransition();
   resizeCanvas();
   hoverGallery();
   window.scrollTo(0, 0);
+});
+document.addEventListener("DOMContentLoaded", () => {
+  // Run the once transition on page refresh
+  revealTransition();
 });

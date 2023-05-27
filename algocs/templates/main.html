@@ -41,6 +41,85 @@
   <body>
     <!-- canvas -->
     <canvas id="canvas"></canvas>
+
+    <!-- reveal/page transition -->
+    {% if not page_loaded %} {% set page_loaded = true %}
+    <!-- button for reveal animation-->
+    <button class="btn-reveal">Welcome</button>
+    <ul class="text-container">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div class="text-wrapper">
+      <div class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+        est, molestie id porta quis, sollicitudin at velit.
+      </div>
+      <div class="text">
+        Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+        Phasellus et lectus vitae quam euismod tincidunt.
+      </div>
+      <div class="text">
+        Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+        elit. Vestibulum lobortis aliquam nibh.
+      </div>
+      <div class="text">
+        Non blandit mauris fringilla quis. Nunc sit amet fringilla quam. Mauris
+        et felis quis mauris iaculis gravida ac in enim.
+      </div>
+      <div class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+        est, molestie id porta quis, sollicitudin at velit.
+      </div>
+      <div class="text">
+        Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+        Phasellus et lectus vitae quam euismod tincidunt.
+      </div>
+      <div class="text">
+        Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+        elit. Vestibulum lobortis aliquam nibh.
+      </div>
+      <div class="text">
+        Non blandit mauris fringilla quis. Nunc sit amet fringilla quam. Mauris
+        et felis quis mauris iaculis gravida ac in enim.
+      </div>
+      <div class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+        est, molestie id porta quis, sollicitudin at velit.
+      </div>
+      <div class="text">
+        Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+        Phasellus et lectus vitae quam euismod tincidunt.
+      </div>
+      <div class="text">
+        Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+        elit. Vestibulum lobortis aliquam nibh.
+      </div>
+      <div class="text">
+        Non blandit mauris fringilla quis. Nunc sit amet fringilla quam. Mauris
+        et felis quis mauris iaculis gravida ac in enim.
+      </div>
+      <div class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus
+        est, molestie id porta quis, sollicitudin at velit.
+      </div>
+      <div class="text">
+        Vestibulum pretium at lectus sed rutrum. Integer vel quam neque.
+        Phasellus et lectus vitae quam euismod tincidunt.
+      </div>
+      <div class="text">
+        Fusce commodo placerat semper. Vestibulum ut dapibus nunc, eu molestie
+        elit. Vestibulum lobortis aliquam nibh.
+      </div>
+      <div class="text">
+        Non blandit mauris fringilla quis. Nunc sit amet fringilla quam. Mauris
+        et felis quis mauris iaculis gravida ac in enim.
+      </div>
+    </div>
+    {% else %}
     <!-- page-tranisiton -->
     <ul class="transition">
       <li></li>
@@ -49,6 +128,7 @@
       <li></li>
       <li></li>
     </ul>
+    {% endif %}
 
     <main id="swup">
       <!-- navbar -->
