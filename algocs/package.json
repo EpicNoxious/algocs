@@ -6,7 +6,7 @@
   "scripts": {
     "start:scss": "sass static/sass/main.scss static/css/styles.css -w",
     "start:pug": "pug --watch ./views -o ./templates -P",
-    "develop": "concurrently \"npm run start:pug\" \"npm run start:scss\" \"python manage.py livereload\" "
+    "develop": "concurrently \"npm run start:scss\" \"python manage.py livereload\" "
   },
   "author": "Jappreet Singh",
   "license": "ISC",

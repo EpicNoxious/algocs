@@ -1,9 +1,8 @@
-const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
-const tileSize = Math.floor(window.innerWidth * 0.04); // Set tile size to 4% of screen width
-const originalStrokeStyle = "#1f1f1f"; // Store the original stroke color
-
-function resizeCanvas() {
+export function resizeCanvas() {
+  const canvas = document.getElementById("canvas");
+  const context = canvas.getContext("2d");
+  const tileSize = Math.floor(window.innerWidth * 0.04); // Set tile size to 4% of screen width
+  const originalStrokeStyle = "#1f1f1f"; // Store the original stroke color
   context.translate(0.5, 0.5);
   const bodyHeight = document.body.offsetHeight;
   const scrollBarWidth = window.innerWidth - document.body.clientWidth;
@@ -34,7 +33,7 @@ function resizeCanvas() {
     const row = Math.floor(y / tileSize);
 
     // Set the new stroke color with desired opacity
-    context.strokeStyle = "rgba(143, 128, 238, 1)";
+    context.strokeStyle = "rgba(79, 38, 233, 1)";
 
     // Stroke the tile with new color
     context.strokeRect(col * tileSize, row * tileSize, tileSize, tileSize);
@@ -43,13 +42,6 @@ function resizeCanvas() {
     setTimeout(function () {
       context.strokeStyle = originalStrokeStyle;
       context.strokeRect(col * tileSize, row * tileSize, tileSize, tileSize);
-    }, 500);
+    }, 300);
   });
 }
-
-resizeCanvas(); // Initial canvas sizing
-
-// Add event listener for window resize
-window.addEventListener("resize", function () {
-  resizeCanvas();
-});

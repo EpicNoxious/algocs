@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/swup@3"></script>
     <script src="https://unpkg.com/@swup/forms-plugin@2"></script>
     <script src="https://unpkg.com/@swup/js-plugin@2"></script>
+    <script src="https://unpkg.com/@swup/debug-plugin@3"></script>
 
     <!-- favicon -->
     <link rel="icon" href="{% static 'public/favicon.ico' %}" />
@@ -29,12 +30,12 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
 
     <!-- js -->
-    <script defer src="{% static 'js/app.js' %}"></script>
-    <script defer src="{% static 'js/canvas.js' %}"></script>
-    <script defer src="{% static 'js/cursorhover.js' %}"></script>
-    <script defer src="{% static 'js/lenis.js' %}"></script>
-    <script defer src="{% static 'js/swup.js' %}"></script>
-    <script defer src="{% static 'js/zindex.js' %}"></script>
+    <script type="module" defer src="{% static 'js/app.js' %}"></script>
+    <script type="module" defer src="{% static 'js/canvas.js' %}"></script>
+    <script type="module" defer src="{% static 'js/cursorhover.js' %}"></script>
+    <script type="module" defer src="{% static 'js/lenis.js' %}"></script>
+    <script type="module" defer src="{% static 'js/swup.js' %}"></script>
+    <script type="module" defer src="{% static 'js/zindex.js' %}"></script>
   </head>
 
   <body>
@@ -65,6 +66,5 @@
 
       <!-- footer -->
     </main>
-    {% include 'footer.html' %}
   </body>
 </html>
