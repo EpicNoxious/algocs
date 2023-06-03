@@ -151,3 +151,17 @@
 //       rotation: 360,
 //     });
 // };
+
+const splide = new Splide(".splide", {
+  type: "loop",
+  drag: "free",
+  focus: "center",
+  autoWidth: true,
+  gap: 80,
+  pagination: false,
+  arrows: false,
+  autoScroll: {
+    speed: 2,
+  },
+});
+splide.mount(window.splide.Extensions);

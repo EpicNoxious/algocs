@@ -29,12 +29,20 @@
     <!-- lenis -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
 
-    <!-- js -->
+    <!-- splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- vanilla js -->
     <script type="module" defer src="{% static 'js/app.js' %}"></script>
-    <script type="module" defer src="{% static 'js/canvas.js' %}"></script>
     <script type="module" defer src="{% static 'js/cursorhover.js' %}"></script>
     <script type="module" defer src="{% static 'js/lenis.js' %}"></script>
-    <script type="module" defer src="{% static 'js/swup.js' %}"></script>
+    <script type="module" dfer src="{% static 'js/canvas.js' %}"></script>
+    <script type="module" deefer src="{% static 'js/swup.js' %}"></script>
     <script type="module" defer src="{% static 'js/zindex.js' %}"></script>
   </head>
 
@@ -43,9 +51,9 @@
     <canvas id="canvas"></canvas>
 
     <!-- reveal/page transition -->
-    {% if not page_loaded %} {% set page_loaded = true %}
+
     <!-- button for reveal animation-->
-    <button class="btn-reveal">Welcome</button>
+    <!-- <button class="btn-reveal">Welcome</button>
     <ul class="text-container">
       <li></li>
       <li></li>
@@ -118,8 +126,7 @@
         Non blandit mauris fringilla quis. Nunc sit amet fringilla quam. Mauris
         et felis quis mauris iaculis gravida ac in enim.
       </div>
-    </div>
-    {% else %}
+    </div> -->
     <!-- page-tranisiton -->
     <ul class="transition">
       <li></li>
@@ -128,7 +135,6 @@
       <li></li>
       <li></li>
     </ul>
-    {% endif %}
 
     <main id="swup">
       <!-- navbar -->

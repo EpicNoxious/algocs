@@ -319,7 +319,7 @@ ul.transition li {
 .text {
   width: 300%;
   font-family: "Fivo Sans Modern";
-  font-size: 4vw;
+  font-size: 3.5vw;
   text-transform: uppercase;
   opacity: 0.1;
   color: rgb(var(--primary));
@@ -543,6 +543,26 @@ section.carousel ul li h1 {
     transform: translateX(200vw);
   }
 }
+section.splide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.splide .splide__track ul li {
+  font-size: 16vw;
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-family: "Fivo", sans-serif;
+}
+section.splide object {
+  margin: auto 0;
+  height: 75%;
+}
+
 section.hero {
   height: 100vh;
   width: 100%;
