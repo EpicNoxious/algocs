@@ -152,16 +152,27 @@
 //     });
 // };
 
-const splide = new Splide(".splide", {
-  type: "loop",
-  drag: "free",
-  focus: "center",
-  autoWidth: true,
-  gap: 80,
-  pagination: false,
-  arrows: false,
-  autoScroll: {
-    speed: 2,
-  },
-});
-splide.mount(window.splide.Extensions);
+export function splideTransition() {
+  // Select all carousel elements on the page
+  const carouselElements = document.querySelectorAll(".splide");
+
+  // Iterate through each carousel element
+  carouselElements.forEach((carouselElement) => {
+    // Initialize a new Splide instance for each carousel
+    const splide = new Splide(carouselElement, {
+      type: "loop",
+      drag: false,
+      autoWidth: true,
+      gap: 80,
+      pagination: false,
+      arrows: false,
+      autoScroll: {
+        speed: 2,
+        pauseOnHover: false,
+      },
+    });
+
+    // Mount the Splide instance
+    splide.mount(window.splide.Extensions);
+  });
+}

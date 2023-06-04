@@ -1,5 +1,7 @@
 import { resizeCanvas } from "./canvas.js";
 import { hoverGallery } from "./gallery.js";
+import { splideTransition } from "./splide.js";
+import { incrementZIndex } from "./zindex.js";
 
 // Page reveal transition
 const revealTransition = () => {
@@ -170,16 +172,20 @@ swup.on("clickLink", () => {
 //   }
 // });
 
-// Function Calls
+// Function Calls For the first time and when page refresh
 inTransition();
 resizeCanvas();
 hoverGallery();
+incrementZIndex();
+splideTransition();
 
 // On Swup content replace
 document.addEventListener("swup:contentReplaced", () => {
   inTransition();
   resizeCanvas();
   hoverGallery();
+  incrementZIndex();
+  splideTransition();
   window.scrollTo(0, 0);
 });
 document.addEventListener("DOMContentLoaded", () => {

@@ -17,6 +17,7 @@ export function hoverGallery() {
         x: posX,
         y: posY,
         ease: "power2.out",
+        duration: 1.5,
       });
     });
 }

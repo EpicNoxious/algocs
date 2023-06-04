@@ -34,18 +34,6 @@ section.carousel {
     }
   }
 }
-.cutout {
-  position: absolute;
-  top: 50%;
-  z-index: 10;
-  transform: translateY(-50%);
-  &.l {
-    left: 0;
-  }
-  &.r {
-    right: 0;
-  }
-}
 
 @keyframes scroll {
   0% {
