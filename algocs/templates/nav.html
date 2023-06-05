@@ -1,5 +1,8 @@
 <nav>
-  <span>dashboard</span>
+  <!-- <div class="nav-toggle-container">
+    <span>dashboard</span>
+    <span>-</span>
+  </div>
   <ul>
     <li><a href="{% url 'index' %}">Home</a></li>
     <li><a href="{% url 'partners' %}">Collab</a></li>
@@ -9,5 +12,21 @@
   </ul>
   <div class="logo">
     <img src="../static/img/logo.svg" alt="algocs logo" />
+  </div> -->
+  <div class="img-box hoverable" data-trailer-content="Bring Up">
+    <div class="img-box-container" tabindex="0">
+      <div class="toggle-container nav-toggle-container">
+        <div class="img-title">dashboard</div>
+        <div class="img-cut">-</div>
+      </div>
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'partners' %}">Collab</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+      <div class="img-content" style="display: none"></div>
+    </div>
   </div>
 </nav>

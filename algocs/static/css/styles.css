@@ -61,23 +61,30 @@ nav {
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
-  pointer-events: none;
+  width: auto;
+  pointer-events: all;
+}
+nav .nav-toggle-container {
+  width: 12vw;
+  color: rgb(var(--background));
+  background-color: rgb(var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1vw;
+  pointer-events: all;
 }
 nav span {
-  background-color: rgb(var(--primary));
-  color: rgb(var(--background));
   text-transform: uppercase;
   font-size: 1vw;
   font-weight: 1000;
-  font-family: "Fivo", sans-serif;
   line-height: 3;
-  width: 10vw;
+  font-family: "Fivo", sans-serif;
   text-align: center;
 }
 nav ul {
   padding: 1vw 1vw 2vw 1vw;
-  width: 10vw;
+  width: 12vw;
   border: 3px solid rgb(var(--primary));
   list-style: none;
   display: flex;

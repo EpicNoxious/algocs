@@ -32,4 +32,16 @@ export function incrementZIndex() {
       toggleContainer2.classList.toggle("img-content-clicked");
     });
   });
+
+  // flip cards ffor picture library
+  const pictureLib = document.querySelector(".picture-lib");
+  const pictures = document.querySelectorAll(".mg-box");
+  if (pictureLib) {
+    let currentLastIndex = 2;
+    let zIndexPicture = 5;
+    pictureLib.addEventListener("click", () => {
+      currentLastIndex = (currentLastIndex + 1) % 3;
+      pictures[currentLastIndex].style.zIndex = ++zIndexPicture;
+    });
+  }
 }
