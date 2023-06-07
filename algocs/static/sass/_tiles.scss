@@ -127,12 +127,14 @@ ul.transition {
 
       .img-cut {
         margin: 0vh 1vh;
+        height: 100%;
       }
       .img-title {
         font-size: 1vw;
         font-weight: 1000;
         margin: 0vh 1vh;
         background-color: transparent;
+        height: 100%;
       }
     }
     .toggle-container-clicked + .img {
