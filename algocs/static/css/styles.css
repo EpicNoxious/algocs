@@ -140,7 +140,10 @@ nav ul li a:hover {
 
 .nav-title,
 .nav-cut {
-  height: auto !important;
+  height: 3vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tile:hover {
@@ -229,14 +232,12 @@ ul.transition li {
 }
 .img-box-container .toggle-container .img-cut {
   margin: 0vh 1vh;
-  height: 100%;
 }
 .img-box-container .toggle-container .img-title {
   font-size: 1vw;
   font-weight: 1000;
   margin: 0vh 1vh;
   background-color: transparent;
-  height: 100%;
 }
 .img-box-container .toggle-container-clicked + .img {
   visibility: hidden;
@@ -296,7 +297,7 @@ ul.transition li {
   top: 0;
   left: 0;
   text-transform: uppercase;
-  pointer-events: none;
+  pointer-events: all;
 }
 
 .btn-reveal {

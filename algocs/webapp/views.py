@@ -25,3 +25,13 @@ def galleryView(request):
 def partnersView(request):
   context= {}
   return render(request, 'partners.html', context)
+
+# privacy view
+def privacyView(request):
+  context= {}
+  return render(request, 'privacy.html', context)
+
+# legal view
+def legalView(request):
+  context= {}
+  return render(request, 'legal.html', context)

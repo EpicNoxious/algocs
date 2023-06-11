@@ -1,0 +1,21 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<!-- main with sections-->
+<main>
+  <section class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">Legal</li>
+        <li class="splide__slide">Statement</li>
+        <li class="splide__slide">Legal</li>
+        <li class="splide__slide">Statement</li>
+        <li class="splide__slide">Legal</li>
+        <li class="splide__slide">Statement</li>
+        <li class="splide__slide">Legal</li>
+        <li class="splide__slide">Statement</li>
+      </ul>
+    </div>
+    <img class="cutout r" src="../static/img/cutoutr.svg" alt="cutout-right" />
+  </section>
+  {% include 'footer.html' %}
+</main>
+{% endblock %}

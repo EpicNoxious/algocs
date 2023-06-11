@@ -91,5 +91,8 @@ nav {
 
 .nav-title,
 .nav-cut {
-  height: auto !important;
+  height: 3vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

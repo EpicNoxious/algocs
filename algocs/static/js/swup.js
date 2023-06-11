@@ -2,7 +2,7 @@ import { resizeCanvas } from "./canvas.js";
 import { hoverGallery } from "./gallery.js";
 import { splideTransition } from "./splide.js";
 import { incrementZIndex } from "./zindex.js";
-
+import { cursorHover } from "./cursorhover.js";
 // Page reveal transition
 // const revealTransition = () => {
 //   const btn = document.querySelector(".btn-reveal");
@@ -91,52 +91,53 @@ const pageTransition = [
 
 // In page transition
 const inTransition = () => {
-  gsap.to(".logo object", {
+  let timeline = gsap.timeline();
+  timeline.to(".logo object", {
     duration: 0.7,
     y: 0,
     ease: "power2.out",
   });
-  gsap.to(".hero h4 div.overflow div.slide-in", {
+  timeline.to(".hero h4 div.overflow div.slide-in", {
     duration: 0.5,
     y: 0,
     ease: "power2.out",
     stagger: 0.05,
     delay: 0.5,
   });
-  gsap.to(".hero h1 div.overflow div.slide-in-in", {
+  timeline.to(".hero h1 div.overflow div.slide-in-in", {
     duration: 0.5,
     y: 0,
     ease: "power2.out",
     stagger: 0.05,
     delay: 0.5,
   });
-  gsap.to(".color", {
+  timeline.to(".color", {
     duration: 0.3,
     ease: "power2.out",
     color: "rgb(var(--background))",
     rotation: -3,
   });
-  gsap.from(".check", {
+  timeline.from(".check", {
     duration: 0.3,
     ease: "power2.out",
     scaleY: 0,
     transformOrigin: "center",
   });
-  gsap.to(".check", {
+  timeline.to(".check", {
     scaleY: 1,
   });
-  gsap.set(".color-svg", {
+  timeline.set(".color-svg", {
     scale: 0,
     opacity: 1,
   });
-  gsap.to(".color-svg", {
+  timeline.to(".color-svg", {
     duration: 1,
     ease: Linear.easeNone,
     scale: 1,
     opacity: 1,
     rotation: 720,
   });
-  gsap.to(".color-svg", {
+  timeline.to(".color-svg", {
     duration: 2,
     ease: Linear.easeNone,
     repeat: -1,
@@ -176,6 +177,7 @@ swup.on("clickLink", () => {
 inTransition();
 resizeCanvas();
 hoverGallery();
+cursorHover();
 incrementZIndex();
 splideTransition();
 
@@ -184,6 +186,7 @@ document.addEventListener("swup:contentReplaced", () => {
   inTransition();
   resizeCanvas();
   hoverGallery();
+  cursorHover();
   incrementZIndex();
   splideTransition();
   window.scrollTo(0, 0);
