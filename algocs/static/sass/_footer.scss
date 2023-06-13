@@ -64,9 +64,13 @@ section.footer {
       justify-content: center;
       gap: 2vw;
     }
-    p {
+    p,
+    a {
       font-size: 0.8vw;
       pointer-events: all;
+      color: rgb(var(--primary));
+      text-decoration: none;
+      cursor: pointer;
       &:hover {
         color: rgb(var(--tertiary));
       }

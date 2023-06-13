@@ -1,0 +1,34 @@
+section.privacy {
+  width: 100%;
+  padding: 0 5vw;
+
+  gap: 5vw;
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5vw;
+    h2 {
+      text-align: left;
+      width: 75%;
+      padding-bottom: 1vw;
+    }
+    text-align: justify;
+    p {
+      width: 75%;
+      font-size: 1.2vw;
+      margin: 0 auto;
+    }
+    a {
+      pointer-events: all;
+      color: rgb(var(--tertiary));
+      text-decoration: none;
+      cursor: pointer;
+    }
+    ul {
+      width: 75%;
+      font-size: 1.2vw;
+    }
+  }
+}

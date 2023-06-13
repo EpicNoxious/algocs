@@ -203,6 +203,7 @@ ul.transition li {
 .img-box {
   width: 20vw;
   height: 50vh;
+  pointer-events: all !important;
 }
 .img-box-container {
   display: flex;
@@ -225,10 +226,11 @@ ul.transition li {
   align-items: center;
   justify-content: space-between;
   height: 15%;
+  pointer-events: all;
 }
 .img-box-container .toggle-container:hover {
-  background-color: rgb(var(--secondary));
-  color: rgb(var(--primary));
+  background-color: rgb(var(--secondary)) !important;
+  color: rgb(var(--primary)) !important;
 }
 .img-box-container .toggle-container .img-cut {
   margin: 0vh 1vh;
@@ -594,7 +596,6 @@ section.splide img {
 }
 
 section.hero {
-  height: 100vh;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -694,10 +695,10 @@ section.hero .check {
 }
 
 section.sessions {
-  height: 400vh;
   width: 100%;
   position: relative;
   padding: 5vw;
+  height: 400vh;
 }
 section.sessions .img-box {
   position: absolute;
@@ -761,7 +762,6 @@ section.sessions .img-box:nth-of-type(13) {
 
 section.metrics {
   padding: 5vw;
-  min-height: 100vh;
   width: 100%;
   position: relative;
 }
@@ -813,7 +813,6 @@ section.metrics .metrics-content--right {
 
 section.mail {
   padding: 5vw;
-  height: 100vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -883,7 +882,6 @@ section.mail .picture-lib .mg-box:nth-of-type(3) {
 }
 
 section.about {
-  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -921,6 +919,74 @@ section.about .about__right .img-box {
 section.about .about__right .img-box:nth-of-type(2) {
   z-index: 3;
   transform: translate(5vw, -12.5vh);
+}
+
+section.privacy {
+  width: 100%;
+  padding: 0 5vw;
+  gap: 5vw;
+}
+section.privacy > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5vw;
+  text-align: justify;
+}
+section.privacy > * h2 {
+  text-align: left;
+  width: 75%;
+  padding-bottom: 1vw;
+}
+section.privacy > * p {
+  width: 75%;
+  font-size: 1.2vw;
+  margin: 0 auto;
+}
+section.privacy > * a {
+  pointer-events: all;
+  color: rgb(var(--tertiary));
+  text-decoration: none;
+  cursor: pointer;
+}
+section.privacy > * ul {
+  width: 75%;
+  font-size: 1.2vw;
+}
+
+section.legal {
+  width: 100%;
+  padding: 0 5vw;
+  gap: 5vw;
+}
+section.legal > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5vw;
+  text-align: justify;
+}
+section.legal > * h2 {
+  text-align: left;
+  width: 75%;
+  padding-bottom: 1vw;
+}
+section.legal > * p {
+  width: 75%;
+  font-size: 1.2vw;
+  margin: 0 auto;
+}
+section.legal > * p a {
+  pointer-events: all;
+  color: rgb(var(--tertiary));
+  text-decoration: none;
+  cursor: pointer;
+}
+section.legal > * ul {
+  width: 75%;
+  font-size: 1.2vw;
 }
 
 section.gallery {
@@ -1159,7 +1225,6 @@ section.contact-footer .footer-right {
 }
 
 section.recent-collab {
-  height: 250vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1224,7 +1289,6 @@ section.recent-collab .collab-container:nth-of-type(4) .collab-text {
 
 section.stats {
   padding: 5vw;
-  height: 90vh;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -1350,11 +1414,16 @@ section.footer .footer-right .footer-statement {
   justify-content: center;
   gap: 2vw;
 }
-section.footer .footer-right p {
+section.footer .footer-right p,
+section.footer .footer-right a {
   font-size: 0.8vw;
   pointer-events: all;
+  color: rgb(var(--primary));
+  text-decoration: none;
+  cursor: pointer;
 }
-section.footer .footer-right p:hover {
+section.footer .footer-right p:hover,
+section.footer .footer-right a:hover {
   color: rgb(var(--tertiary));
 }
 

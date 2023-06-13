@@ -97,6 +97,7 @@ ul.transition {
 .img-box {
   width: 20vw;
   height: 50vh;
+  pointer-events: all !important;
 
   &-container {
     display: flex;
@@ -119,10 +120,11 @@ ul.transition {
       align-items: center;
       justify-content: space-between;
       height: 15%;
+      pointer-events: all;
 
       &:hover {
-        background-color: rgb(var(--secondary));
-        color: rgb(var(--primary));
+        background-color: rgb(var(--secondary)) !important;
+        color: rgb(var(--primary)) !important;
       }
 
       .img-cut {
