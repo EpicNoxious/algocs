@@ -37,6 +37,11 @@
       rel="stylesheet"
     />
 
+    <!-- tippy -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.2/dist/tippy-bundle.umd.js"></script>
+
     <!-- vanilla js -->
     <script type="module" defer src="{% static 'js/splide.js' %}"></script>
     <script type="module" defer src="{% static 'js/cursorhover.js' %}"></script>
@@ -47,15 +52,13 @@
   </head>
 
   <body>
-    <!-- cursor hover -->
-    <div class="cursor-hover">Sample Text</div>
     <!-- canvas -->
     <canvas id="canvas"></canvas>
 
     <!-- reveal/page transition -->
 
     <!-- button for reveal animation-->
-    <!-- <button class="btn-reveal">Welcome</button>
+    <button class="btn-reveal">Welcome</button>
     <ul class="text-container">
       <li></li>
       <li></li>
@@ -128,7 +131,7 @@
         Non blandit mauris fringilla quis. Nunc sit amet fringilla quam. Mauris
         et felis quis mauris iaculis gravida ac in enim.
       </div>
-    </div> -->
+    </div>
     <!-- page-tranisiton -->
     <ul class="transition">
       <li></li>

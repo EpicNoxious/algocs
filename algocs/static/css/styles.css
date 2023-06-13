@@ -294,12 +294,18 @@ ul.transition li {
   background-color: rgb(var(--tertiary));
   color: rgb(var(--background));
   z-index: 1000;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
   text-transform: uppercase;
   pointer-events: all;
+}
+
+.tippy-box[data-theme~=custom] {
+  background-color: rgb(var(--tertiary));
+  color: rgb(var(--background));
+  font-size: 0.8vw;
+  font-family: "Fivo", sans-serif;
+  z-index: 1000;
+  border-radius: 0px;
+  text-transform: uppercase;
 }
 
 .btn-reveal {
@@ -1393,9 +1399,18 @@ section.footer .footer-left .footer-content {
   align-items: center;
   justify-content: space-between;
 }
-section.footer .footer-left .footer-content p {
+section.footer .footer-left .footer-content p,
+section.footer .footer-left .footer-content a {
   font-size: 1.2vw;
   pointer-events: all;
+  height: 100%;
+  color: rgb(var(--primary));
+  text-decoration: none;
+  cursor: pointer;
+}
+section.footer .footer-left .footer-content p:hover,
+section.footer .footer-left .footer-content a:hover {
+  color: rgb(var(--tertiary));
 }
 section.footer .footer-right {
   padding: 5vh 5vw;

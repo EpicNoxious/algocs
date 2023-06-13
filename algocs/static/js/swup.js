@@ -4,60 +4,60 @@ import { splideTransition } from "./splide.js";
 import { incrementZIndex } from "./zindex.js";
 import { cursorHover } from "./cursorhover.js";
 // Page reveal transition
-// const revealTransition = () => {
-//   const btn = document.querySelector(".btn-reveal");
-//   btn.addEventListener("click", function () {
-//     gsap.to(".btn-reveal", 1, {
-//       opacity: 0,
-//       y: -50,
-//       ease: Expo.easeInOut,
-//     });
+const revealTransition = () => {
+  const btn = document.querySelector(".btn-reveal");
+  btn.addEventListener("click", function () {
+    gsap.to(".btn-reveal", 1, {
+      opacity: 0,
+      y: -50,
+      ease: Expo.easeInOut,
+    });
 
-//     gsap.to(".text-wrapper > div", 1, {
-//       x: "500",
-//       ease: Expo.easeInOut,
-//       delay: 1,
-//       stagger: 0.1,
-//     });
+    gsap.to(".text-wrapper > div", 1, {
+      x: "500",
+      ease: Expo.easeInOut,
+      delay: 1,
+      stagger: 0.1,
+    });
 
-//     gsap.to(".text-wrapper", 3, {
-//       y: -400,
-//       scale: 4.5,
-//       rotate: -90,
-//       ease: Expo.easeInOut,
-//       delay: 1.5,
-//     });
+    gsap.to(".text-wrapper", 3, {
+      y: -400,
+      scale: 4.5,
+      rotate: -90,
+      ease: Expo.easeInOut,
+      delay: 1.5,
+    });
 
-//     gsap.to(".text", 1, {
-//       opacity: 1,
-//       ease: Expo.easeInOut,
-//       delay: 3,
-//     });
+    gsap.to(".text", 1, {
+      opacity: 1,
+      ease: Expo.easeInOut,
+      delay: 3,
+    });
 
-//     gsap.to(".text-wrapper > div", 4, {
-//       x: "-4000",
-//       ease: Expo.easeInOut,
-//       delay: 3.5,
-//       stagger: 0.05,
-//     });
+    gsap.to(".text-wrapper > div", 4, {
+      x: "-4000",
+      ease: Expo.easeInOut,
+      delay: 3.5,
+      stagger: 0.05,
+    });
 
-//     gsap.to(".text-container li", {
-//       duration: 0.5,
-//       scaleY: 0,
-//       transformOrigin: "bottom left",
-//       stagger: 0.1,
-//       delay: 6.5,
-//       onComplete: function () {
-//         const elementsToHide = document.querySelectorAll(
-//           ".btn-reveal, .text-wrapper > div, .text-wrapper, .text, .text-container"
-//         );
-//         elementsToHide.forEach((element) => {
-//           element.style.display = "none";
-//         });
-//       },
-//     });
-//   });
-// };
+    gsap.to(".text-container li", {
+      duration: 0.5,
+      scaleY: 0,
+      transformOrigin: "bottom left",
+      stagger: 0.1,
+      delay: 6.5,
+      onComplete: function () {
+        const elementsToHide = document.querySelectorAll(
+          ".btn-reveal, .text-wrapper > div, .text-wrapper, .text, .text-container"
+        );
+        elementsToHide.forEach((element) => {
+          element.style.display = "none";
+        });
+      },
+    });
+  });
+};
 
 // Between page transition
 const pageTransition = [
@@ -166,13 +166,17 @@ swup.on("clickLink", () => {
   }
 });
 
-// swup.on("animationInStart", () => {
-//   if (swup.options.animateHistoryBrowsing) {
-//     // Run the page transition
-//     inTransition();
-//   }
-// });
+swup.on("animationInStart", () => {
+  if (swup.options.animateHistoryBrowsing) {
+    // Run the page transition
+    inTransition();
+  }
+});
 
+swup.on("animationOutDone", () => {
+  // Destroy all Tippy tooltips
+  tippy.hideAll();
+});
 // Function Calls For the first time and when page refresh
 inTransition();
 resizeCanvas();
@@ -193,5 +197,5 @@ document.addEventListener("swup:contentReplaced", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
   // Run the once transition on page refresh
-  // revealTransition();
+  revealTransition();
 });
