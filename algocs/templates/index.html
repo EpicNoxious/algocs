@@ -289,13 +289,27 @@
           quasi distinctio itaque? Totam facere, quisquam accusamus nisi ducimus
           in non!
         </p>
-        <div class="mail-content">
-          <input type="text" placeholder="yourname@mail.com" />
+
+        <form
+          method="POST"
+          class="form"
+          data-swup-form
+          class="mail-content"
+          autocomplete="off"
+        >
+          {% csrf_token %} {% for field in form %}
+          <!--  -->
+          {{ field }}
+          <!--  -->
+          {% for error in field.errors %}
+          <span style="color: red" class="field--errors">{{error}}</span>
+          {% endfor %} {% endfor %}
+
           <button class="btn btn" data-label="Join Us">
             Join Us<span class="btn-bg-fixed"></span
             ><span class="btn-bg-slide"></span>
           </button>
-        </div>
+        </form>
       </div>
       <div class="mailbox--right">
         <div class="picture-lib hoverable" data-trailer-content="Next">

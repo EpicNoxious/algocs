@@ -110,21 +110,6 @@ nav ul li a:hover {
   color: rgb(var(--tertiary));
 }
 
-.logo {
-  pointer-events: none;
-  height: 2.4vw;
-  overflow: hidden;
-  z-index: 10;
-  position: fixed;
-  top: 2vh;
-  transform: translate(-50%, 0);
-  left: 50%;
-}
-.logo img {
-  height: 2.4vw;
-  z-index: 100;
-}
-
 .nav-box {
   width: auto !important;
   height: auto !important;
@@ -146,6 +131,38 @@ nav ul li a:hover {
   justify-content: center;
 }
 
+.logo {
+  pointer-events: all;
+  height: 2.4vw;
+  overflow: hidden;
+  z-index: 10;
+  position: fixed;
+  top: 2vh;
+  transform: translate(-50%, 0);
+  left: 50%;
+}
+.logo svg {
+  height: 2.4vw;
+  z-index: 100;
+}
+.logo:hover svg path {
+  animation: colorCycle 1s forwards infinite;
+}
+
+@keyframes colorCycle {
+  0% {
+    fill: rgb(var(--primary));
+  }
+  33% {
+    fill: rgb(var(--secondary));
+  }
+  66% {
+    fill: rgb(var(--tertiary));
+  }
+  100% {
+    fill: rgb(var(--primary));
+  }
+}
 .tile:hover {
   stroke: rgb(23, 31, 230);
 }
@@ -433,20 +450,47 @@ input {
   font-size: 1.6vw;
   font-family: "Fivo", sans-serif;
   font-weight: 1000;
+  cursor: text;
 }
 
+input[type=email],
 input[type=text] {
-  color: rgb(var(--secondary));
+  color: rgba(var(--secondary), 0.33);
   height: 8vh;
   width: 66.67%;
   border: 0;
-  border-bottom: 2px solid rgb(var(--secondary));
+  border-bottom: 2px solid rgba(var(--secondary), 0.33);
   outline: 0;
   background-color: transparent;
 }
 
 input::placeholder {
-  color: rgba(var(--secondary), 0.5);
+  color: rgba(var(--secondary), 0.33);
+}
+
+input:focus,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active,
+input:-webkit-autofill::first-line {
+  color: rgba(var(--secondary), 1);
+  -webkit-text-fill-color: rgba(var(--secondary), 1);
+  border-bottom: 2px solid rgba(var(--secondary), 1);
+  -webkit-box-shadow: 0px;
+  background-color: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+  font-size: 1.6vw;
+  font-family: "Fivo", sans-serif;
+  font-weight: 1000;
 }
 
 .btn {
@@ -454,76 +498,18 @@ input::placeholder {
   font-size: 1.6vw;
   font-family: "Fivo", sans-serif;
   font-weight: 1000;
-  background: transparent;
   outline: none;
-  color: transparent;
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
   pointer-events: all;
-  background-color: rgb(var(--tertiary));
+  color: rgb(var(--secondary));
+  background-color: rgb(var(--primary));
   text-transform: uppercase;
   border: 0;
   height: 8vh;
+  cursor: pointer;
 }
-
-.btn-bg-fixed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(var(--primary));
-  z-index: -5;
-}
-
-.btn::after {
-  content: attr(data-label);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: rgb(var(--secondary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  transition: all 0.5s;
-}
-
-.btn::before {
-  content: attr(data-label);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.btn:hover {
+  background-color: rgb(var(--secondary));
   color: rgb(var(--primary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  transition: all 0.5s;
-}
-
-.btn-bg-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background: rgb(var(--secondary));
-  z-index: -3;
-  transition: height 0.5s;
-}
-
-.btn:hover:after {
-  top: -100%;
-}
-
-.btn:hover:before {
-  top: 0;
 }
 
 section.carousel {

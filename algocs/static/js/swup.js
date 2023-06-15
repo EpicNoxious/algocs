@@ -195,7 +195,7 @@ document.addEventListener("swup:contentReplaced", () => {
   splideTransition();
   window.scrollTo(0, 0);
 });
-document.addEventListener("DOMContentLoaded", () => {
-  // Run the once transition on page refresh
-  revealTransition();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Run the once transition on page refresh
+//   revealTransition();
+// });

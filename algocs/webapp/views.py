@@ -1,9 +1,15 @@
 from django.shortcuts import render
-
+from .forms import EmailForm
 
 # index view
 def indexView(request):
-  context= {}
+  form = EmailForm()
+  if request.method == 'POST':
+    form = EmailForm(data=request.POST)
+    if form.is_valid():
+      print(form.data)
+      form.save()
+  context= {'form': form}
   return render(request, 'index.html', context)
 
 # about view

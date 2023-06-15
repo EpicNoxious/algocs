@@ -58,22 +58,6 @@ nav {
   }
 }
 
-.logo {
-  pointer-events: none;
-  height: 2.4vw;
-  overflow: hidden;
-  z-index: 10;
-  position: fixed;
-  top: 2vh;
-  transform: translate(-50%, 0);
-  left: 50%;
-  img {
-    // transform: translate(0, 20vh);
-    height: 2.4vw;
-    z-index: 100;
-  }
-}
-
 .nav-box {
   width: auto !important;
   height: auto !important;
@@ -95,4 +79,38 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.logo {
+  pointer-events: all;
+  height: 2.4vw;
+  overflow: hidden;
+  z-index: 10;
+  position: fixed;
+  top: 2vh;
+  transform: translate(-50%, 0);
+  left: 50%;
+  svg {
+    // transform: translate(0, 20vh);
+    height: 2.4vw;
+    z-index: 100;
+  }
+  &:hover svg path {
+    animation: colorCycle 1s forwards infinite;
+  }
+}
+
+@keyframes colorCycle {
+  0% {
+    fill: rgb(var(--primary));
+  }
+  33% {
+    fill: rgb(var(--secondary));
+  }
+  66% {
+    fill: rgb(var(--tertiary));
+  }
+  100% {
+    fill: rgb(var(--primary));
+  }
 }
