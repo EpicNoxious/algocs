@@ -27,8 +27,18 @@ section.splide {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none;
+  pointer-events: all;
   z-index: -1;
+  @include laptop {
+    width: 75%;
+  }
+  @include tab {
+    width: 66.67%;
+  }
+  @include phone {
+    display: none;
+    visibility: hidden;
+  }
   &.l {
     left: 0;
   }

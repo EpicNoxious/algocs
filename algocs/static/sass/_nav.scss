@@ -19,6 +19,21 @@ nav {
     justify-content: space-between;
     padding: 0 1vw;
     pointer-events: all;
+    height: 3vw !important;
+
+    @include bigtab {
+      height: 5vw !important;
+      width: 5vw;
+      margin-left: auto;
+      .nav-title {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .nav-cut {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
   }
   span {
     text-transform: uppercase;
@@ -40,14 +55,18 @@ nav {
     flex-direction: column;
     gap: 1vh;
     background-color: rgb(var(--background));
-
+    @include bigtab {
+      width: 15vw;
+      visibility: hidden;
+      opacity: 0;
+    }
     li {
       a {
         text-decoration: none;
         color: rgb(var(--primary));
         text-transform: uppercase;
-        font-size: 1000;
-        font-family: "Fivo", sans-serif;
+        font-weight: 1000;
+        font-family: "Vietnam", sans-serif;
         font-size: 1vw;
         &:hover {
           color: rgb(var(--tertiary));
@@ -61,11 +80,17 @@ nav {
 .nav-box {
   width: auto !important;
   height: auto !important;
+  &-container {
+    @include bigtab {
+      background-color: transparent !important;
+    }
+  }
 }
 
 .nav-toggle-container {
-  height: 3vw !important;
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     & + ul {
       border: 3px solid rgb(var(--secondary)) !important;
       border-top: 0px solid rgb(var(--secondary)) !important;
@@ -76,6 +101,9 @@ nav {
 .nav-title,
 .nav-cut {
   height: 3vw !important;
+  @include bigtab {
+    height: 5vw !important;
+  }
   display: flex;
   align-items: center;
   justify-content: center;

@@ -86,6 +86,26 @@ ul.transition {
 .toggle-container-clicked {
   height: 100% !important;
 }
+.nav-toggle-container-clicked {
+  height: 3vw !important;
+  @include bigtab {
+    height: 5vw !important;
+    width: 15vw !important;
+  }
+  width: 12vw !important;
+}
+.nav-title-clicked {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.nav-cut-clicked {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.nav-ul-clicked {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 .img-clicked {
   height: 0vh !important;
   padding: 0 !important;
@@ -120,6 +140,9 @@ ul.transition {
       align-items: center;
       justify-content: space-between;
       height: 15%;
+      @include bigtab {
+        height: 10%;
+      }
       pointer-events: all;
 
       &:hover {
@@ -161,6 +184,9 @@ ul.transition {
       align-items: center;
       justify-content: center;
       height: 15%;
+      @include bigtab {
+        height: 10%;
+      }
       color: rgb(var(--primary));
     }
     .img {
@@ -169,6 +195,10 @@ ul.transition {
       justify-content: center;
       padding-top: 40%;
       padding-bottom: 40%;
+      @include bigtab {
+        padding-top: 45%;
+        padding-bottom: 45%;
+      }
       position: relative;
       overflow: hidden;
       &-src {
@@ -270,4 +300,11 @@ ul.transition {
   text-transform: uppercase;
   opacity: 0.1;
   color: rgb(var(--primary));
+}
+
+canvas {
+  @include phone {
+    display: none;
+    visibility: hidden;
+  }
 }

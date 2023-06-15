@@ -47,3 +47,31 @@ main {
   z-index: 2;
   position: relative;
 }
+
+.null-display {
+  display: none;
+  @include noview {
+    background-color: rgb(var(--background));
+    position: fixed;
+    z-index: 10000000;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    h2 {
+      color: rgb(var(--tertiary));
+    }
+  }
+  @include phone {
+    display: none;
+  }
+}
+
+@include bigtab {
+  .tippy-content {
+    display: none;
+  }
+}

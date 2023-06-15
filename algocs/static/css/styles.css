@@ -51,6 +51,37 @@ main {
   position: relative;
 }
 
+.null-display {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .null-display {
+    background-color: rgb(var(--background));
+    position: fixed;
+    z-index: 10000000;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  .null-display h2 {
+    color: rgb(var(--tertiary));
+  }
+}
+@media screen and (max-width: 479px) {
+  .null-display {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .tippy-content {
+    display: none;
+  }
+}
 nav {
   position: fixed;
   top: 3vh;
@@ -73,6 +104,22 @@ nav .nav-toggle-container {
   justify-content: space-between;
   padding: 0 1vw;
   pointer-events: all;
+  height: 3vw !important;
+}
+@media screen and (max-width: 1100px) {
+  nav .nav-toggle-container {
+    height: 5vw !important;
+    width: 5vw;
+    margin-left: auto;
+  }
+  nav .nav-toggle-container .nav-title {
+    visibility: hidden;
+    opacity: 0;
+  }
+  nav .nav-toggle-container .nav-cut {
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 nav span {
   text-transform: uppercase;
@@ -95,6 +142,13 @@ nav ul {
   gap: 1vh;
   background-color: rgb(var(--background));
 }
+@media screen and (max-width: 1100px) {
+  nav ul {
+    width: 15vw;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
 nav ul li {
   pointer-events: all;
 }
@@ -102,8 +156,8 @@ nav ul li a {
   text-decoration: none;
   color: rgb(var(--primary));
   text-transform: uppercase;
-  font-size: 1000;
-  font-family: "Fivo", sans-serif;
+  font-weight: 1000;
+  font-family: "Vietnam", sans-serif;
   font-size: 1vw;
 }
 nav ul li a:hover {
@@ -114,11 +168,13 @@ nav ul li a:hover {
   width: auto !important;
   height: auto !important;
 }
-
-.nav-toggle-container {
-  height: 3vw !important;
+@media screen and (max-width: 1100px) {
+  .nav-box-container {
+    background-color: transparent !important;
+  }
 }
-.nav-toggle-container:hover + ul {
+
+.nav-toggle-container:hover + ul, .nav-toggle-container:focus + ul, .nav-toggle-container:active + ul {
   border: 3px solid rgb(var(--secondary)) !important;
   border-top: 0px solid rgb(var(--secondary)) !important;
 }
@@ -129,6 +185,12 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 1100px) {
+  .nav-title,
+  .nav-cut {
+    height: 5vw !important;
+  }
 }
 
 .logo {
@@ -207,6 +269,32 @@ ul.transition li {
   height: 100% !important;
 }
 
+.nav-toggle-container-clicked {
+  height: 3vw !important;
+  width: 12vw !important;
+}
+@media screen and (max-width: 1100px) {
+  .nav-toggle-container-clicked {
+    height: 5vw !important;
+    width: 15vw !important;
+  }
+}
+
+.nav-title-clicked {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.nav-cut-clicked {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.nav-ul-clicked {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 .img-clicked {
   height: 0vh !important;
   padding: 0 !important;
@@ -245,6 +333,11 @@ ul.transition li {
   height: 15%;
   pointer-events: all;
 }
+@media screen and (max-width: 1100px) {
+  .img-box-container .toggle-container {
+    height: 10%;
+  }
+}
 .img-box-container .toggle-container:hover {
   background-color: rgb(var(--secondary)) !important;
   color: rgb(var(--primary)) !important;
@@ -278,6 +371,11 @@ ul.transition li {
   height: 15%;
   color: rgb(var(--primary));
 }
+@media screen and (max-width: 1100px) {
+  .img-box-container .img-content {
+    height: 10%;
+  }
+}
 .img-box-container .img {
   display: flex;
   align-items: center;
@@ -287,6 +385,12 @@ ul.transition li {
   position: relative;
   overflow: hidden;
   color: rgb(var(--background));
+}
+@media screen and (max-width: 1100px) {
+  .img-box-container .img {
+    padding-top: 45%;
+    padding-bottom: 45%;
+  }
 }
 .img-box-container .img-src {
   padding-top: 50%;
@@ -377,6 +481,13 @@ ul.transition li {
   text-transform: uppercase;
   opacity: 0.1;
   color: rgb(var(--primary));
+}
+
+@media screen and (max-width: 479px) {
+  canvas {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 @font-face {
@@ -517,9 +628,8 @@ section.carousel {
   width: 100%;
   height: 100vh;
 }
-section.carousel object {
+section.carousel img {
   margin: auto 0;
-  height: 75%;
 }
 section.carousel ul {
   display: flex;
@@ -577,8 +687,24 @@ section.splide img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none;
+  pointer-events: all;
   z-index: -1;
+}
+@media screen and (max-width: 1280px) {
+  .cutout {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .cutout {
+    width: 66.67%;
+  }
+}
+@media screen and (max-width: 479px) {
+  .cutout {
+    display: none;
+    visibility: hidden;
+  }
 }
 .cutout.l {
   left: 0;
@@ -640,19 +766,23 @@ section.hero .check {
 }
 .color svg {
   position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
+  top: -1.5vw;
+  right: -1.5vw;
   height: 3.2vw;
   color: rgb(var(--tertiary));
   background-color: rgb(var(--background));
   border-radius: 100000px;
-  padding: 0.8rem;
+  padding: 0.9vw;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5;
   opacity: 0;
   pointer-events: all;
+}
+.color svg:focus {
+  border: 0px;
+  outline: 0px;
 }
 
 @keyframes rotate {
@@ -851,8 +981,8 @@ section.mail .picture-lib .img {
   width: 20vw;
 }
 section.mail .picture-lib .img img {
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 section.mail .picture-lib .mg-box:nth-of-type(1) {
   position: absolute;
