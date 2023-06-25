@@ -1,29 +1,55 @@
 <nav>
-  <!-- <div class="nav-toggle-container">
-    <span>dashboard</span>
-    <span>-</span>
-  </div>
-  <ul>
-    <li><a href="{% url 'index' %}">Home</a></li>
-    <li><a href="{% url 'partners' %}">Collab</a></li>
-    <li><a href="{% url 'gallery' %}">Gallery</a></li>
-    <li><a href="{% url 'about' %}">About</a></li>
-    <li><a href="{% url 'contact' %}">Contact</a></li>
-  </ul> -->
-  <div class="img-box nav-box hoverable" data-trailer-content="Click Me">
-    <div class="img-box-container nav-box-container">
-      <div class="toggle-container nav-toggle-container">
-        <div class="img-title nav-title">dashboard</div>
-        <div class="img-cut nav-cut">-</div>
+  <div class="nav-box">
+    <div class="nav-box-container">
+      <div
+        class="nav-toggle-container hoverable"
+        data-trailer-content="Click Me"
+      >
+        <div class="nav-title">dashboard</div>
+        <div class="nav-cut">-</div>
       </div>
-      <ul class="img nav-ul">
-        <li><a href="{% url 'index' %}">Home</a></li>
-        <li><a href="{% url 'partners' %}">Collab</a></li>
-        <li><a href="{% url 'gallery' %}">Gallery</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
+      <ul class="nav-ul">
+        <li>
+          <a
+            class="hoverable"
+            data-trailer-content="take me there"
+            href="{% url 'index' %}"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="hoverable"
+            data-trailer-content="take me there"
+            href="{% url 'partners' %}"
+            >Collab</a
+          >
+        </li>
+        <li>
+          <a
+            class="hoverable"
+            data-trailer-content="take me there"
+            href="{% url 'gallery' %}"
+            >Gallery</a
+          >
+        </li>
+        <li>
+          <a
+            class="hoverable"
+            data-trailer-content="take me there"
+            href="{% url 'about' %}"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            class="hoverable"
+            data-trailer-content="take me there"
+            href="{% url 'contact' %}"
+            >Contact</a
+          >
+        </li>
       </ul>
-      <div class="img-content" style="display: none"></div>
     </div>
   </div>
   <div class="logo">

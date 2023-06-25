@@ -10,8 +10,11 @@ section.footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  pointer-events: all;
+  margin-top: 3vh;
+
   .footer-left {
-    padding: 0 5vw;
+    padding: 5vw;
     width: 100%;
     height: 70%;
     display: flex;
@@ -50,6 +53,9 @@ section.footer {
         color: rgb(var(--primary));
         text-decoration: none;
         cursor: pointer;
+        @include bigtab {
+          font-size: 1.6vw;
+        }
         &:hover {
           color: rgb(var(--tertiary));
         }
@@ -79,6 +85,9 @@ section.footer {
       color: rgb(var(--primary));
       text-decoration: none;
       cursor: pointer;
+      @include bigtab {
+        font-size: 1.2vw;
+      }
       &:hover {
         color: rgb(var(--tertiary));
       }

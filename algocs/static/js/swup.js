@@ -2,6 +2,7 @@ import { resizeCanvas } from "./canvas.js";
 import { hoverGallery } from "./gallery.js";
 import { splideTransition } from "./splide.js";
 import { incrementZIndex } from "./zindex.js";
+import { navToggleFunctionality } from "./nav.js";
 import { cursorHover } from "./cursorhover.js";
 // Page reveal transition
 const revealTransition = () => {
@@ -148,11 +149,7 @@ const inTransition = () => {
 // Initialize Swup
 const swup = new Swup({
   containers: ["#swup"],
-  plugins: [
-    new SwupJsPlugin(pageTransition),
-    new SwupFormsPlugin(),
-    new SwupDebugPlugin(),
-  ],
+  plugins: [new SwupJsPlugin(pageTransition), new SwupFormsPlugin()],
 });
 
 // Preload Pages
@@ -183,6 +180,7 @@ resizeCanvas();
 hoverGallery();
 cursorHover();
 incrementZIndex();
+navToggleFunctionality();
 splideTransition();
 
 // On Swup content replace
@@ -192,6 +190,7 @@ document.addEventListener("swup:contentReplaced", () => {
   hoverGallery();
   cursorHover();
   incrementZIndex();
+  navToggleFunctionality();
   splideTransition();
   window.scrollTo(0, 0);
 });

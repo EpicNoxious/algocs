@@ -1,43 +1,3 @@
-// .......................tiles
-// .......................tiles
-// .......................tiles
-// .......................tiles
-// .......................tiles
-
-.tile:hover {
-  stroke: rgba(23, 31, 230, 1);
-}
-
-// #tile-container {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   align-items: center;
-//   overflow: hidden;
-
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-// }
-// .tile {
-//   flex-shrink: 0;
-//   box-sizing: border-box;
-//   border: 1px solid rgba(var(--secondary), 0.03);
-
-//   background-color: rgb(var(--background));
-//   width: var(--tile-size);
-//   height: var(--tile-size);
-//   transition: border 20ms ease-in-out;
-//   &:hover {
-//     border: 1px solid rgba(var(--secondary), 1);
-//   }
-//   &:not(:hover) {
-//     transition-delay: 700ms;
-//     transition-timing-function: ease-in-out;
-//   }
-// }
 canvas {
   position: absolute;
   top: 0;
@@ -81,31 +41,12 @@ ul.transition {
   height: 6vh !important;
 }
 .img-box-container-clicked {
-  height: 100% !important;
+  height: auto !important;
 }
 .toggle-container-clicked {
-  height: 100% !important;
+  height: 7.5vh !important;
 }
-.nav-toggle-container-clicked {
-  height: 3vw !important;
-  @include bigtab {
-    height: 5vw !important;
-    width: 15vw !important;
-  }
-  width: 12vw !important;
-}
-.nav-title-clicked {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-.nav-cut-clicked {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-.nav-ul-clicked {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
+
 .img-clicked {
   height: 0vh !important;
   padding: 0 !important;
@@ -114,11 +55,37 @@ ul.transition {
   height: 0vh !important;
   display: none;
 }
+
+.nav-toggle-container-clicked {
+  height: 7.5vh !important;
+  @include bigtab {
+    width: 20vw !important;
+    &::after {
+      content: "" !important;
+    }
+    & > .nav-title {
+      display: flex !important;
+      margin: 0 auto;
+    }
+  }
+}
+
+.nav-ul-clicked {
+  visibility: hidden;
+  opacity: 0;
+  @include bigtab {
+    visibility: visible;
+    opacity: 1;
+    display: flex !important;
+  }
+}
 .img-box {
   width: 20vw;
   height: 50vh;
   pointer-events: all !important;
-
+  @include bigtab {
+    width: 30vw;
+  }
   &-container {
     display: flex;
     align-items: stretch;
@@ -139,10 +106,7 @@ ul.transition {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 15%;
-      @include bigtab {
-        height: 10%;
-      }
+      height: 7.5vh;
       pointer-events: all;
 
       &:hover {
@@ -152,14 +116,18 @@ ul.transition {
 
       .img-cut {
         margin: 0vh 1vh;
-        // height: 100%;
+        @include bigtab {
+          font-size: 2vw;
+        }
       }
       .img-title {
         font-size: 1vw;
         font-weight: 1000;
         margin: 0vh 1vh;
         background-color: transparent;
-        // height: 100%;
+        @include bigtab {
+          font-size: 2vw;
+        }
       }
     }
     .toggle-container-clicked + .img {
@@ -183,24 +151,20 @@ ul.transition {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 15%;
-      @include bigtab {
-        height: 10%;
-      }
+      height: 7.5vh;
       color: rgb(var(--primary));
+      @include bigtab {
+        font-size: 2vw;
+      }
     }
     .img {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 40%;
-      padding-bottom: 40%;
-      @include bigtab {
-        padding-top: 45%;
-        padding-bottom: 45%;
-      }
+      height: 35vh;
       position: relative;
       overflow: hidden;
+
       &-src {
         padding-top: 50%;
         padding-bottom: 50%;
@@ -301,7 +265,6 @@ ul.transition {
   opacity: 0.1;
   color: rgb(var(--primary));
 }
-
 canvas {
   @include phone {
     display: none;

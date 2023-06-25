@@ -57,6 +57,9 @@ section.hero {
     top: -1.5vw;
     right: -1.5vw;
     height: 3.2vw;
+    @include bigtab {
+      height: 4vw;
+    }
     color: rgb(var(--tertiary));
     background-color: rgb(var(--background));
     border-radius: 100000px;
@@ -114,13 +117,16 @@ section.sessions {
   position: relative;
   padding: 5vw;
   height: 400vh;
+
   .img-box {
     position: absolute;
-    top: 0%;
+    top: calc(-3% + 3vh);
     left: 27.5%;
     bottom: 0%;
     pointer-events: all;
-
+    @include bigtab {
+      left: 22.25%;
+    }
     &:nth-of-type(1) {
       transform: translate(-10vw, 25vh);
       z-index: 2;
@@ -183,10 +189,13 @@ section.metrics {
   padding: 5vw;
   width: 100%;
   position: relative;
-
+  pointer-events: all;
+  h2 {
+    width: 70%;
+  }
   .subhead {
-    margin-top: 5vh;
-    width: 50%;
+    margin-top: 3vh;
+    width: 70%;
     text-align: justify;
   }
   .metrics-content {
@@ -197,6 +206,7 @@ section.metrics {
     align-items: center;
     justify-content: space-between;
     gap: 5%;
+
     &--left {
       display: flex;
       align-items: flex-start;
@@ -207,17 +217,26 @@ section.metrics {
         color: rgb(var(--secondary));
         font-size: 1.2vw;
         font-family: "Fivo", sans-serif;
+        @include bigtab {
+          font-size: 1.6vw;
+        }
       }
       .metrics-number {
         color: rgb(var(--tertiary));
         font-size: 2.4vw;
         font-family: "Fivo", sans-serif;
+        @include bigtab {
+          font-size: 2.8vw;
+        }
       }
       .metrics-title {
         font-size: 2.4vw;
         font-family: "Fivo", sans-serif;
         text-transform: capitalize;
         color: rgb(var(--primary));
+        @include bigtab {
+          font-size: 2.8vw;
+        }
       }
     }
     &--right {
@@ -227,6 +246,9 @@ section.metrics {
       height: 20vh;
       font-size: 1.2vw;
       text-align: justify;
+      @include bigtab {
+        font-size: 1.6vw;
+      }
     }
   }
 }
@@ -251,6 +273,7 @@ section.mail {
     align-items: center;
     justify-content: center;
     flex: auto;
+    margin-top: 3vh;
     &--left {
       display: flex;
       align-items: flex-start;
@@ -263,7 +286,7 @@ section.mail {
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        margin-top: 5vh;
+        margin-top: 3vh;
       }
     }
     &--right {
@@ -275,7 +298,6 @@ section.mail {
     width: 50%;
     margin: auto;
     position: relative;
-    pointer-events: all;
 
     .img {
       height: 50vh;
@@ -289,19 +311,19 @@ section.mail {
       position: absolute;
       top: 0;
       left: 0;
-      transform: rotate(7deg) translate(-0%, -50%);
+      transform: rotate(7deg) translate(-0%, calc(-50% - 5vw));
     }
     .mg-box:nth-of-type(2) {
       position: absolute;
       top: 0;
       left: 0;
-      transform: rotate(-7deg) translate(-0%, -50%);
+      transform: rotate(-7deg) translate(-0%, calc(-50% - 5vw));
     }
     .mg-box:nth-of-type(3) {
       position: absolute;
       top: 0;
       left: 0;
-      transform: rotate(0deg) translate(-0%, -50%);
+      transform: rotate(0deg) translate(-0%, calc(-50% - 5vw));
     }
   }
 }

@@ -19,7 +19,6 @@ section.splide {
 
   img {
     margin: auto 0;
-    height: 75%;
   }
 }
 
@@ -27,13 +26,11 @@ section.splide {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: all;
+  pointer-events: none;
   z-index: -1;
   @include laptop {
-    width: 75%;
   }
   @include tab {
-    width: 66.67%;
   }
   @include phone {
     display: none;

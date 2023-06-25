@@ -20,18 +20,24 @@ nav {
     padding: 0 1vw;
     pointer-events: all;
     height: 3vw !important;
-
     @include bigtab {
       height: 5vw !important;
       width: 5vw;
       margin-left: auto;
-      .nav-title {
-        visibility: hidden;
-        opacity: 0;
+      position: relative;
+      &::after {
+        content: "=";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(var(--background));
+        font-size: 4vw;
+        font-weight: 1000;
+        font-family: "Fivo", sans-serif;
       }
-      .nav-cut {
-        visibility: hidden;
-        opacity: 0;
+      & > * {
+        display: none;
       }
     }
   }
@@ -56,9 +62,12 @@ nav {
     gap: 1vh;
     background-color: rgb(var(--background));
     @include bigtab {
-      width: 15vw;
-      visibility: hidden;
-      opacity: 0;
+      display: none;
+      width: 20vw;
+      padding: 1.6vw 1.6vw 2.4vw 1.6vw !important;
+    }
+    @include phone {
+      width: 40vw;
     }
     li {
       a {
@@ -70,6 +79,9 @@ nav {
         font-size: 1vw;
         &:hover {
           color: rgb(var(--tertiary));
+        }
+        @include bigtab {
+          font-size: 2vw;
         }
       }
       pointer-events: all;
@@ -87,26 +99,20 @@ nav {
   }
 }
 
-.nav-toggle-container {
-  &:hover,
-  &:focus,
-  &:active {
-    & + ul {
-      border: 3px solid rgb(var(--secondary)) !important;
-      border-top: 0px solid rgb(var(--secondary)) !important;
-    }
-  }
-}
-
 .nav-title,
 .nav-cut {
   height: 3vw !important;
-  @include bigtab {
-    height: 5vw !important;
-  }
+  font-size: 1vw;
+  font-weight: 1000;
+  font-family: "Fivo", sans-serif;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include bigtab {
+    height: 5vw !important;
+    font-size: 2vw;
+  }
 }
 
 .logo {
@@ -118,12 +124,19 @@ nav {
   top: 2vh;
   transform: translate(-50%, 0);
   left: 50%;
+  @include bigtab {
+    height: 4vw;
+  }
   svg {
     // transform: translate(0, 20vh);
     height: 2.4vw;
+    @include bigtab {
+      height: 4vw;
+    }
     z-index: 100;
   }
-  &:hover svg path {
+  &:hover svg path,
+  &:focus svg path {
     animation: colorCycle 1s forwards infinite;
   }
 }
