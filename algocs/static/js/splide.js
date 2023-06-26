@@ -163,7 +163,7 @@ export function splideTransition() {
       type: "loop",
       drag: false,
       autoWidth: true,
-      gap: 80,
+      gap: 100,
       pagination: false,
       arrows: false,
       autoScroll: {

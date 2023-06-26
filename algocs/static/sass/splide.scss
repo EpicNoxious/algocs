@@ -6,19 +6,28 @@ section.splide {
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  @include phone {
+    height: 75vh;
+  }
   .splide__track {
     ul {
       li {
-        font-size: 16vw;
+        font-size: 14vw;
         text-transform: uppercase;
         font-weight: 1000;
         font-family: "Fivo", sans-serif;
+        @include phone {
+          font-size: 18vw;
+        }
       }
     }
   }
 
   img {
     margin: auto 0;
+    @include phone {
+      width: 100%;
+    }
   }
 }
 
@@ -33,8 +42,8 @@ section.splide {
   @include tab {
   }
   @include phone {
-    display: none;
-    visibility: hidden;
+    // display: none;
+    // visibility: hidden;
   }
   &.l {
     left: 0;

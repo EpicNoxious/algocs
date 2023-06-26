@@ -43,7 +43,7 @@ body::-webkit-scrollbar {
 }
 
 main {
-  pointer-events: none;
+  pointer-events: all;
   z-index: 2;
   position: relative;
 }
@@ -70,7 +70,7 @@ main {
   }
 }
 
-@include bigtab {
+@include tab {
   .tippy-content {
     display: none;
   }

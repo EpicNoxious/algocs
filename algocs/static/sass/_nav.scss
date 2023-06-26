@@ -10,6 +10,7 @@ nav {
   flex-direction: column;
   width: auto;
   pointer-events: all;
+
   .nav-toggle-container {
     width: 12vw;
     color: rgb(var(--background));
@@ -40,6 +41,13 @@ nav {
         display: none;
       }
     }
+    @include phone {
+      height: 8vw !important;
+      width: 8vw;
+      &::after {
+        font-size: 5.6vw;
+      }
+    }
   }
   span {
     text-transform: uppercase;
@@ -68,6 +76,7 @@ nav {
     }
     @include phone {
       width: 40vw;
+      padding: 3.2vw !important;
     }
     li {
       a {
@@ -83,6 +92,9 @@ nav {
         @include bigtab {
           font-size: 2vw;
         }
+        @include phone {
+          font-size: 4vw;
+        }
       }
       pointer-events: all;
     }
@@ -92,6 +104,8 @@ nav {
 .nav-box {
   width: auto !important;
   height: auto !important;
+  position: relative;
+  z-index: 1000;
   &-container {
     @include bigtab {
       background-color: transparent !important;
@@ -113,6 +127,9 @@ nav {
     height: 5vw !important;
     font-size: 2vw;
   }
+  @include phone {
+    font-size: 4vw;
+  }
 }
 
 .logo {
@@ -127,11 +144,18 @@ nav {
   @include bigtab {
     height: 4vw;
   }
+  @include phone {
+    height: 6vw;
+  }
   svg {
     // transform: translate(0, 20vh);
     height: 2.4vw;
+    width: 100%;
     @include bigtab {
       height: 4vw;
+    }
+    @include phone {
+      height: 6vw;
     }
     z-index: 100;
   }

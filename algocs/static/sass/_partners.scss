@@ -7,6 +7,7 @@ section.recent-collab {
   position: relative;
   padding: 5vw;
   gap: 10vh;
+  pointer-events: all;
 
   .collab-container {
     height: 50vh;
@@ -14,25 +15,54 @@ section.recent-collab {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: row;
+    flex-wrap: wrap;
     padding: 0 5vw;
+    @include bigtab {
+      padding: 0;
+    }
+    @include phone {
+      flex-direction: column;
+    }
     .collab-text {
       width: 50%;
       text-align: justify;
+
+      @include phone {
+        margin-top: auto;
+        width: 100%;
+        height: 15vh;
+      }
     }
     .collab-img {
       pointer-events: all;
+      @include phone {
+        width: 100%;
+        .img-box {
+          width: calc(100% - 10vw);
+        }
+      }
     }
 
     &:nth-of-type(1) {
       .collab-img {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 0%;
         transform: translate(15vw, 10vh);
+        @include bigtab {
+          left: -10%;
+          // transform: translate(0vw, 10vh);
+        }
+        @include phone {
+          left: 0%;
+          transform: translate(5vw, 0vh);
+        }
       }
       .collab-text {
         margin-left: 35%;
+        @include bigtab {
+          margin-left: auto;
+        }
       }
     }
     &:nth-of-type(2) {
@@ -41,20 +71,37 @@ section.recent-collab {
         top: 0;
         left: 0;
         transform: translate(65vw, 70vh);
+        @include phone {
+          left: 0%;
+          transform: translate(5vw, 60vh);
+        }
       }
       .collab-text {
         margin-right: 35%;
+        @include bigtab {
+          margin-right: auto;
+        }
       }
     }
     &:nth-of-type(3) {
       .collab-img {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 0%;
+        left: 0%;
         transform: translate(15vw, 130vh);
+        @include bigtab {
+          left: -10%;
+        }
+        @include phone {
+          left: 0%;
+          transform: translate(5vw, 120vh);
+        }
       }
       .collab-text {
         margin-left: 35%;
+        @include bigtab {
+          margin-left: auto;
+        }
       }
     }
     &:nth-of-type(4) {
@@ -63,9 +110,16 @@ section.recent-collab {
         top: 0;
         left: 0;
         transform: translate(65vw, 190vh);
+        @include phone {
+          left: 0%;
+          transform: translate(5vw, 180vh);
+        }
       }
       .collab-text {
         margin-right: 35%;
+        @include bigtab {
+          margin-right: auto;
+        }
       }
     }
   }
@@ -84,6 +138,9 @@ section.stats {
     position: relative;
     pointer-events: all;
     padding: 2vh 0;
+    @include phone {
+      padding: 1vh 0;
+    }
     .stats-strip {
       width: 100%;
     }
@@ -110,6 +167,12 @@ section.stats {
         white-space: nowrap;
         animation: stripscroll 12s linear infinite;
         width: calc((25vw) * 8);
+        @include bigtab {
+          width: calc((30vw) * 8);
+        }
+        @include phone {
+          width: calc((35vw) * 8);
+        }
         li {
           font-size: 2.4vw;
           list-style: none;
@@ -121,6 +184,14 @@ section.stats {
           display: flex;
           align-items: center;
           justify-content: center;
+          @include bigtab {
+            width: 30vw;
+            font-size: 3vw;
+          }
+          @include bigtab {
+            width: 35vw;
+            font-size: 4vw;
+          }
         }
       }
     }
@@ -134,15 +205,23 @@ section.stats {
     transform: translateX(calc(-25vw) * 4);
   }
 }
-
-// //   border: 1px solid pink;
-// width: 100%;
-// display: flex;
-// align-items: center;
-// justify-content: space-between;
-// color: rgb(var(--tertiary));
-// white-space: nowrap;
-// //   overflow-x: hidden;
-// //   animation: scroll 2s linear infinite;
-// // width: calc((50vw) * 8);
-//
+@include bigtab {
+  @keyframes stripscroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-30vw) * 4);
+    }
+  }
+}
+@include phone {
+  @keyframes stripscroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-35vw) * 4);
+    }
+  }
+}

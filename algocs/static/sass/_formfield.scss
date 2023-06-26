@@ -4,6 +4,9 @@ input {
   font-family: "Fivo", sans-serif;
   font-weight: 1000;
   cursor: text;
+  @include phone {
+    font-size: 3.2vw;
+  }
 }
 input[type="email"],
 input[type="text"] {
@@ -14,6 +17,10 @@ input[type="text"] {
   border-bottom: 2px solid rgba(var(--secondary), 0.33);
   outline: 0;
   background-color: transparent;
+  @include phone {
+    height: 5vh;
+    width: 75%;
+  }
 }
 input::placeholder {
   color: rgba(var(--secondary), 0.33);
@@ -41,6 +48,9 @@ input:-webkit-autofill::first-line {
   font-size: 1.6vw;
   font-family: "Fivo", sans-serif;
   font-weight: 1000;
+  @include phone {
+    font-size: 3.2vw;
+  }
 }
 
 .btn {
@@ -56,6 +66,10 @@ input:-webkit-autofill::first-line {
   border: 0;
   height: 8vh;
   cursor: pointer;
+  @include phone {
+    height: 5vh;
+    font-size: 3.2vw;
+  }
   &:hover {
     background-color: rgb(var(--secondary));
     color: rgb(var(--primary));

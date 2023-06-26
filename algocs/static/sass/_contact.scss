@@ -2,6 +2,12 @@ section.contact {
   height: 100vh;
   width: 100%;
   position: relative;
+  pointer-events: all;
+  img {
+    @include phone {
+      width: 100%;
+    }
+  }
   .contact-container {
     width: 66.67%;
     margin-left: 33.33%;
@@ -15,13 +21,29 @@ section.contact {
       width: 66.67%;
       margin-left: 30%;
     }
+    @include phone {
+      width: 100%;
+      margin-left: 0%;
+      flex-direction: column;
+      height: 100%;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 10vh;
+      padding: 5vw;
+    }
   }
   .contact-text-container {
+    @include phone {
+      margin-top: 1vh;
+    }
     p {
       text-transform: uppercase !important;
       font-size: 0.8vw !important;
       @include bigtab {
         font-size: 1.6vw !important;
+      }
+      @include phone {
+        font-size: 3.2vw !important;
       }
     }
     font-weight: 1000;
@@ -36,12 +58,18 @@ section.contact {
     @include bigtab {
       height: 15vh;
     }
+    @include phone {
+      height: auto;
+    }
     .contact-number {
       color: rgb(var(--tertiary));
       font-size: 1.2vw;
       font-family: "Fivo", sans-serif;
       @include bigtab {
         font-size: 2vw;
+      }
+      @include phone {
+        font-size: 3.2vw;
       }
     }
     .contact-head {
@@ -51,6 +79,9 @@ section.contact {
       color: rgb(var(--primary));
       @include bigtab {
         font-size: 3.2vw;
+      }
+      @include phone {
+        font-size: 4vw;
       }
     }
     .contact-text {

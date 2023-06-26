@@ -14,6 +14,9 @@ h1 {
   @include bigtab {
     font-size: 10.4vw;
   }
+  @include phone {
+    font-size: 14vw;
+  }
 }
 
 h2 {
@@ -23,6 +26,9 @@ h2 {
   text-transform: uppercase;
   @include bigtab {
     font-size: 5.6vw;
+  }
+  @include phone {
+    font-size: 6.4vw;
   }
 }
 
@@ -34,6 +40,9 @@ h3 {
   @include bigtab {
     font-size: 3.2vw;
   }
+  @include phone {
+    font-size: 4vw;
+  }
 }
 h4 {
   color: rgb(var(--secondary));
@@ -44,12 +53,18 @@ h4 {
   @include bigtab {
     font-size: 2.4vw;
   }
+  @include phone {
+    font-size: 3.2vw;
+  }
 }
 p {
   font-family: "Vietnam";
   font-size: 1.4vw;
   @include bigtab {
     font-size: 1.6vw;
+  }
+  @include phone {
+    font-size: 3.2vw;
   }
 }
 
@@ -71,5 +86,8 @@ h6 {
   font-size: 1.2vw;
   @include bigtab {
     font-size: 2vw;
+  }
+  @include phone {
+    font-size: 3.2vw;
   }
 }

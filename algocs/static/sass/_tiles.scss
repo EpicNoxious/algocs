@@ -45,6 +45,9 @@ ul.transition {
 }
 .toggle-container-clicked {
   height: 7.5vh !important;
+  @include phone {
+    height: 5.25vh !important;
+  }
 }
 
 .img-clicked {
@@ -68,6 +71,9 @@ ul.transition {
       margin: 0 auto;
     }
   }
+  @include phone {
+    width: 40vw !important;
+  }
 }
 
 .nav-ul-clicked {
@@ -85,6 +91,10 @@ ul.transition {
   pointer-events: all !important;
   @include bigtab {
     width: 30vw;
+  }
+  @include phone {
+    width: 40vw;
+    height: 35vh;
   }
   &-container {
     display: flex;
@@ -108,7 +118,9 @@ ul.transition {
       justify-content: space-between;
       height: 7.5vh;
       pointer-events: all;
-
+      @include phone {
+        height: 5.25vh;
+      }
       &:hover {
         background-color: rgb(var(--secondary)) !important;
         color: rgb(var(--primary)) !important;
@@ -156,12 +168,18 @@ ul.transition {
       @include bigtab {
         font-size: 2vw;
       }
+      @include phone {
+        height: 5.25vh;
+      }
     }
     .img {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 35vh;
+      @include phone {
+        height: 24.5vh;
+      }
       position: relative;
       overflow: hidden;
 
@@ -171,6 +189,7 @@ ul.transition {
       }
       img {
         width: 100%;
+        height: 100%;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);

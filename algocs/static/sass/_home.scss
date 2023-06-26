@@ -11,6 +11,9 @@ section.hero {
   padding: 5vw;
   & > h4 {
     margin-top: 20vh;
+    @include phone {
+      margin-top: 25vh;
+    }
   }
   .overflow {
     overflow: hidden;
@@ -59,6 +62,10 @@ section.hero {
     height: 3.2vw;
     @include bigtab {
       height: 4vw;
+    }
+    @include phone {
+      height: 5.6vw;
+      padding: 1.2vw;
     }
     color: rgb(var(--tertiary));
     background-color: rgb(var(--background));
@@ -117,67 +124,117 @@ section.sessions {
   position: relative;
   padding: 5vw;
   height: 400vh;
+  @include bigtab {
+    height: 375vh;
+  }
+  @include phone {
+    height: 180vh;
+  }
 
   .img-box {
     position: absolute;
-    top: calc(-3% + 3vh);
+    top: calc(0% + 3vh);
     left: 27.5%;
     bottom: 0%;
     pointer-events: all;
     @include bigtab {
       left: 22.25%;
+      top: calc(-3% + 3vh);
+    }
+    @include phone {
+      left: 17.5%;
+      top: calc(-10% + 1vh);
     }
     &:nth-of-type(1) {
       transform: translate(-10vw, 25vh);
       z-index: 2;
+      @include phone {
+        transform: translate(-10vw, 25vh);
+      }
     }
     &:nth-of-type(2) {
       transform: translate(5vw, 50vh);
       z-index: 3;
+      @include phone {
+        transform: translate(5vw, 35vh);
+      }
     }
     &:nth-of-type(3) {
       transform: translate(20vw, 75vh);
       z-index: 4;
+      @include phone {
+        transform: translate(20vw, 45vh);
+      }
     }
     &:nth-of-type(4) {
       transform: translate(35vw, 100vh);
       z-index: 5;
+      @include phone {
+        transform: translate(35vw, 55vh);
+      }
     }
     &:nth-of-type(5) {
       transform: translate(20vw, 125vh);
       z-index: 5;
+      @include phone {
+        transform: translate(20vw, 65vh);
+      }
     }
     &:nth-of-type(6) {
       transform: translate(5vw, 150vh);
       z-index: 5;
+      @include phone {
+        transform: translate(5vw, 75vh);
+      }
     }
     &:nth-of-type(7) {
       transform: translate(-10vw, 175vh);
       z-index: 5;
+      @include phone {
+        transform: translate(-10vw, 85vh);
+      }
     }
     &:nth-of-type(8) {
       transform: translate(5vw, 200vh);
       z-index: 5;
+      @include phone {
+        transform: translate(5vw, 95vh);
+      }
     }
     &:nth-of-type(9) {
       transform: translate(20vw, 225vh);
       z-index: 5;
+      @include phone {
+        transform: translate(20vw, 105vh);
+      }
     }
     &:nth-of-type(10) {
       transform: translate(35vw, 250vh);
       z-index: 5;
+      @include phone {
+        transform: translate(35vw, 115vh);
+      }
     }
     &:nth-of-type(11) {
       transform: translate(20vw, 275vh);
       z-index: 5;
+      @include phone {
+        transform: translate(20vw, 125vh);
+      }
     }
     &:nth-of-type(12) {
       transform: translate(5vw, 300vh);
       z-index: 5;
+      @include phone {
+        transform: translate(5vw, 135vh);
+      }
     }
     &:nth-of-type(13) {
       transform: translate(-10vw, 325vh);
       z-index: 5;
+      @include phone {
+        transform: translate(-10vw, 145vh);
+      }
     }
   }
 }
@@ -192,11 +249,18 @@ section.metrics {
   pointer-events: all;
   h2 {
     width: 70%;
+    @include phone {
+      width: 80%;
+    }
   }
   .subhead {
     margin-top: 3vh;
     width: 70%;
     text-align: justify;
+    @include phone {
+      width: 80%;
+      margin-top: 1vh;
+    }
   }
   .metrics-content {
     display: flex;
@@ -206,6 +270,10 @@ section.metrics {
     align-items: center;
     justify-content: space-between;
     gap: 5%;
+    @include phone {
+      width: 100%;
+      gap: 5%;
+    }
 
     &--left {
       display: flex;
@@ -213,12 +281,21 @@ section.metrics {
       justify-content: center;
       flex-direction: column;
       height: 20vh;
+      @include phone {
+        height: 15vh;
+        width: 25%;
+        justify-content: flex-start;
+      }
+
       .number {
         color: rgb(var(--secondary));
         font-size: 1.2vw;
         font-family: "Fivo", sans-serif;
         @include bigtab {
           font-size: 1.6vw;
+        }
+        @include phone {
+          font-size: 3.2vw;
         }
       }
       .metrics-number {
@@ -228,6 +305,9 @@ section.metrics {
         @include bigtab {
           font-size: 2.8vw;
         }
+        @include phone {
+          font-size: 4.8vw;
+        }
       }
       .metrics-title {
         font-size: 2.4vw;
@@ -236,6 +316,9 @@ section.metrics {
         color: rgb(var(--primary));
         @include bigtab {
           font-size: 2.8vw;
+        }
+        @include phone {
+          font-size: 4.8vw;
         }
       }
     }
@@ -248,6 +331,12 @@ section.metrics {
       text-align: justify;
       @include bigtab {
         font-size: 1.6vw;
+      }
+      @include phone {
+        height: 15vh;
+        align-items: flex-start;
+        font-size: 3.2vw;
+        width: 75%;
       }
     }
   }
@@ -263,7 +352,6 @@ section.mail {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-
   .subhead {
     width: 100%;
     text-align: justify;
@@ -273,7 +361,12 @@ section.mail {
     align-items: center;
     justify-content: center;
     flex: auto;
+    flex-wrap: wrap;
     margin-top: 3vh;
+    @include phone {
+      margin-top: 1vh;
+      flex-direction: column;
+    }
     &--left {
       display: flex;
       align-items: flex-start;
@@ -281,16 +374,25 @@ section.mail {
       flex-direction: column;
       height: 100%;
       width: 50%;
+      @include phone {
+        width: 100%;
+      }
       .mail-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
         margin-top: 3vh;
+        @include phone {
+          margin-top: 3vh;
+        }
       }
     }
     &--right {
       width: 50%;
+      @include phone {
+        width: 100%;
+      }
     }
   }
 
@@ -298,10 +400,21 @@ section.mail {
     width: 50%;
     margin: auto;
     position: relative;
-
+    pointer-events: all;
+    @include phone {
+      display: none;
+    }
     .img {
       height: 50vh;
       width: 20vw;
+      @include bigtab {
+        height: 35vh;
+        width: 30vw;
+      }
+      @include phone {
+        height: 35vh;
+        width: 40vw;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -312,12 +425,18 @@ section.mail {
       top: 0;
       left: 0;
       transform: rotate(7deg) translate(-0%, calc(-50% - 5vw));
+      @include bigtab {
+        transform: rotate(5deg) translate(-0%, calc(-50% - 5vw));
+      }
     }
     .mg-box:nth-of-type(2) {
       position: absolute;
       top: 0;
       left: 0;
       transform: rotate(-7deg) translate(-0%, calc(-50% - 5vw));
+      @include bigtab {
+        transform: rotate(-5deg) translate(-0%, calc(-50% - 5vw));
+      }
     }
     .mg-box:nth-of-type(3) {
       position: absolute;
