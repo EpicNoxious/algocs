@@ -247,10 +247,13 @@ ul.transition {
   outline: none;
   font-weight: 1000;
   text-transform: uppercase;
-  font-size: 3.2vw;
+  font-size: 4vw;
   cursor: pointer !important;
   font-family: "Fivo Sans Modern";
   pointer-events: all;
+  @include bigtab {
+    font-size: 6vw;
+  }
 }
 
 .text-container {
@@ -277,16 +280,29 @@ ul.transition {
   justify-content: space-between;
   cursor: default;
   z-index: 210;
+  @include bigtab {
+    line-height: 0;
+  }
 }
 
 .text {
   width: 300%;
   font-family: "Fivo Sans Modern";
-  font-size: 3.5vw;
+  font-size: 4vw;
   text-transform: uppercase;
   opacity: 0.1;
+  overflow: visible;
+  white-space: nowrap;
   color: rgb(var(--primary));
+  @include tab {
+    font-size: 6vw;
+  }
+  @include phone {
+    font-size: 14vw;
+  }
 }
+//
+
 canvas {
   @include phone {
     display: none;

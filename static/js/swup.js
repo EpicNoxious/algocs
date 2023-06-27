@@ -22,8 +22,8 @@ const revealTransition = () => {
     });
 
     gsap.to(".text-wrapper", 3, {
-      y: -400,
-      scale: 4.5,
+      y: -600,
+      scale: 3,
       rotate: -90,
       ease: Expo.easeInOut,
       delay: 1.5,
@@ -36,7 +36,7 @@ const revealTransition = () => {
     });
 
     gsap.to(".text-wrapper > div", 4, {
-      x: "-4000",
+      x: "-6000",
       ease: Expo.easeInOut,
       delay: 3.5,
       stagger: 0.05,
@@ -192,5 +192,11 @@ document.addEventListener("swup:contentReplaced", () => {
   incrementZIndex();
   navToggleFunctionality();
   splideTransition();
+  window.scrollTo(0, 0);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Run the once transition on page refresh
+  revealTransition();
   window.scrollTo(0, 0);
 });
