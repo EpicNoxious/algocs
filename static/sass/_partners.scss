@@ -7,7 +7,6 @@ section.recent-collab {
   position: relative;
   padding: 5vw;
   gap: 10vh;
-  pointer-events: all;
 
   .collab-container {
     height: 50vh;
@@ -38,7 +37,6 @@ section.recent-collab {
       }
     }
     .collab-img {
-      pointer-events: all;
       @include phone {
         width: 100%;
         .img-box {

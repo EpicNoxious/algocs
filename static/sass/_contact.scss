@@ -87,6 +87,10 @@ section.contact {
     .contact-text {
       pointer-events: all;
       text-transform: capitalize;
+      a {
+        color: rgb(var(--primary));
+        text-decoration: none;
+      }
       &:hover {
         color: rgb(var(--tertiary));
       }

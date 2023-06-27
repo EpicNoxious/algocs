@@ -10,7 +10,6 @@ class EmailForm(ModelForm):
     super(EmailForm, self).__init__(*args, **kwargs)
     self.fields['email'].widget.attrs['class'] = 'input--email'
     self.fields['email'].widget.attrs['autocomplete'] = 'false'
-    self.fields['email'].widget.attrs['name'] = 'hidden'
     self.fields['email'].widget.attrs['placeholder'] = 'your.mail@email.com'
     
     for name, field in self.fields.items():

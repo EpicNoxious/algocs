@@ -1,4 +1,10 @@
-{% extends 'main.html' %} {% load static %} {% block content %}
+{% extends 'main.html' %} {% load static %}
+
+<!-- title of the page -->
+{% block title %} Let's Connect {% endblock %}
+<!--  -->
+
+{% block content %}
 
 <!-- main with sections-->
 <main>
@@ -25,13 +31,13 @@
             class="contact-text hoverable"
             data-trailer-content="anmol.wri@gmail.com"
           >
-            general
+            <a href="mailto:anmol.wri@gmail.com">General</a>
           </p>
           <p
             class="contact-text hoverable"
-            data-trailer-content="+91 9999040232"
+            data-trailer-content="+91 84473 64970"
           >
-            talk
+            <a href="tel:+918447364970">Talk</a>
           </p>
         </div>
       </div>
@@ -41,14 +47,29 @@
           <div class="contact-head">follow us</div>
         </div>
         <div class="contact-text-container">
-          <p class="contact-text follow hoverable" data-trailer-content="">
-            linkedin
+          <p
+            class="contact-text follow hoverable"
+            data-trailer-content="@anmol-wadhwa"
+          >
+            <a target="_blank" href="https://www.linkedin.com/in/anmol-wadhwa/"
+              >Linkedin</a
+            >
           </p>
-          <p class="contact-text follow hoverable" data-trailer-content="">
-            twitter
+          <p
+            class="contact-text follow hoverable"
+            data-trailer-content="@anmollness"
+          >
+            <a target="_blank" href="https://twitter.com/anmollness">Twitter</a>
           </p>
-          <p class="contact-text follow hoverable" data-trailer-content="">
-            developer
+          <p
+            class="contact-text follow hoverable"
+            data-trailer-content="@jappeet-singh16"
+          >
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/jappreet-singh16/"
+              >developer
+            </a>
           </p>
         </div>
       </div>

@@ -10,7 +10,6 @@ section.footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  pointer-events: all;
   margin-top: 3vh;
   @include bigtab {
     height: 35vh;
