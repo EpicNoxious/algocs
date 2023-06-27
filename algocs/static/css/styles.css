@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
 }
 
 main {
-  pointer-events: all;
+  pointer-events: none;
   z-index: 2;
   position: relative;
 }
@@ -450,8 +450,10 @@ ul.transition li {
   opacity: 0;
 }
 .img-box-container .img-content {
-  font-size: 1vw;
-  font-weight: 1000;
+  font-size: 0.8vw;
+  font-weight: 100;
+  font-family: "Vietnam", sans-serif;
+  text-transform: none;
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -463,12 +465,13 @@ ul.transition li {
 }
 @media screen and (max-width: 1100px) {
   .img-box-container .img-content {
-    font-size: 2vw;
+    font-size: 1.2vw;
   }
 }
 @media screen and (max-width: 479px) {
   .img-box-container .img-content {
     height: 5.25vh;
+    font-size: 1.6vw;
   }
 }
 .img-box-container .img {
@@ -1443,7 +1446,7 @@ section.about .about__left {
 }
 @media screen and (max-width: 1100px) {
   section.about .about__left {
-    width: 33.33%;
+    width: 40%;
   }
 }
 @media screen and (max-width: 479px) {
@@ -1465,7 +1468,7 @@ section.about .about__right {
 }
 @media screen and (max-width: 1100px) {
   section.about .about__right {
-    width: 66.67%;
+    width: 60%;
   }
 }
 @media screen and (max-width: 479px) {
@@ -1489,7 +1492,8 @@ section.about .about__right .img-box {
 }
 @media screen and (max-width: 479px) {
   section.about .about__right .img-box {
-    transform: translate(-10vw, -20vh);
+    transform: translate(-20vw, -20vh);
+    width: 66.67%;
   }
 }
 section.about .about__right .img-box:nth-of-type(2) {
@@ -1498,7 +1502,7 @@ section.about .about__right .img-box:nth-of-type(2) {
 }
 @media screen and (max-width: 479px) {
   section.about .about__right .img-box:nth-of-type(2) {
-    transform: translate(15vw, -12.5vh);
+    transform: translate(0vw, -12.5vh);
   }
 }
 
@@ -1518,12 +1522,23 @@ section.privacy > * {
 section.privacy > * h2 {
   text-align: left;
   width: 75%;
-  padding-bottom: 1vw;
+  padding-bottom: 3vh;
+}
+@media screen and (max-width: 479px) {
+  section.privacy > * h2 {
+    width: 100%;
+    padding-bottom: 1vh;
+  }
 }
 section.privacy > * p {
-  width: 75%;
-  font-size: 1.2vw;
   margin: 0 auto;
+  width: 75%;
+}
+@media screen and (max-width: 479px) {
+  section.privacy > * p {
+    width: 100%;
+    padding-bottom: 5vh;
+  }
 }
 section.privacy > * a {
   pointer-events: all;
@@ -1534,6 +1549,18 @@ section.privacy > * a {
 section.privacy > * ul {
   width: 75%;
   font-size: 1.2vw;
+}
+@media screen and (max-width: 1100px) {
+  section.privacy > * ul {
+    font-size: 1.4vw;
+  }
+}
+@media screen and (max-width: 479px) {
+  section.privacy > * ul {
+    width: 100%;
+    font-size: 3.2vw;
+    padding-bottom: 5vh;
+  }
 }
 
 section.legal {
@@ -1552,12 +1579,23 @@ section.legal > * {
 section.legal > * h2 {
   text-align: left;
   width: 75%;
-  padding-bottom: 1vw;
+  padding-bottom: 3vh;
+}
+@media screen and (max-width: 479px) {
+  section.legal > * h2 {
+    width: 100%;
+    padding-bottom: 1vh;
+  }
 }
 section.legal > * p {
   width: 75%;
-  font-size: 1.2vw;
   margin: 0 auto;
+}
+@media screen and (max-width: 479px) {
+  section.legal > * p {
+    width: 100%;
+    padding-bottom: 5vh;
+  }
 }
 section.legal > * p a {
   pointer-events: all;
@@ -1568,6 +1606,18 @@ section.legal > * p a {
 section.legal > * ul {
   width: 75%;
   font-size: 1.2vw;
+}
+@media screen and (max-width: 1100px) {
+  section.legal > * ul {
+    font-size: 1.4vw;
+  }
+}
+@media screen and (max-width: 479px) {
+  section.legal > * ul {
+    width: 100%;
+    font-size: 3.2vw;
+    padding-bottom: 5vh;
+  }
 }
 
 section.gallery {
@@ -1593,6 +1643,10 @@ section.gallery {
 .gallery-box {
   position: absolute;
   transition: transform 700ms ease;
+}
+.gallery-box img {
+  height: 100%;
+  width: 100%;
 }
 
 .gallery-box:hover {
@@ -1906,12 +1960,19 @@ section.recent-collab .collab-container {
 section.recent-collab .collab-container .collab-text {
   width: 50%;
   text-align: justify;
+  font-size: 1.2vw;
+}
+@media screen and (max-width: 1100px) {
+  section.recent-collab .collab-container .collab-text {
+    font-size: 1.6vw;
+  }
 }
 @media screen and (max-width: 479px) {
   section.recent-collab .collab-container .collab-text {
     margin-top: auto;
     width: 100%;
     height: 15vh;
+    font-size: 3.2vw;
   }
 }
 section.recent-collab .collab-container .collab-img {

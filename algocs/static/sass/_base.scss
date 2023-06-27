@@ -43,7 +43,7 @@ body::-webkit-scrollbar {
 }
 
 main {
-  pointer-events: all;
+  pointer-events: none;
   z-index: 2;
   position: relative;
 }

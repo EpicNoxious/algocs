@@ -21,7 +21,7 @@ section.about {
       width: 50%;
       padding-left: 5vw;
       @include bigtab {
-        width: 33.33%;
+        width: 40%;
       }
       @include phone {
         padding: 0 5vw;
@@ -35,7 +35,7 @@ section.about {
       height: 100%;
       width: 50%;
       @include bigtab {
-        width: 66.67%;
+        width: 60%;
       }
       @include phone {
         width: 100%;
@@ -57,13 +57,15 @@ section.about {
           left: 27.5%;
         }
         @include phone {
-          transform: translate(-10vw, -20vh);
+          transform: translate(-20vw, -20vh);
+          // left: 0%;
+          width: calc(66.67%);
         }
         &:nth-of-type(2) {
           z-index: 3;
           transform: translate(5vw, -12.5vh);
           @include phone {
-            transform: translate(calc(67.5vw - 35vw - 17.5vw), -12.5vh);
+            transform: translate(calc(67.5vw - 35vw - 17.5vw - 15vw), -12.5vh);
           }
         }
       }

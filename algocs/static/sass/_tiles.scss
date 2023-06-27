@@ -155,8 +155,10 @@ ul.transition {
     }
 
     .img-content {
-      font-size: 1vw;
-      font-weight: 1000;
+      font-size: 0.8vw;
+      font-weight: 100;
+      font-family: "Vietnam", sans-serif;
+      text-transform: none;
       display: inline-block;
       width: 100%;
       text-align: center;
@@ -166,10 +168,11 @@ ul.transition {
       height: 7.5vh;
       color: rgb(var(--primary));
       @include bigtab {
-        font-size: 2vw;
+        font-size: 1.2vw;
       }
       @include phone {
         height: 5.25vh;
+        font-size: 1.6vw;
       }
     }
     .img {
